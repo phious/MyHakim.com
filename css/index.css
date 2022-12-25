@@ -1,9 +1,8 @@
 body{
-    background-image: url(img/bg01.jpg);
+    background-image: url(../img/bg01.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height: 100%;
     width: 100%;
 }
 
@@ -17,8 +16,6 @@ html, body {
     background-attachment: fixed;
     max-height: 100vh;
     height: 100vh;
-
-
 }
 table{
     width: 100%;
