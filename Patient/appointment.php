@@ -106,7 +106,7 @@
                 </tr>
                 <tr class="menu-row">
                     <td class="menu-btn menu-icon-doctor">
-                        <a href="doctors.php" class="non-style-link-menu"><div><p class="menu-text">All Doctors</p></a></div>
+                        <a href="hospital.php" class="non-style-link-menu"><div><p class="menu-text">All Doctors</p></a></div>
                     </td>
                 </tr>
                 
@@ -431,7 +431,7 @@
                     <div class="popup">
                     <center>
                         <h2></h2>
-                        <a class="close" href="doctors.php">&times;</a>
+                        <a class="close" href="hospital.php">&times;</a>
                         <div class="content">
                             eDoc Web App<br>
                             
@@ -500,7 +500,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="doctors.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
+                                    <a href="hospital.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
                                 
                                     
                                 </td>

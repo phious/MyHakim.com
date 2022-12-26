@@ -48,7 +48,7 @@
     //echo $userid;
     //echo $username;
     
-    date_default_timezone_set('Asia/Kolkata');
+    date_default_timezone_set('Asia/Aden');
 
     $today = date('Y-m-d');
 
@@ -85,7 +85,7 @@
                 </tr>
                 <tr class="menu-row">
                     <td class="menu-btn menu-icon-doctor">
-                        <a href="doctors.php" class="non-style-link-menu"><div><p class="menu-text">All Doctors</p></a></div>
+                        <a href="hospital.php" class="non-style-link-menu"><div><p class="menu-text">All Hospitals</p></a></div>
                     </td>
                 </tr>
                 
@@ -109,7 +109,7 @@
         </div>
         <?php
 
-                $sqlmain= "select * from schedule inner join doctor on schedule.docid=doctor.docid where schedule.scheduledate>='$today'  order by schedule.scheduledate asc";
+                $sqlmain= "select * from schedule inner join hospital on schedule.hid=hospital.hid where schedule.scheduledate>='$today'  order by schedule.scheduledate asc";
                 $sqlpt1="";
                 $insertkey="";
                 $q='';
@@ -120,7 +120,7 @@
                         if(!empty($_POST["search"])){
                             /*TODO: make and understand */
                             $keyword=$_POST["search"];
-                            $sqlmain= "select * from schedule inner join doctor on schedule.docid=doctor.docid where schedule.scheduledate>='$today' and (doctor.docname='$keyword' or doctor.docname like '$keyword%' or doctor.docname like '%$keyword' or doctor.docname like '%$keyword%' or schedule.title='$keyword' or schedule.title like '$keyword%' or schedule.title like '%$keyword' or schedule.title like '%$keyword%' or schedule.scheduledate like '$keyword%' or schedule.scheduledate like '%$keyword' or schedule.scheduledate like '%$keyword%' or schedule.scheduledate='$keyword' )  order by schedule.scheduledate asc";
+                            $sqlmain= "select * from schedule inner join hospital on schedule.hid=hospital.hid where schedule.scheduledate>='$today' and (hospital.hosname='$keyword' or hospital.hosname like '$keyword%' or hospital.hosname like '%$keyword' or hospital.hosname like '%$keyword%' or schedule.title='$keyword' or schedule.title like '$keyword%' or schedule.title like '%$keyword' or schedule.title like '%$keyword%' or schedule.scheduledate like '$keyword%' or schedule.scheduledate like '%$keyword' or schedule.scheduledate like '%$keyword%' or schedule.scheduledate='$keyword' )  order by schedule.scheduledate asc";
                             //echo $sqlmain;
                             $insertkey=$keyword;
                             $searchtype="Search Result : ";
@@ -144,11 +144,11 @@
                     <td >
                             <form action="" method="post" class="header-search">
 
-                                        <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Doctor name or Email or Date (YYYY-MM-DD)" list="doctors" value="<?php  echo $insertkey ?>">&nbsp;&nbsp;
+                                        <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Hospital name or Email or Date (YYYY-MM-DD)" list="hospital" value="<?php  echo $insertkey ?>">&nbsp;&nbsp;
                                         
                                         <?php
-                                            echo '<datalist id="doctors">';
-                                            $list11 = $database->query("select DISTINCT * from  doctor;");
+                                            echo '<datalist id="hospital">';
+                                            $list11 = $database->query("select DISTINCT * from  hospital;");
                                             $list12 = $database->query("select DISTINCT * from  schedule GROUP BY title;");
                                             
 
@@ -157,7 +157,7 @@
 
                                             for ($y=0;$y<$list11->num_rows;$y++){
                                                 $row00=$list11->fetch_assoc();
-                                                $d=$row00["docname"];
+                                                $d=$row00["hosname"];
                                                
                                                 echo "<option value='$d'><br/>";
                                                
@@ -252,7 +252,7 @@
                                         };
                                         $scheduleid=$row["scheduleid"];
                                         $title=$row["title"];
-                                        $docname=$row["docname"];
+                                        $hosname=$row["hosname"];
                                         $scheduledate=$row["scheduledate"];
                                         $scheduletime=$row["scheduletime"];
 
@@ -269,7 +269,7 @@
                                                                 '.substr($title,0,21).'
                                                             </div><br>
                                                             <div class="h3-search">
-                                                                '.substr($docname,0,30).'
+                                                                '.substr($hosame,0,30).'
                                                             </div>
                                                             <div class="h4-search">
                                                                 '.$scheduledate.'<br>Starts: <b>@'.substr($scheduletime,0,5).'</b> (24h)

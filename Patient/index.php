@@ -55,7 +55,6 @@
     $stmt->execute();
     $userrow = $stmt->get_result();
     $userfetch=$userrow->fetch_assoc();
-
     $userid= $userfetch["pid"];
     $username=$userfetch["pname"];
 
@@ -94,7 +93,7 @@
                 </tr>
                 <tr class="menu-row">
                     <td class="menu-btn menu-icon-doctor">
-                        <a href="doctors.php" class="non-style-link-menu"><div><p class="menu-text">All Hospitals</p></a></div>
+                        <a href="hospital.php" class="non-style-link-menu"><div><p class="menu-text">All Hospitals</p></a></div>
                     </td>
                 </tr>
                 
@@ -165,7 +164,7 @@
                             <h3>Welcome!</h3>
                             <h1><?php echo $username  ?>.</h1>
                             <p>Haven't any idea about doctors? no problem let's jumping to 
-                                <a href="doctors.php" class="non-style-link"><b>"All Hospital"</b></a> section or 
+                                <a href="hospital.php" class="non-style-link"><b>"All Hospital"</b></a> section or 
                                 <a href="schedule.php" class="non-style-link"><b>"Sessions"</b> </a><br>
                                 Track your past and future appointments history.<br>Also find out the expected arrival time of your doctor or medical consultant.<br><br>
                             </p>
@@ -176,12 +175,12 @@
                                 <input type="search" name="search" class="input-text " placeholder="Search Hospitals Here" list="Hospitals" style="width:45%;">&nbsp;&nbsp;
                                 
                                 <?php
-                                    echo '<datalist id="Hospital">';
-                                    $list11 = $database->query("select  hosname,hosaddress from  hospital;");
+                                    echo '<datalist id="hospital">';
+                                    $list11 = $database->query("select  hid,hosname,hosaddress from  hospital;");
     
                                     for ($y=0;$y<$list11->num_rows;$y++){
                                         $row00=$list11->fetch_assoc();
-                                        $d=$row00["hosname"];
+                                        $d=$row00["hid"];
                                         
                                         echo "<option value='$d'><br/>";
                                         
@@ -244,7 +243,7 @@
                                         
                                             <?php
                                             $nextweek=date("Y-m-d",strtotime("+1 week"));
-                                                $sqlmain= "select * from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid  where  patient.pid=$userid  and schedule.scheduledate>='$today' order by schedule.scheduledate asc";
+                                                $sqlmain= "select * from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid inner join hospital on schedule.hid=hospital.hid where  patient.pid=$userid  and schedule.scheduledate>='$today' order by schedule.scheduledate asc";
                                                 //echo $sqlmain;
                                                 $result= $database->query($sqlmain);
                 
@@ -271,6 +270,7 @@
                                                     $scheduleid=$row["scheduleid"];
                                                     $title=$row["title"];
                                                     $apponum=$row["apponum"];
+                                                    $docname=$row["docname"];
                                                     $hosname=$row["hosname"];
                                                     $scheduledate=$row["scheduledate"];
                                                     $scheduletime=$row["scheduletime"];
@@ -280,10 +280,10 @@
                                                         $apponum
                                                         .'</td>
                                                         <td style="padding:20px;"> &nbsp;'.
-                                                        substr($title,0,30)
+                                                        substr($hosname,0,30)
                                                         .'</td>
                                                         <td>
-                                                        '.substr($hosname,0,20).'
+                                                        '.substr($docname,0,20).'
                                                         </td>
                                                         <td style="text-align:center;">
                                                             '.substr($scheduledate,0,10).' '.substr($scheduletime,0,5).'
