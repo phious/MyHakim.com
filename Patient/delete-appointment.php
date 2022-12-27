@@ -3,7 +3,7 @@
     session_start();
 
     if(isset($_SESSION["user"])){
-        if(($_SESSION["user"])=="" or $_SESSION['usertype']!='a'){
+        if(($_SESSION["user"])=="" or $_SESSION['usertype']!='p'){
             header("location: ../login.php");
         }
 
@@ -20,8 +20,7 @@
         //$email=($result001->fetch_assoc())["docemail"];
         $sql= $database->query("delete from appointment where appoid='$id';");
         $stmt = $database->prepare($sqlmain);
-        $stmt->bind_param("i",$id);
-        $stmt->execute();
+      
         //$sql= $database->query("delete from doctor where docemail='$email';");
         //print_r($email);
         header("location: appointment.php");

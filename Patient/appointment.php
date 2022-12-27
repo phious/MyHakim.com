@@ -213,7 +213,7 @@
                 <tr>
                    <td colspan="4">
                        <center>
-                        <div class="abc scroll">
+                        <div class="">
                         <table width="93%" class="sub-table scrolldown" border="0" style="border:none">
                         
                         <tbody>
