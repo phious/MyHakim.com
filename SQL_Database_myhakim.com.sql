@@ -106,8 +106,7 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `pemail` varchar(255) DEFAULT NULL,
   `pname` varchar(255) DEFAULT NULL,
   `ppassword` varchar(255) DEFAULT NULL,
-  `paddress` varchar(255) DEFAULT NULL,
-  `pnic` varchar(15) DEFAULT NULL,
+  `pcity` varchar(255) DEFAULT NULL,
   `pdob` date DEFAULT NULL,
   `ptel` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`pid`)
@@ -117,8 +116,8 @@ CREATE TABLE IF NOT EXISTS `patient` (
 -- Dumping data for table `patient`
 --
 
-INSERT INTO `patient` (`pid`, `pemail`, `pname`, `ppassword`, `paddress`, `pnic`, `pdob`, `ptel`) VALUES
-(1, 'patient@myhakim.com', 'Test Patient', '123', 'CMC', '0745', '2015-04-01', '0911202122');
+INSERT INTO `patient` (`pid`, `pemail`, `pname`, `ppassword`, `pcity`, `pdob`, `ptel`) VALUES
+(1, 'patient@myhakim.com', 'Test Patient', '123', 'Addis Ababa', '2015-04-01', '0911202122');
 
 -- --------------------------------------------------------
 --
