@@ -199,7 +199,7 @@
                         
                             <?php
 
-         
+                                $sqlmain= "select * from hospital";
                                 $result= $database->query($sqlmain);
 
                                 if($result->num_rows==5){
