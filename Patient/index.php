@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/animations.css">  
     <link rel="stylesheet" href="../css/main.css">  
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/patient.css">
       <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <title>Dashboard</title>
    
@@ -20,6 +21,8 @@
         .sub-table,.anime{
             animation: transitionIn-Y-bottom 0.5s;
         }
+        
+    
     </style>
     
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -63,14 +66,14 @@
     //echo $username;
     
     ?>
-    <div class="container">
+    <div class="container" >
         <div class="menu">
             <table class="menu-container" border="0">
                 <tr>
                     <td style="padding:10px" colspan="2">
                         <table border="0" class="profile-container">
                             <tr>
-                                <td width="30%" style="padding-left:20px" >
+                                <td width="30%" style="padding-left:px" >
                                     <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
                                 </td>
                                 <td style="padding:0px;margin:0px;">
@@ -115,7 +118,7 @@
                 
             </table>
         </div>
-        <div class="dash-body" style="margin-top: 15px">
+        <div class="dash-body" style="margin-top: 0px">
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;" >
                         
                         <tr >
@@ -170,19 +173,19 @@
                             </p>
                             
                             
-                            <form action="schedule.php" method="post" style="display: flex">
+                            <form action="hospital.php" method="post" style="display: flex">
 
-                                <input type="search" name="search" class="input-text " placeholder="Search Hospitals Here" list="Hospitals" style="width:45%;">&nbsp;&nbsp;
+                                <input type="search" name="search" class="input-text " placeholder="Search Hospitals Here" list="Hospital" style="width:45%;">&nbsp;&nbsp;
                                 
                                 <?php
                                     echo '<datalist id="hospital">';
-                                    $list11 = $database->query("select  hid,hosname,hosaddress from  hospital;");
+                                    $list11 = $database->query("select  hid,hosemail,hosname,hosaddress from hospital;");
     
                                     for ($y=0;$y<$list11->num_rows;$y++){
                                         $row00=$list11->fetch_assoc();
-                                        $d=$row00["hid"];
+                                        $h=$row00["hid"];
                                         
-                                        echo "<option value='$d'><br/>";
+                                        echo "<option value='$h'><br/>";
                                         
                                     };
     

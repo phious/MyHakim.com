@@ -111,15 +111,15 @@
                             <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Hospital name or Address" list="Hospitals">&nbsp;&nbsp;
                             
                             <?php
-                                echo '<datalist id="hospitals">';
+                                echo '<datalist id="hospital">';
                                 $list11 = $database->query("select  hosname,hosaddress from  hospital;");
 
                                 for ($y=0;$y<$list11->num_rows;$y++){
                                     $row00=$list11->fetch_assoc();
-                                    $d=$row00["hosname"];
-                                    $c=$row00["hosaddress"];
-                                    echo "<option value='$d'><br/>";
-                                    echo "<option value='$c'><br/>";
+                                    $p=$row00["hosname"];
+                                    $p=$row00["hosaddress"];
+                                    echo "<option value='$p'><br/>";
+                                    echo "<option value='$p'><br/>";
                                 };
 
                             echo ' </datalist>';
@@ -137,7 +137,7 @@
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
                             <?php 
-                        date_default_timezone_set('Asia/Kolkata');
+                        date_default_timezone_set('Asia/Aden');
 
                         $date = date('Y-m-d');
                         echo $date;
