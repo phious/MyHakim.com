@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/animations.css">  
-    <link rel="stylesheet" href="../css/main.css">  
+    <link rel="stylesheet" href="../css/main.css"> 
     <link rel="stylesheet" href="../css/admin.css">
-        
+    
+   
     <title>Hospitals</title>
     <style>
         .popup{
@@ -108,24 +109,23 @@
                         
                         <form action="" method="post" class="header-search">
 
-                            <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Hospital name or Address" list="Hospitals">&nbsp;&nbsp;
+                            <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Hospital name or Address" list="hospitals">&nbsp;&nbsp;
                             
                             <?php
-                                echo '<datalist id="hospital">';
-                                $list11 = $database->query("select  hosname,hosaddress from  hospital;");
+                                echo '<datalist id="hospitals">';
+                                $list11 = $database->query("select  hosname,hosaddress from hospital;");
 
                                 for ($y=0;$y<$list11->num_rows;$y++){
                                     $row00=$list11->fetch_assoc();
-                                    $p=$row00["hosname"];
-                                    $p=$row00["hosaddress"];
-                                    echo "<option value='$p'><br/>";
-                                    echo "<option value='$p'><br/>";
+                                    $d=$row00["hosname"];
+                                    $a=$row00["hosaddress"];
+                                    echo "<option value='$d'><br/>";
+                                    echo "<option value='$a'><br/>";
                                 };
 
                             echo ' </datalist>';
 ?>
-                            
-                       
+
                             <input type="Submit" value="Search" class="login-btn btn-primary btn" style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
                         
                         </form>
@@ -153,7 +153,7 @@
                
                 
                 <tr>
-                    <td colspan="4" style="padding-top:10px;">
+                    <td colspan="4" style="padding-top:0px;">
                         <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">Hospital (<?php echo $list11->num_rows; ?>)</p>
                     </td>
                     
@@ -175,53 +175,46 @@
                 <tr>
                    <td colspan="4">
                        <center>
-                        <div class="abc scroll">
-                        <table width="93%" class="sub-table scrolldown" border="0">
+                        <div >
+                        <table width="90%" class="sub-table scrolldown" border="0">
                         <thead>
                         <tr>
-                                <th class="table-headin">
-                                    
-                                
+                                <th class="table-headin">     
                                 Hospital Name
-                                
                                 </th>
                                 <th class="table-headin">      
                                 Address
                                 </th>
                                 <th class="table-headin">
-                                    Email
+                                Email
                                 </th>
-                                <th class="table-headin">
-                                    
-                                   Telephone Number
-                                    
+                                <th class="table-headin">     
+                                Telephone Number
                                 </th>
-                                <th class="table-headin">
-                                    
-                                    Events
-                                    
+                                <th class="table-headin"> 
+                                 Events
                                 </tr>
                         </thead>
                         <tbody>
                         
                             <?php
 
-                                
+$sqlmain= "select * from hospital";
+         
                                 $result= $database->query($sqlmain);
 
-                                if($result->num_rows==0){
+                                if($result->num_rows==5){
                                     echo '<tr>
                                     <td colspan="4">
-                                    <br><br><br><br>
+                                   
                                     <center>
                                     <img src="../img/notfound.svg" width="25%">
                                     
                                     <br>
-                                    <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">We  couldnt find anything related to your keywords !</p>
-                                    <a class="non-style-link" href="hospital.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Hospital &nbsp;</font></button>
-                                    </a>
+                                    <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">No Hospitals Added</p>
+                                     </br>
                                     </center>
-                                    <br><br><br><br>
+                                   
                                     </td>
                                     </tr>';
                                     
@@ -229,7 +222,7 @@
                                 else{
                                 for ( $x=0; $x<$result->num_rows;$x++){
                                     $row=$result->fetch_assoc();
-                                    $hosid=$row["hosid"];
+                                    
                                     $name=$row["hosname"];
                                     $address=$row["hosaddress"];
                                     $email=$row["hosemail"];
@@ -253,7 +246,7 @@
                                         <div style="display:flex;justify-content: left;">
                                         
                                         
-                                       <a href="?action=session&id='.$hosid.'&name='.$name.'"  class="non-style-link"><button  class="btn-primary-soft btn button-icon menu-icon-session-active"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Make An Appointment!</font></button></a>
+                                       <a href="?action=session&id='.'&name='.$name.'"  class="non-style-link"><button  class="btn-primary-soft btn button-icon menu-icon-session-active"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Make An Appointment!</font></button></a>
                                         </div>
                                         </td>
                                     </tr>';
@@ -303,39 +296,8 @@
             </div>
             ';
         }
-        }elseif($action=='session'){
-            $name=$_GET["name"];
-            echo '
-            <div id="popup1" class="overlay">
-                    <div class="popup">
-                    <center>
-                        <h2>Redirect to Doctors sessions?</h2>
-                        <a class="close" href="hospital.php">&times;</a>
-                        <div class="content">
-                            You want to view All sessions by <br>('.substr($name,0,40).').
-                            
-                        </div>
-                        <form action="schedule.php" method="post" style="display: flex">
-
-                                <input type="hidden" name="search" value="'.$name.'">
-
-                                
-                        <div style="display: flex;justify-content:center;margin-left:45%;margin-top:6%;;margin-bottom:6%;">
-                        
-                        <input type="submit"  value="Yes" class="btn-primary btn"   >
-                        
-                        
-                        </div>
-                    </center>
-            </div>
-            </div>
-            ';
         }
        
-
-           
-      
-   
 
 ?>
 </div>
