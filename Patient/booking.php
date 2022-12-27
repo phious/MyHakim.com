@@ -39,15 +39,11 @@
 
     //import database
     include("../connection.php");
-
-    $sqlmain= "select * from patient where pemail=?";
-    $stmt = $database->prepare($sqlmain);
-    $stmt->bind_param("s",$useremail);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $userrow = $database->query("select * from patient where pemail='$useremail'");
     $userfetch=$userrow->fetch_assoc();
     $userid= $userfetch["pid"];
     $username=$userfetch["pname"];
+
 
 
     //echo $userid;
@@ -194,7 +190,7 @@
                 <tr>
                    <td colspan="4">
                        <center>
-                        <div class="abc scroll">
+                        <div class="">
                         <table width="100%" class="sub-table scrolldown" border="0" style="padding: 50px;border:none">
                             
                         <tbody>
