@@ -199,7 +199,6 @@
                         
                             <?php
 
-$sqlmain= "select * from hospital";
          
                                 $result= $database->query($sqlmain);
 
