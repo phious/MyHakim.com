@@ -51,14 +51,14 @@ table{
 .myhakim-logo{
     color: white;
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 60px;
     padding-left: 20px;
     animation: transitionIn-Y-over 0.5s;
 }
 
 .myhakim-logo-sub{
     color: rgba(255, 255, 255, 0.733);
-    font-size: 12px;
+    font-size: 50px;
 
 }
 
