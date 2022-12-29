@@ -21,6 +21,23 @@
         .sub-table{
             animation: transitionIn-Y-bottom 0.5s;
         }
+    
+        div.popup {
+    margin: 10px auto;
+    
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+        
+        div.hyu {   
+            width:80%;
+            height:600px;
+            overflow:auto;
+           
+        }
     </style>
     
     
@@ -373,7 +390,7 @@
                         <a class="close" href="settings.php">&times;</a> 
                         <div style="display: flex;justify-content: center;">
                        
-                        <table width="100%" class="abc">
+                        <table width="100%" class="hyu">
                         <tr>
                                         <td class="label-td" colspan="2">'.
                                             $errorlist[$error_1]

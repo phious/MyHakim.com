@@ -16,6 +16,22 @@
         .sub-table{
             animation: transitionIn-Y-bottom 0.5s;
         }
+        div.popup {
+    margin: 10px auto;
+
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+        
+        div.hyu {   
+            width:80%;
+            height:600px;
+            overflow:auto;
+           
+        }
 </style>
 </head>
 <body>
@@ -174,7 +190,7 @@
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
                             <?php 
-                        date_default_timezone_set('Asia/Kolkata');
+                        date_default_timezone_set('Asia/Aden');
 
                         $date = date('Y-m-d');
                         echo $date;
@@ -230,7 +246,7 @@
                 <tr>
                    <td colspan="4">
                        <center>
-                        <div class="abc scroll">
+                        <div >
                         <table width="93%" class="sub-table scrolldown"  style="border-spacing:0;">
                         <thead>
                         <tr>
@@ -240,12 +256,7 @@
                                 Name
                                 
                                 </th>
-                                <th class="table-headin">
-                                    
-                                
-                                    NIC
-                                    
-                                </th>
+                               
                                 <th class="table-headin">
                                 
                             
@@ -296,7 +307,7 @@
                                     $pid=$row["pid"];
                                     $name=$row["pname"];
                                     $email=$row["pemail"];
-                                    $nic=$row["pnic"];
+                                   
                                     $dob=$row["pdob"];
                                     $tel=$row["ptel"];
                                     
@@ -304,9 +315,7 @@
                                         <td> &nbsp;'.
                                         substr($name,0,35)
                                         .'</td>
-                                        <td>
-                                        '.substr($nic,0,12).'
-                                        </td>
+                                       
                                         <td>
                                             '.substr($tel,0,10).'
                                         </td>
@@ -353,17 +362,18 @@
             $row=$result->fetch_assoc();
             $name=$row["pname"];
             $email=$row["pemail"];
-            $nic=$row["pnic"];
+           
             $dob=$row["pdob"];
             $tele=$row["ptel"];
-            $address=$row["paddress"];
+            $address=$row["pcity"];
             echo '
             <div id="popup1" class="overlay">
                     <div class="popup">
                     <center>
+                    <div class="hyu">
                         <a class="close" href="patient.php">&times;</a>
                         <div class="content">
-
+                       
                         </div>
                         <div style="display: flex;justify-content: center;">
                         <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
@@ -408,16 +418,8 @@
                                 '.$email.'<br><br>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="nic" class="form-label">NIC: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                '.$nic.'<br><br>
-                                </td>
-                            </tr>
+                           
+                           
                             <tr>
                                 <td class="label-td" colspan="2">
                                     <label for="Tele" class="form-label">Telephone: </label>

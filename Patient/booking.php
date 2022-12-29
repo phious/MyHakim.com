@@ -51,7 +51,7 @@
     
 
 
-    date_default_timezone_set('Asia/Kolkata');
+    date_default_timezone_set('Asia/Aden');
 
     $today = date('Y-m-d');
 

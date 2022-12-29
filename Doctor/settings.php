@@ -21,6 +21,22 @@
         .sub-table{
             animation: transitionIn-Y-bottom 0.5s;
         }
+        div.popup {
+    margin: 10px auto;
+    
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+        
+        div.hyu {   
+            width:80%;
+            height:600px;
+            overflow:auto;
+           
+        }
     </style>
     
     
@@ -127,7 +143,7 @@
                                 </p>
                                 <p class="heading-sub12" style="padding: 0;margin: 0;">
                                     <?php 
-                                date_default_timezone_set('Asia/Kolkata');
+                                date_default_timezone_set('Asia/Aden');
         
                                 $today = date('Y-m-d');
                                 echo $today;
@@ -397,7 +413,7 @@
                             
                                 <a class="close" href="settings.php">&times;</a> 
                                 <div style="display: flex;justify-content: center;">
-                                <div class="abc">
+                                <div class="hyu">
                                 <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
                                 <tr>
                                         <td class="label-td" colspan="2">'.

@@ -260,7 +260,7 @@
                             <tr>
                                 <td width="50%">
                                     <center>
-                                        <div class="abc scroll" style="height: 200px;">
+                                        <div class="" style="height: 200px;">
                                         <table width="85%" class="sub-table scrolldown" border="0">
                                         <thead>
                                         <tr>    
@@ -443,16 +443,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <center>
-                                        <a href="appointment.php" class="non-style-link"><button class="btn-primary btn" style="width:85%">Show all Appointments</button></a>
-                                    </center>
-                                </td>
-                                <td>
-                                    <center>
-                                        <a href="schedule.php" class="non-style-link"><button class="btn-primary btn" style="width:85%">Show all Sessions</button></a>
-                                    </center>
-                                </td>
+                                
+                                
                             </tr>
                         </table>
                     </td>

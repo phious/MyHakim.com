@@ -195,17 +195,12 @@ body{
     border-bottom: 3px solid var(--primarycolor);
 }
 
-.abc{
+.hyu{
   width: 50%;
   height: 0px;
   overflow: auto;
 }
-
-
-
-
-
-        
+       
 .overlay {
     position: fixed;
     top: 0;
@@ -223,7 +218,7 @@ body{
   }
   
   .popup {
-    margin: 70px auto;
+    margin: 10px auto;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
@@ -547,6 +542,8 @@ input[type=search]:focus {
   padding: 20px;
   padding-left: 35px;
 }
+
+
 
 .patient-header{
   background-image: url(../img/b3.jpg);

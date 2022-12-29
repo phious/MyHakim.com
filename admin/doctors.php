@@ -5,17 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/animations.css">  
-    <link rel="stylesheet" href="../css/main.css">  
+    <link rel="stylesheet" href="../css/main.css"<?php echo time(); ?>">  
     <link rel="stylesheet" href="../css/admin.css">
         
     <title>Doctors</title>
     <style>
-        .popup{
+       .popup{
             animation: transitionIn-Y-bottom 0.5s;
         }
         .sub-table{
             animation: transitionIn-Y-bottom 0.5s;
         }
+        div.popup {
+    margin: 10px auto;
+    
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+
+        div.hyu {   
+            width:80%;
+            height:2000px;
+            overflow:auto;
+           
+        }
+
 </style>
 </head>
 <body>
@@ -132,7 +149,7 @@
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
                             <?php 
-                        date_default_timezone_set('Asia/Kolkata');
+                        date_default_timezone_set('Asia/Aden');
 
                         $date = date('Y-m-d');
                         echo $date;
@@ -177,8 +194,8 @@
                 <tr>
                    <td colspan="4">
                        <center>
-                        <div class="abc scroll">
-                        <table width="93%" class="sub-table scrolldown" border="0">
+                        <div class="">
+                        <table width="90%" class="sub-table scrolldown" border="0">
                         <thead>
                         <tr>
                                 <th class="table-headin">
@@ -403,6 +420,7 @@
             </div>
             </div>
             ';
+            
         }elseif($action=='add'){
                 $error_1=$_GET["error"];
                 $errorlist= array(
@@ -415,19 +433,24 @@
                 );
                 if($error_1!='4'){
                 echo '
+                
             <div id="popup1" class="overlay">
+            
                     <div class="popup">
                     <center>
-                    
+                    <div class="hyu">
                         <a class="close" href="doctors.php">&times;</a> 
+                       <div class="content">
                         <div style="display: flex;justify-content: center;">
-                        <div class="abc">
-                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
+                        
+                        <table width="100%" height="50%" class="sub-table scrolldown add-doc-form-container" border="0">
                         <tr>
-                                <td class="label-td" colspan="2">'.
+                                <td class="label-td" colspan="2" >'.
                                     $errorlist[$error_1]
                                 .'</td>
+                               
                             </tr>
+                            
                             <tr>
                                 <td>
                                     <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Add New Doctor.</p><br><br>
@@ -537,6 +560,7 @@
                         </table>
                         </div>
                         </div>
+                        </div>
                     </center>
                     <br><br>
             </div>
@@ -593,24 +617,29 @@
             if($error_1!='4'){
                     echo '
                     <div id="popup1" class="overlay">
+                            
                             <div class="popup">
                             <center>
+                            <div class="hyu">
                             
                                 <a class="close" href="doctors.php">&times;</a> 
                                 <div style="display: flex;justify-content: center;">
-                                <div class="abc">
+                                
                                 <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
                                 <tr>
+                                
                                         <td class="label-td" colspan="2">'.
                                             $errorlist[$error_1]
                                         .'</td>
                                     </tr>
                                     <tr>
+                                    
                                         <td>
                                             <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Edit Doctor Details.</p>
                                         Doctor ID : '.$id.' (Auto Generated)<br><br>
                                         </td>
                                     </tr>
+                                   
                                     <tr>
                                         <td class="label-td" colspan="2">
                                             <form action="edit-doc.php" method="POST" class="add-new-form">

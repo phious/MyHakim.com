@@ -16,6 +16,22 @@
         .sub-table{
             animation: transitionIn-Y-bottom 0.5s;
         }
+        div.popup {
+    margin: 10px auto;
+
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+        
+        div.hyu {   
+            width:80%;
+            height:600px;
+            overflow:auto;
+           
+        }
 </style>
 </head>
 <body>
@@ -178,7 +194,7 @@
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
                             <?php 
-                        date_default_timezone_set('Asia/Kolkata');
+                        date_default_timezone_set('Asia/Aden');
 
                         $date = date('Y-m-d');
                         echo $date;
@@ -234,7 +250,7 @@
                 <tr>
                    <td colspan="4">
                        <center>
-                        <div class="abc scroll">
+                        <div class="hyu">
                         <table width="93%" class="sub-table scrolldown"  style="border-spacing:0;">
                         <thead>
                         <tr>
@@ -368,6 +384,7 @@
             <div id="popup1" class="overlay">
                     <div class="popup">
                     <center>
+                    <div class="hyu">
                         <a class="close" href="patient.php">&times;</a>
                         <div class="content">
 

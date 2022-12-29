@@ -134,7 +134,7 @@
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
                             <?php 
-                        date_default_timezone_set('Asia/Kolkata');
+                        date_default_timezone_set('Asia/Aden');
 
                         $date = date('Y-m-d');
                         echo $date;
@@ -179,7 +179,7 @@
                 <tr>
                    <td colspan="4">
                        <center>
-                        <div class="abc scroll">
+                        <div class="">
                         <table width="93%" class="sub-table scrolldown" border="0">
                         <thead>
                         <tr>
@@ -423,7 +423,7 @@
                     
                         <a class="close" href="doctors.php">&times;</a> 
                         <div style="display: flex;justify-content: center;">
-                        <div class="abc">
+                        <div >
                         <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
                         <tr>
                                 <td class="label-td" colspan="2">'.
@@ -600,7 +600,7 @@
                             
                                 <a class="close" href="doctors.php">&times;</a> 
                                 <div style="display: flex;justify-content: center;">
-                                <div class="abc">
+                                <div class="">
                                 <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
                                 <tr>
                                         <td class="label-td" colspan="2">'.
