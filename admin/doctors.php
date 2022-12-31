@@ -69,7 +69,7 @@
                                     <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
                                 </td>
                                 <td style="padding:0px;margin:0px;">
-                                    <p class="profile-title">Administrator</p>
+                                    <p class="profile-title">Kiduspaulos</p>
                                     <p class="profile-subtitle">admin@myhakim.com</p>
                                 </td>
                             </tr>
@@ -114,7 +114,7 @@
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
                 <tr >
                     <td width="13%">
-                        <a href="doctors.php" ><button  class="login-btn btn-primary-soft btn btn-icon-back"  style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Back</font></button></a>
+                        <a href="index.php" ><button  class="login-btn btn-primary-soft btn btn-icon-back"  style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Back</font></button></a>
                     </td>
                     <td>
                         
@@ -183,7 +183,7 @@
                         
                         $sqlmain= "select * from doctor where docemail='$keyword' or docname='$keyword' or docname like '$keyword%' or docname like '%$keyword' or docname like '%$keyword%'";
                     }else{
-                        $sqlmain= "select * from doctor order by docid desc";
+                        $sqlmain= "select * from doctor where h_code='kk15'";
 
                     }
 
@@ -489,14 +489,26 @@
                                     <input type="text" name="nic" class="input-text" placeholder="NIC Number" required><br>
                                 </td>
                             </tr>
+                            
                             <tr>
                                 <td class="label-td" colspan="2">
                                     <label for="Tele" class="form-label">Telephone: </label>
                                 </td>
                             </tr>
+                            
                             <tr>
                                 <td class="label-td" colspan="2">
                                     <input type="tel" name="Tele" class="input-text" placeholder="Telephone Number" required><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <label for="h_code" class="form-label">Hospital code: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <input type="text" name="h_code" class="input-text" placeholder="hospital code" required><br>
                                 </td>
                             </tr>
                             <tr>

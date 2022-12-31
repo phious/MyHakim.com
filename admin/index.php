@@ -56,7 +56,7 @@
                                     <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
                                 </td>
                                 <td style="padding:0px;margin:0px;">
-                                    <p class="profile-title">Administrator</p>
+                                    <p class="profile-title">Kiduspaulos</p>
                                     <p class="profile-subtitle">admin@myhakim.com</p>
                                 </td>
                             </tr>
@@ -169,7 +169,13 @@
                                     <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex">
                                         <div>
                                                 <div class="h1-dashboard">
-                                                    <?php    echo $doctorrow->num_rows  ?>
+                                                    <?php
+                                                    include("../connection.php");    
+                                                    $query = "SELECT * FROM doctor WHERE h_code='kk15'";
+                                                    $query_run = mysqli_query($database, $query);
+                                                    $row = mysqli_num_rows($query_run);
+                                                    echo '<p>'.$row.'</p>';  
+                                                    ?>
                                                 </div><br>
                                                 <div class="h3-dashboard">
                                                     Doctors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
