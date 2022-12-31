@@ -41,7 +41,9 @@ body{
     background: #555; 
   }
 
+      
 
+ 
 
 
 
@@ -593,4 +595,35 @@ input[type=search]:focus {
   background-position: 68% 50%;
   background-repeat: no-repeat;
   transition: 0.5s;
+}
+
+
+.container {
+  
+  display: inline-block;
+}
+@keyframes typing {
+  from { width: 0%  }
+  to { width: 62% }
+ 
+}
+@keyframes blink {
+  from { border-color: transparent }
+  to { border-color: orange; }
+}
+.typed-out{
+  overflow: hidden;
+  border-right: .01em solid orange;
+  white-space: nowrap;
+  margin-left: 15%;
+  animation: 
+      typing 6s steps(90, end) forwards;
+      blink .75s infinite;
+  width: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 400;
+  
+  
 }
