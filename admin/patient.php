@@ -124,7 +124,7 @@
                             
                             <?php
                                 echo '<datalist id="patient">';
-                                $list11 = $database->query("select  pname,pemail from patient;");
+                                $list11 = $database->query("SELECT  pname,pemail FROM `patient` WHERE h_code='kk15' ;");
 
                                 for ($y=0;$y<$list11->num_rows;$y++){
                                     $row00=$list11->fetch_assoc();
@@ -174,9 +174,9 @@
                     if($_POST){
                         $keyword=$_POST["search"];
                         
-                        $sqlmain= "select * from patient where pemail='$keyword' or pname='$keyword' or pname like '$keyword%' or pname like '%$keyword' or pname like '%$keyword%' ";
+                        $sqlmain= "SELECT * FROM `patient` WHERE pemail='$keyword' OR pname='$keyword' OR pname LIKE '$keyword%' OR pname LIKE '%$keyword' OR pname LIKE '%$keyword%' ";
                     }else{
-                        $sqlmain= "select * from patient order by pid desc";
+                        $sqlmain= "SELECT * FROM `patient` WHERE h_code='kk15'";
 
                     }
 
