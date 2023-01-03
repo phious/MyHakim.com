@@ -63,6 +63,9 @@ if($_POST){
             $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Already have an account for this Email Address.</label>';
         }else{
             //TODO
+            $newpassword = password_hash($newpassword, PASSWORD_DEFAULT);
+            $token = bin2hex(random_bytes(50));
+            $verified = false;
             $database->query("insert into patient(pemail,pname,ppassword, pcity,pdob,ptel) values('$email','$name','$newpassword','$city','$dob','$tele');");
             $database->query("insert into webuser values('$email','p')");
 
