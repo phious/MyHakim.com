@@ -139,8 +139,8 @@
                                 echo $today;
 
 
-                                $patientrow = $database->query("select  * from  patient;");
-                                $doctorrow = $database->query("select  * from  doctor;");
+                                $patientrow = $database->query("SELECT * FROM  `patient` WHERE `h_code`='kk15'");
+                                $doctorrow = $database->query("SELECT  * FROM  `doctor` WHERE `h_code`='kk15'");
                                 $appointmentrow = $database->query("select  * from  appointment where appodate>='$today';");
                                 $schedulerow = $database->query("select  * from  schedule where scheduledate='$today';");
 
@@ -163,22 +163,17 @@
                                 <td colspan="4">
                                     <p style="font-size: 20px;font-weight:600;padding-left: 12px;">Status</p>
                                 </td>
-                            </tr>
+                            </tr>   
                             <tr>
                                 <td style="width: 25%;">
                                     <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex">
                                         <div>
+                                            
                                                 <div class="h1-dashboard">
-                                                    <?php
-                                                    include("../connection.php");    
-                                                    $query = "SELECT * FROM doctor WHERE h_code='kk15'";
-                                                    $query_run = mysqli_query($database, $query);
-                                                    $row = mysqli_num_rows($query_run);
-                                                    echo '<p>'.$row.'</p>';  
-                                                    ?>
+                                                <?php echo $doctorrow->num_rows  ?>
                                                 </div><br>
                                                 <div class="h3-dashboard">
-                                                    Doctors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    Doctors &nbsp;
                                                 </div>
                                         </div>
                                                 <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/doctors-hover.svg');"></div>
