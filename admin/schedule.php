@@ -185,7 +185,7 @@
                                 
                             <?php 
                             
-                                $list11 = $database->query("select  * from  doctor order by docname asc;");
+                                $list11 = $database->query("SELECT * FROM `doctor`  WHERE h_code='kk15'");
 
                                 for ($y=0;$y<$list11->num_rows;$y++){
                                     $row00=$list11->fetch_assoc();
@@ -229,7 +229,7 @@
                         }
                         //echo $sqlpt2;
                         //echo $sqlpt1;
-                        $sqlmain= "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid ";
+                        $sqlmain= "SELECT schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.nop FROM `schedule` INNER JOIN `doctor` ON schedule.docid=doctor.docid ";
                         $sqllist=array($sqlpt1,$sqlpt2);
                         $sqlkeywords=array(" where "," and ");
                         $key2=0;
@@ -415,7 +415,7 @@
                                     <option value="" disabled selected hidden>Choose Doctor Name from the list</option><br/>';
                                         
         
-                                        $list11 = $database->query("select  * from  doctor order by docname asc;");
+                                        $list11 = $database->query("SELECT * FROM `doctor` WHERE h_code='kk15';");
         
                                         for ($y=0;$y<$list11->num_rows;$y++){
                                             $row00=$list11->fetch_assoc();
