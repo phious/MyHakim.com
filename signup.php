@@ -17,7 +17,7 @@
 //learn from w3schools.com
 //Unset all the server side variables
 
-session_start();
+include('create-account.php');
 
 $_SESSION["user"]="";
 $_SESSION["usertype"]="";
@@ -28,31 +28,20 @@ $date = date('Y-m-d');
 
 $_SESSION["date"]=$date;
 
-
-
 if($_POST){
-
-    
 
     $_SESSION["personal"]=array(
         'fname'=>$_POST['fname'],
         'lname'=>$_POST['lname'],
-        'city'=>$_POST['city'],
-       
-        'dob'=>$_POST['dob']
     );
 
 
     print_r($_SESSION["personal"]);
     header("location: create-account.php");
 
-
-
-
 }
 
 ?>
-
 
     <center>
     <div class="container">
@@ -60,69 +49,81 @@ if($_POST){
             <tr>
                 <td colspan="2">
                     <p class="header-text">Let's Get Started</p>
-                    <p class="sub-text">Add Your Personal Details to Continue</p>
+                    <p class="sub-text">Add account informations</p>
                 </td>
             </tr>
             <tr>
-                <form action="" method="POST" >
-                <td class="label-td" colspan="2">
-                    <label for="name" class="form-label">Name: </label>
-                </td>
+                <form action="create-account.php" method="POST" >
+                        <td class="label-td" colspan="2">
+                            <label for="name" class="form-label">Name: </label>
+                        </td>
             </tr>
-            <tr>
-                <td class="label-td">
-                    <input type="text" name="fname" class="input-text" placeholder="First Name" required>
-                </td>
-                <td class="label-td">
-                    <input type="text" name="lname" class="input-text" placeholder="Last Name" required>
-                </td>
-            </tr>
-            <tr>
-                <td class="label-td" colspan="2">
-                    <label for="city" class="form-label">city: </label>
-                </td>
-            </tr>
-            <tr>
-                <td class="label-td" colspan="2">
-                    <input type="text" name="city" class="input-text" placeholder="city" required>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="label-td">
+                            <input type="text" name="fname" class="input-text" placeholder="First Name" required>
+                        </td>
+                        <td class="label-td">
+                            <input type="text" name="lname" class="input-text" placeholder="Last Name" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                                <label for="newemail" class="form-label">Email: </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="email" name="newemail" class="input-text" placeholder="Email Address" required>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <label for="newpassword" class="form-label">Create New Password: </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="password" name="newpassword" class="input-text" placeholder="New Password" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <label for="cpassword" class="form-label">Confirm Password: </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="password" name="cpassword" class="input-text" placeholder="Confirm Password" required>
+                        </td>
+                    </tr>
             
-            
-            <tr>
-                <td class="label-td" colspan="2">
-                    <label for="dob" class="form-label">Date of Birth: </label>
-                </td>
-            </tr>
-            <tr>
-                <td class="label-td" colspan="2">
-                    <input type="date" name="dob" class="input-text" required>
-                </td>
-            </tr>
-            <tr>
-                <td class="label-td" colspan="2">
-                </td>
-            </tr>
+                    <tr>
+                        <td colspan="2">
+                            <?php echo $error ?>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <input type="reset" value="Reset" class="login-btn btn-primary-soft btn" >
+                        </td>
+                        <td>
+                            <input type="submit" value="Sign Up" class="login-btn btn-primary btn">
+                        </td>
 
-            <tr>
-                <td>
-                    <input type="reset" value="Reset" class="login-btn btn-primary-soft btn" >
-                </td>
-                <td>
-                    <input type="submit" value="Next" class="login-btn btn-primary btn">
-                </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <br>
+                            <label for="" class="sub-text" style="font-weight: 280;">Already have an account&#63; </label>
+                            <a href="login.php" class="hover-link1 non-style-link">Login</a>
+                            <br><br><br>
+                        </td>
+                    </tr>
 
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <br>
-                    <label for="" class="sub-text" style="font-weight: 280;">Already have an account&#63; </label>
-                    <a href="login.php" class="hover-link1 non-style-link">Login</a>
-                    <br><br><br>
-                </td>
-            </tr>
 
-                    </form>
+                </form>
             </tr>
         </table>
 

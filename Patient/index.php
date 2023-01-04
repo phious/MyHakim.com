@@ -52,7 +52,7 @@
     //import database
     include("../connection.php");
 
-    $sqlmain= "select * from patient where pemail=?";
+    $sqlmain= "SELECT * FROM `account` WHERE pemail=?";
     $stmt = $database->prepare($sqlmain);
     $stmt->bind_param("s",$useremail);
     $stmt->execute();
@@ -142,10 +142,10 @@
                                 echo $today;
 
 
-                                $patientrow = $database->query("select  * from  patient;");
-                                $hospitalrow = $database->query("select  * from  hospital;");
-                                $appointmentrow = $database->query("select  * from  appointment where appodate>='$today';");
-                                $schedulerow = $database->query("select  * from  schedule where scheduledate='$today';");
+                                $patientrow = $database->query("SELECT * FROM  `account`;");
+                                $hospitalrow = $database->query("SELECT  * FROM  hospital;");
+                                $appointmentrow = $database->query("SELECT  * FROM  appointment WHERE appodate>='$today';");
+                                $schedulerow = $database->query("SELECT * FROM  schedule WHERE scheduledate='$today';");
 
 
                                 ?>
@@ -161,7 +161,7 @@
                     <td colspan="4" >
                         
                     <center>
-                    <table class="filter-container doctor-header patient-header" style="border: none;width:95%" border="0" >
+                    <table class="filter-container doctor-header account-header" style="border: none;width:95%" border="0" >
                     <tr>
                         <td >
                             <h3>Welcome!</h3>
@@ -246,7 +246,7 @@
                                         
                                             <?php
                                             $nextweek=date("Y-m-d",strtotime("+1 week"));
-                                                $sqlmain= "select * from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid inner join hospital on schedule.hid=hospital.hid where  patient.pid=$userid  and schedule.scheduledate>='$today' order by schedule.scheduledate asc";
+                                                $sqlmain= "select * from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join account on account.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid inner join hospital on schedule.hid=hospital.hid where  account.pid=$userid  and schedule.scheduledate>='$today' order by schedule.scheduledate asc";
                                                 //echo $sqlmain;
                                                 $result= $database->query($sqlmain);
                 

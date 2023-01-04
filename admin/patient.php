@@ -124,7 +124,7 @@
                             
                             <?php
                                 echo '<datalist id="patient">';
-                                $list11 = $database->query("SELECT  pname,pemail FROM `patient`");
+                                $list11 = $database->query("SELECT  pname,pemail FROM `patient` WHERE h_code='kk15' ;");
 
                                 for ($y=0;$y<$list11->num_rows;$y++){
                                     $row00=$list11->fetch_assoc();

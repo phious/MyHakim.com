@@ -40,7 +40,7 @@
 
     //import database
     include("../connection.php");
-    $userrow = $database->query("select * from patient where pemail='$useremail'");
+    $userrow = $database->query("SELECT * FROM `account` WHERE pemail='$useremail'");
     $userfetch=$userrow->fetch_assoc();
     $userid= $userfetch["pid"];
     $username=$userfetch["pname"];

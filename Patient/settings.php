@@ -63,7 +63,7 @@
 
     //import database
     include("../connection.php");
-    $userrow = $database->query("select * from patient where pemail='$useremail'");
+    $userrow = $database->query("SELECT * FROM `account` WHERE pemail='$useremail'");
     
     
     $userfetch=$userrow->fetch_assoc();
@@ -152,10 +152,10 @@
                                 echo $today;
 
 
-                                $patientrow = $database->query("select  * from  patient;");
+                                $patientrow = $database->query("SELECT * FROM `account`;");
                                
-                                $appointmentrow = $database->query("select  * from  appointment where appodate>='$today';");
-                                $schedulerow = $database->query("select  * from  schedule where scheduledate='$today';");
+                                $appointmentrow = $database->query("SELECT * FROM `appointment` WHERE appodate>='$today';");
+                                $schedulerow = $database->query("SELECT * FROM `schedule` WHERE scheduledate='$today';");
 
 
                                 ?>
@@ -283,12 +283,11 @@
             </div>
             ';
         }elseif($action=='view'){
-            $sqlmain= "select * from patient where pid='$id'";
+            $sqlmain= "SELECT * FROM `account` WHERE pid='$id'";
             $result= $database->query($sqlmain);
             $row=$result->fetch_assoc();
             $name=$row["pname"];
             $email=$row["pemail"];           
-            $tele=$row['ptel'];
             echo '
             <div id="popup1" class="overlay">
                     <div class="popup">
@@ -330,21 +329,6 @@
                                 '.$email.'<br><br>
                                 </td>
                             </tr>
-                           
-                            
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="Tele" class="form-label">Telephone: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                '.$tele.'<br><br>
-                                </td>
-                            </tr>
-                         
-                           
-                            
                             <tr>
                                 <td colspan="2">
                                     <a href="settings.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
@@ -363,13 +347,11 @@
             </div>
             ';
         }elseif($action=='edit'){
-            $sqlmain= "select * from patient where pid='$id'";
+            $sqlmain= "SELECT * FROM `account` WHERE pid='$id'";
             $result= $database->query($sqlmain);
             $row=$result->fetch_assoc();
             $name=$row["pname"];
             $email=$row["pemail"];
-           
-            $tele=$row['ptel'];
 
             $error_1=$_GET["error"];
                 $errorlist= array(
@@ -427,22 +409,7 @@
                                         </td>
                                         
                                     </tr>
-                                    
-                                    
-                                   
-                                    <tr>
-                                        <td class="label-td" colspan="2">
-                                            <label for="Tele" class="form-label">Telephone: </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label-td" colspan="2">
-                                            <input type="tel" name="Tele" class="input-text" placeholder="Telephone Number" value="'.$tele.'" required><br>
-                                        </td>
-                                    </tr>
-                                        
                                
-                                       
                                     <tr>
                                         <td class="label-td" colspan="2">
                                             <label for="password" class="form-label">Password: </label>

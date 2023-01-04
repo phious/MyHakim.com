@@ -115,7 +115,7 @@
                         $today = date('Y-m-d');
                         echo $today;
 
-                        $list110 = $database->query("select  * from  appointment;");
+                        $list110 = $database->query("SELECT * FROM  `appointment` WHERE h_code='kk15';");
 
                         ?>
                         </p>

@@ -134,7 +134,7 @@
                                 echo $today;
 
 
-                                $patientrow = $database->query("SELECT * FROM `patient`");
+                                $patientrow = $database->query("SELECT * FROM `patient` WHERE h_code='kk15';");
                                 $doctorrow = $database->query("SELECT * FROM `doctor` WHERE h_code='kk15';");
                                 $appointmentrow = $database->query("select * from  appointment where appodate>='$today';");
                                 $schedulerow = $database->query("select  * from  schedule where scheduledate='$today';");

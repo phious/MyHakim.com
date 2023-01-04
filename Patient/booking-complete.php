@@ -18,7 +18,7 @@
 
     //import database
     include("../connection.php");
-    $sqlmain= "select * from patient where pemail=?";
+    $sqlmain= "SELECT * FROM `account` WHERE pemail=?";
     $stmt = $database->prepare($sqlmain);
     $stmt->bind_param("s",$useremail);
     $stmt->execute();
