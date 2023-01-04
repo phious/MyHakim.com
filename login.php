@@ -102,15 +102,28 @@
             $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">We cant found any acount for this email.</label>';
         }
 
-
-
-
-
-
         
-    }else{
-        $error='<label for="promter" class="form-label">&nbsp;</label>';
+    }elseif($utype=='dev'){
+        //TODO
+        $checker = $database->query("select * from developers where devemail='$email' and devpassword='$password'");
+        if ($checker->num_rows==){
+
+
+            //   developers dashbord
+            $_SESSION['user']=$email;
+            $_SESSION['usertype']='dev';
+            header('location: developer/index.php');
+
+        }else{
+            $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
+        }
+
     }
+
+
+else{
+    $error='<label for="promter" class="form-label">&nbsp;</label>';
+}
 
     ?>
 

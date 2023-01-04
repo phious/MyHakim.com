@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!devTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
         
     <title>Dashboard</title>
     <style>
-        .dashbord-tables,.doctor-heade{
+        .dashbord-tables,.devtor-heade{
             animation: transitionIn-Y-over 0.5s;
         }
         .filter-container{
@@ -19,7 +19,7 @@
         .sub-table,#anim{
             animation: transitionIn-Y-bottom 0.5s;
         }
-        .doctor-heade{
+        .devtor-heade{
             animation: transitionIn-Y-over 0.5s;
         }
     </style>
@@ -34,7 +34,7 @@
     session_start();
 
     if(isset($_SESSION["user"])){
-        if(($_SESSION["user"])=="" or $_SESSION['usertype']!='d'){
+        if(($_SESSION["user"])=="" or $_SESSION['usertype']!='dev'){
             header("location: ../login.php");
         }else{
             $useremail=$_SESSION["user"];
@@ -47,10 +47,10 @@
 
     //import database
     include("../connection.php");
-    $userrow = $database->query("select * from doctor where docemail='$useremail'");
+    $userrow = $database->query("select * from developers where devemail='$useremail'");
     $userfetch=$userrow->fetch_assoc();
-    $userid= $userfetch["docid"];
-    $username=$userfetch["docname"];
+    $userid= $userfetch["devid"];
+    $username=$userfetch["devname"];
 
 
     //echo $userid;
@@ -134,7 +134,7 @@
 
 
                                 $patientrow = $database->query("select  * from  patient;");
-                                $doctorrow = $database->query("select  * from  doctor;");
+                                $devtorrow = $database->query("select  * from  devtor;");
                                 $appointmentrow = $database->query("select  * from  appointment where appodate>='$today';");
                                 $schedulerow = $database->query("select  * from  schedule where scheduledate='$today';");
 
@@ -152,7 +152,7 @@
                     <td colspan="4" >
                         
                     <center>
-                    <table class="filter-container doctor-header" style="border: none;width:95%" border="0" >
+                    <table class="filter-container devtor-header" style="border: none;width:95%" border="0" >
                     <tr>
                         <td >
                             <h3>Welcome!</h3>
@@ -193,13 +193,13 @@
                                                     <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex">
                                                         <div>
                                                                 <div class="h1-dashboard">
-                                                                    <?php    echo $doctorrow->num_rows  ?>
+                                                                    <?php    echo $devtorrow->num_rows  ?>
                                                                 </div><br>
                                                                 <div class="h3-dashboard">
-                                                                    All Doctors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                    All devtors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                 </div>
                                                         </div>
-                                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/doctors-hover.svg');"></div>
+                                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/devtors-hover.svg');"></div>
                                                     </div>
                                                 </td>
                                                 <td style="width: 25%;">
@@ -291,7 +291,7 @@
                                         
                                             <?php
                                             $nextweek=date("Y-m-d",strtotime("+1 week"));
-                                            $sqlmain= "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid  where schedule.scheduledate>='$today' and schedule.scheduledate<='$nextweek' order by schedule.scheduledate desc"; 
+                                            $sqlmain= "select schedule.scheduleid,schedule.title,devtor.devname,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join devtor on schedule.devid=devtor.devid  where schedule.scheduledate>='$today' and schedule.scheduledate<='$nextweek' order by schedule.scheduledate desc"; 
                                                 $result= $database->query($sqlmain);
                 
                                                 if($result->num_rows==0){
@@ -316,7 +316,7 @@
                                                     $row=$result->fetch_assoc();
                                                     $scheduleid=$row["scheduleid"];
                                                     $title=$row["title"];
-                                                    $docname=$row["docname"];
+                                                    $devname=$row["devname"];
                                                     $scheduledate=$row["scheduledate"];
                                                     $scheduletime=$row["scheduletime"];
                                                     $nop=$row["nop"];
