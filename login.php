@@ -25,7 +25,7 @@
     $_SESSION["usertype"]="";
     
     // Set the new timezone
-    date_default_timezone_set('Asia/Aden');
+    date_default_timezone_set('Asia/Kolkata');
     $date = date('Y-m-d');
 
     $_SESSION["date"]=$date;
@@ -50,7 +50,7 @@
             $utype=$result->fetch_assoc()['usertype'];
             if ($utype=='p'){
                 //TODO
-                $checker = $database->query("SELECT * FROM `account` where pemail='$email' and ppassword='$password'");
+                $checker = $database->query("select * from patient where pemail='$email' and ppassword='$password'");
                 if ($checker->num_rows==1){
 
 
@@ -102,7 +102,7 @@
 
             elseif($utype=='d'){
                 //TODO
-                $checker = $database->query("SELECT * FROM `doctor` WHERE docemail='$email' AND docpassword='$password'");
+                $checker = $database->query("select * from doctor where docemail='$email' and docpassword='$password'");
                 if ($checker->num_rows==1){
 
 
@@ -123,11 +123,25 @@
 
 
 
-
-
-
+       }elseif($utype=='dev'){
+        //TODO
+        $checker = $database->query("select * from developers where devemail='$email' and devpassword='$password'");
+        if ($checker->num_rows==1){
+    
+    
+            //   developer dashbord
+            $_SESSION['user']=$email;
+            $_SESSION['usertype']='dev';
+            header('location: developers/index.php');
+    
+        }else{
+            $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
+        }
+    
+    }
+    
         
-    }else{
+    else{
         $error='<label for="promter" class="form-label">&nbsp;</label>';
     }
 
