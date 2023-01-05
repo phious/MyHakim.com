@@ -39,7 +39,7 @@ if(isset($_POST['edit_btn'])) {
         <label>Telephone Number</label>
         <input type="text" name="edit_tele" value="<?php echo $row['hostel']?>" class="form-control" placeholder="telephone">
         </div>
-        <a href="register.php" class="btn btn-danger" >CANCEL</a>
+        <a href="addHospitals.php" class="btn btn-danger" >CANCEL</a>
         <button  type="submit" name="updatebtn" class="btn btn-primary" >update</button>
     </fom>
     <?php
