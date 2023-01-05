@@ -7,6 +7,7 @@
 }
 
 body{
+    
     margin: 0;
     padding: 0;
     border-spacing: 0;
@@ -597,61 +598,13 @@ input[type=search]:focus {
   transition: 0.5s;
 }
 
-
-.container {
-  
-  display: inline-block;
-}
-@keyframes typing {
-  from { width: 0%  }
-  to { width: 63% }
-  0% { opacity:1 ; animation-timing-function: ease-in;  }
-  50% { opacity: 1; }
-    100% { opacity: 0; }
- 
-}
-@keyframes detyping {
-  from { width: 62%  }
-  to { width: 0% }
-  from { opacity: 0}
-  from { opacity: 100}
-
-}
-@keyframes blinking {
-  from { border-color: transparent }
-  to { border-color: orange; }
-}
-.typed-out{
-  overflow: hidden;
-  border-right: .15em solid orange;
-  white-space: nowrap;
-  margin-left: 15%;
-  animation: 
-      typing 12s steps(90, end) forwards;
-      blinking  12s infinite;
-  width: 0;
+.word {
+  margin: auto; 
   color: rgba(255, 255, 255, 0.5);
-  font-size: 17px;
-  line-height: 27px;
-  font-weight: 400;
-  
-  
+    font-size: 20px;
+    line-height: 27px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0;
 }
-
-
-.typed-in{
-  overflow: hidden;
-  border-right: .15em solid orange;
-  white-space: nowrap;
-  margin-left: 15%;
-  animation: 
-      detyping 6s steps(90,end) backwards;
-      blinking  1s infinite;
-  width: 0;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 17px;
-  line-height: 27px;
-  font-weight: 400;
-  
-  
 }

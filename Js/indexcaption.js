@@ -1,4 +1,4 @@
-var words = ['Hi i like HTML', 'I also like css', 'Lorem ipsum dolor sit amet', ' consectetur adipiscing elit', 'sed do eiusmod tempor incididunt'],
+var words = ['How is health today, Sounds like not good? Find your doctor online. Book as you wish with MyHakim.com', 'ዛሬ ጤናዎ እንዴት ነው? ጥሩ ያልሆነ ይመስላል? MyHakim.com በአሻዎት ሰዐት በአሻዎት ሆስፒታል ከዶክተርዎ ጋር ቀጠሮዎን አሁን ያዝይዞታል።'],
     part,
     i = 0,
     offset = 0,
