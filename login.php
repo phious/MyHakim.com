@@ -1,4 +1,4 @@
-@ -1,116 +1,98 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +21,7 @@
     //Unset all the server side variables
 
     session_start();
-@ -23,6 +23,8 @@
+
 
     $_SESSION["user"]="";
     $_SESSION["usertype"]="";
@@ -36,7 +36,7 @@
     
 
     //import database
-@ -35,20 +37,28 @@
+
     include("connection.php");
 
     
@@ -77,7 +77,7 @@
                 //TODO
                 $checker = $database->query("SELECT * FROM `account` where pemail='$email' and ppassword='$password'");
                 if ($checker->num_rows==1){
-@ -63,6 +73,8 @@
+
                 }else{
                     $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
                 }
@@ -90,7 +90,7 @@
                 if ($checker->num_rows==1){
 
 
-@ -73,6 +85,8 @@
+
                     //   Admin dashbord
                     $_SESSION['user']=$email;
                     $_SESSION['usertype']='a';
@@ -121,10 +121,27 @@
 
             }
             
-@ -101,23 +115,41 @@
         }else{
             $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">We cant found any acount for this email.</label>';
         }
+    }elseif($utype=='d'){
+        //TODO
+        $checker = $database->query("SELECT * FROM `doctor` WHERE docemail='$email' AND docpassword='$password'");
+        if ($checker->num_rows==1){
+
+
+            //   doctor dashbord
+            $_SESSION['user']=$email;
+            $_SESSION['usertype']='d';
+            header('location: doctor/index.php');
+
+        }else{
+            $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
+        }
+
+    }
+    
+}
     
 
 
@@ -136,4 +153,3 @@
 }
 
     ?>
-
