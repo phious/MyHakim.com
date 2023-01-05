@@ -35,16 +35,10 @@ if($_POST){
         }else{
             //TODO
             $newpassword = password_hash($newpassword, PASSWORD_DEFAULT);
-<<<<<<< Updated upstream
             $token = bin2hex(random_bytes(50));
             $verified = false;
             $database->query("INSERT INTO `account`(pemail,pname,ppassword) values('$email','$name','$newpassword');");
             $database->query("INSERT INTO `webuser` values('$email','p')");
-=======
-
-            $database->query("insert into patient(pemail,pname,ppassword, pcity,pdob,ptel) values('$email','$name','$newpassword','$city','$dob','$tele');");
-            $database->query("insert into webuser values('$email','p')");
->>>>>>> Stashed changes
 
             //print_r("insert into patient values($pid,'$email','$fname','$lname','$newpassword','$city','$dob','$tele');");
             $_SESSION["user"]=$email;
