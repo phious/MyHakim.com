@@ -81,7 +81,26 @@
                 }
 
 
-            }elseif($utype=='d'){
+            }elseif($utype=='dev'){
+                //TODO
+                $checker = $database->query("SELECT * FROM `developers` WHERE devemail='$email' AND devpassword='$password'");
+                if ($checker->num_rows==1){
+
+
+                    //   Admin dashbord
+                    $_SESSION['user']=$email;
+                    $_SESSION['usertype']='dev';
+                    
+                    header('location: developer/index.php');
+
+                }else{
+                    $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
+                }
+
+
+            }
+
+            elseif($utype=='d'){
                 //TODO
                 $checker = $database->query("SELECT * FROM `doctor` WHERE docemail='$email' AND docpassword='$password'");
                 if ($checker->num_rows==1){
