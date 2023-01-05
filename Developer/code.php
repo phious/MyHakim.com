@@ -24,6 +24,41 @@ if(isset($_POST['registerbtn'])){
                 header('Location: addHospitals.php');  
             }
         }
+
+        if(isset($_POST['updatebtn'])) {
+            $id = $_POST['edit_id'];
+            $hospitalName = $_POST['edit_hospitalName'];
+            $address = $_POST['edit_address'];
+            $email = $_POST['edit_email'];
+            $tele = $_POST['edit_tele'];
+        
+            $query = "UPDATE `hospital` SET hosname='$hospitalName', hosaddress='$address', hosemail='$email' WHERE hid='$id' ";
+            $query_run = mysqli_query($database, $query);
+
+            if($query_run){
+                
+                $_SESSION['success'] = "Your data is updated";
+                header('Location: addHospitals.php');
+            }
+            else{
+                $_SESSION['status'] = "Your data is Not updated";
+                header('Location: addHospitals.php');
+            }
+        }
+        
+        
+        if(isset($_POST['delete_btn'])){
+            $id = $_POST['delete_id'];
+        
+            $query = "DELETE FROM `hospital` WHERE hid='$id' ";
+            $query_run = mysqli_query($database, $query);
+
+            if($query_run){
+                $_SESSION['success'] = "Your Data is Deleted";
+                header('Location: addHospitals.php');
+            }
+        }
+        
         
 
 
