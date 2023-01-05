@@ -104,13 +104,13 @@
 
 
 
-    }elseif($utype=='dev'){
+       }elseif($utype=='dev'){
         //TODO
         $checker = $database->query("select * from developers where devemail='$email' and devpassword='$password'");
         if ($checker->num_rows==1){
     
     
-            //   doctor dashbord
+            //   developer dashbord
             $_SESSION['user']=$email;
             $_SESSION['usertype']='dev';
             header('location: developers/index.php');
