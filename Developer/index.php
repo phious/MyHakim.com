@@ -50,8 +50,17 @@ include("../connection.php");
                           
 
                         <div class="topbar-divider d-none d-sm-block"></div>
-
+                        
                     </ul>
+                 <style>
+                    h1{
+                        width: 700px;
+                    }
+                 </style>
+
+                 <div>
+                 <h1>Statistics</h1>
+                </div>
 
                 </nav>
                 <!-- End of Topbar -->
@@ -97,6 +106,80 @@ include("../connection.php");
                             
                         </div>
 
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+
+                                            <?php
+                                            require '../connection.php';
+                                            $query = "SELECT pid FROM `account` ORDER BY pid";
+                                            $query_run = mysqli_query($database, $query);
+
+                                            $row = mysqli_num_rows($query_run);
+                                            echo '<h4>Registered accounts: '.$row.'</h4>';
+                                            ?> 
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+
+                                            <?php
+                                            require '../connection.php';
+                                            $query = "SELECT id FROM `admin` ORDER BY id";
+                                            $query_run = mysqli_query($database, $query);
+
+                                            $row = mysqli_num_rows($query_run);
+                                            echo '<h4>Admins: '.$row.'</h4>';
+                                            ?> 
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+
+                        <!-- Area Chart -->
+                        <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                    <hr>
+                                    Styling for the area chart can be found in the
+                                    <code>/js/demo/chart-area-demo.js</code> file.
+                                </div>
+                            </div>
                         
 
 

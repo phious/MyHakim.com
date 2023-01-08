@@ -2,7 +2,7 @@
     <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; NN.plc 2022</span>
+                        <span>Copyright &copy; ____</span>
                     </div>
                 </div>
             </footer>

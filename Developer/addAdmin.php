@@ -111,16 +111,28 @@
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <form action="code.php" method="POST" enctype="multipart/form-data">
-                            
-                                    <div class="modal-body">
+                                  <form action="code2.php" method="POST" enctype="multipart/form-data">
                                     
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="email" name="aemail" class="form-control" placeholder="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="text" name="apassword" class="form-control" placeholder="password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Usertype</label>
+                                            <input type="text" name="usertype" class="form-control" placeholder="usertype">
+                                        </div>
+                                        
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         <button type="submit" name="registerbtn" class="btn btn-primary">Add</button>
                                     </div>
-                                  </form>
+                          </form>
                             
                                 </div>
                               </div>
@@ -143,12 +155,89 @@
                             
                             <?php
                             require '../connection.php';
-                            $query = "SELECT * From `hospital`";
+                            $query = "SELECT * From `admin`";
+                            $query_run = mysqli_query($database, $query)
+                            ?>
+                            <h1>Admins</h1>
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+                                    <thead>
+                                        <tr>
+                                        <th>EMAIL</th>
+                                        <th>PASSWORD</th>
+                                        
+                                        <th>DELETE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                            
+                                    <?php
+                                    if(mysqli_num_rows($query_run) > 0){
+                            
+                                        while($row = mysqli_fetch_assoc($query_run)){
+                                            
+                                            ?>
+                            
+                                        <tr>
+                                            <td><?php echo $row['aemail']; ?></td>
+                                            <td><?php echo $row['apassword']; ?></td>
+                                            
+                                
+                                            <td>
+                                                <form action="code2.php" method="post">
+                                                    <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>" >
+                                                    <button type="submit"  name="delete_btn" class="btn btn-danger">DELETE</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        
+                                        <?php
+                                        }
+                                        require '../connection.php';
+                            $query = "SELECT * From `webuser`";
                             $query_run = mysqli_query($database, $query)
                             ?>
                             
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+                                    <thead>
+                                        <tr>
+                                        <th>USERTYPE</th>
+                                        <th>EMAIL</th>
+                                        <th>DELETE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                            
+                                    <?php
+                                    if(mysqli_num_rows($query_run) > 0){
+                            
+                                        while($row = mysqli_fetch_assoc($query_run)){
+                                            
+                                            ?>
+                            
+                                        <tr>
+                                            <td><?php echo $row['usertype']; ?></td>
+                                            <td><?php echo $row['email']; ?></td>
+                                            
+                                
+                                            <td>
+                                                <form action="code2.php" method="post">
+                                                    <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>" >
+                                                    <button type="submit"  name="delete_btn" class="btn btn-danger">DELETE</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        
+                                        <?php
+                                        }
+                                        
+                                    }
+                                        
+                                    }else {
+                                        "No Record Found";
+                                    } 
                                 
                                     ?>
+                                    <h1>Webusers</h1>
 
                                     </tbody>
                                 </table>
