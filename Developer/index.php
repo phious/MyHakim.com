@@ -71,7 +71,9 @@ include("../connection.php");
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>       <button class="btn btn-dark" onclick="window.location.href = '../logout.php'; ">
+                                                                                                                Logout
+                                                                                                                </button>
                     </div>
 
                     <!-- Content Row -->

@@ -106,33 +106,32 @@
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Add admins</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Add admin info</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <form action="code2.php" method="POST" enctype="multipart/form-data">
-                                    
+                                  <form action="code3.php" method="POST" enctype="multipart/form-data">
+                            
                                     <div class="modal-body">
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="email" name="aemail" class="form-control" placeholder="email">
+                                    <div class="form-group">
+                                            <label> Hospital name </label>
+                                            <input type="text" name="hosname" class="form-control" placeholder="hosptial name">
                                         </div>
                                         <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="text" name="apassword" class="form-control" placeholder="password">
+                                            <label>Hospital code</label>
+                                            <input type="text" name="h_code" class="form-control" placeholder="hospital code">
                                         </div>
                                         <div class="form-group">
                                             <label>Usertype</label>
                                             <input type="text" name="usertype" class="form-control" placeholder="usertype">
                                         </div>
-                                        
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         <button type="submit" name="registerbtn" class="btn btn-primary">Add</button>
                                     </div>
-                          </form>
+                                  </form>
                             
                                 </div>
                               </div>
@@ -145,7 +144,7 @@
                                 <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-                                   Add data
+                                   Add info
                             </button>
                             </h6>
                             </div>
@@ -155,16 +154,16 @@
                             
                             <?php
                             require '../connection.php';
-                            $query = "SELECT * From `admin`";
+                            $query = "SELECT * From `admin_info`";
                             $query_run = mysqli_query($database, $query)
                             ?>
-                            <h1>Admins</h1>
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+                            
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
                                     <thead>
                                         <tr>
-                                        <th>EMAIL</th>
-                                        <th>PASSWORD</th>
-                                        
+                                        <th>Hospital Name</th>
+                                        <th>Hospital code</th>
+                                        <th>Usertype</th>
                                         <th>DELETE</th>
                                         </tr>
                                     </thead>
@@ -178,49 +177,12 @@
                                             ?>
                             
                                         <tr>
-                                            <td><?php echo $row['aemail']; ?></td>
-                                            <td><?php echo $row['apassword']; ?></td>
-                                            
-                                
-                                            <td>
-                                                <form action="code2.php" method="post">
-                                                    <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>" >
-                                                    <button type="submit"  name="delete_btn" class="btn btn-danger">DELETE</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        
-                                        <?php
-                                        }
-                                        require '../connection.php';
-                            $query = "SELECT * From `webuser`";
-                            $query_run = mysqli_query($database, $query)
-                            ?>
-                            
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
-                                    <thead>
-                                        <tr>
-                                        <th>USERTYPE</th>
-                                        <th>EMAIL</th>
-                                        <th>DELETE</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                            
-                                    <?php
-                                    if(mysqli_num_rows($query_run) > 0){
-                            
-                                        while($row = mysqli_fetch_assoc($query_run)){
-                                            
-                                            ?>
-                            
-                                        <tr>
+                                            <td><?php echo $row['hosname']; ?></td>
+                                            <td><?php echo $row['h_code']; ?></td>
                                             <td><?php echo $row['usertype']; ?></td>
-                                            <td><?php echo $row['email']; ?></td>
-                                            
-                                
+
                                             <td>
-                                                <form action="code2.php" method="post">
+                                                <form action="code3.php" method="post">
                                                     <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>" >
                                                     <button type="submit"  name="delete_btn" class="btn btn-danger">DELETE</button>
                                                 </form>
@@ -229,15 +191,11 @@
                                         
                                         <?php
                                         }
-                                        
-                                    }
                                         
                                     }else {
                                         "No Record Found";
                                     } 
-                                
                                     ?>
-                                    <h1>Webusers</h1>
 
                                     </tbody>
                                 </table>
@@ -245,45 +203,16 @@
                             </div>
                             </div>
                             
-                    
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; NN 2022</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+            
 
         </div>
         <!-- End of Content Wrapper -->
 
     </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    
-
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <?php
+include('include/scripts.php');
+include('include/footer.php');
+?>
 
 </body>
 
