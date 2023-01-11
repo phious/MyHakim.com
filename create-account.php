@@ -35,8 +35,7 @@ if($_POST){
         }else{
             //TODO
             $newpassword = password_hash($newpassword, PASSWORD_DEFAULT);
-            $token = bin2hex(random_bytes(50));
-            $verified = false;
+           
             $database->query("INSERT INTO `account`(pemail,pname,ppassword) values('$email','$name','$newpassword');");
             $database->query("INSERT INTO `webuser` values('$email','p')");
 
