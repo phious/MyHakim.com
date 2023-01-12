@@ -2,6 +2,7 @@
 session_start();
 require '../connection.php';
 if(isset($_POST['registerbtn'])){
+    $hospitalName = $_POST['ahosname'];
     $email = $_POST['aemail'];
     $password = $_POST['apassword'];
     $usertype = $_POST['usertype'];
@@ -10,7 +11,7 @@ if(isset($_POST['registerbtn'])){
     
 
             
-            $query = "INSERT INTO `admin` (aemail, apassword) VALUES ('$email', '$password')";
+            $query = "INSERT INTO `admin` (ahosname, aemail, apassword) VALUES ('$hospitalName','$email', '$password')";
             $query_run = mysqli_query($database, $query);
             
             if($query_run)
@@ -34,10 +35,6 @@ if(isset($_POST['registerbtn'])){
         
             $query = "DELETE FROM `admin` WHERE id='$id' ";
             $query_run = mysqli_query($database, $query);
-
-            $query = "DELETE FROM `webuser` WHERE id='$id' ";
-            $query_run = mysqli_query($database, $query);
-            
 
             if($query_run){
                 $_SESSION['success'] = "Your Data is Deleted";

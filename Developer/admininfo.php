@@ -162,7 +162,6 @@
                                     <thead>
                                         <tr>
                                         <th>Hospital Name</th>
-                                        <th>Hospital code</th>
                                         <th>Usertype</th>
                                         <th>DELETE</th>
                                         </tr>

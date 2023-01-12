@@ -139,7 +139,7 @@
                                 echo $today;
 
 
-                                $patientrow = $database->query("SELECT * FROM  `appointment` WHERE `h_code`='kk15'");
+                                $patientrow = $database->query("SELECT * FROM  `patient` WHERE `h_code`='kk15'");
                                 $doctorrow = $database->query("SELECT  * FROM  `doctor` WHERE `h_code`='kk15'");
                                 $appointmentrow = $database->query("SELECT * FROM `appointment` WHERE appodate>='$today';");
                                 $schedulerow = $database->query("SELECT * FROM `schedule` WHERE scheduledate='$today';");
@@ -165,6 +165,32 @@
                                 </td>
                             </tr>   
                             <tr>
+                                <td style="width: 25%;">
+                                        <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex; ">
+                                            <div>
+                                                    <div class="h1-dashboard" >
+                                                        <?php    echo $appointmentrow ->num_rows  ?>
+                                                    </div><br>
+                                                    <div class="h3-dashboard" >
+                                                        Appointments &nbsp;&nbsp;
+                                                    </div>
+                                            </div>
+                                                    <div class="btn-icon-back dashboard-icons" style="margin-left: 0px;background-image: url('../img/icons/book-hover.svg');"></div>
+                                        </div>
+                                </td>
+                                <td style="width: 25%;">
+                                    <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex;padding-top:26px;padding-bottom:26px;">
+                                        <div>
+                                                <div class="h1-dashboard">
+                                                    <?php    echo $schedulerow ->num_rows  ?>
+                                                </div><br>
+                                                <div class="h3-dashboard" style="font-size: 15px">
+                                                    Today Sessions
+                                                </div>
+                                        </div>
+                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/session-iceblue.svg');"></div>
+                                    </div>
+                                </td>
                                 <td style="width: 25%;">
                                     <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex">
                                         <div>
@@ -192,33 +218,7 @@
                                                 <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/patients-hover.svg');"></div>
                                     </div>
                                 </td>
-                                <td style="width: 25%;">
-                                    <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex; ">
-                                        <div>
-                                                <div class="h1-dashboard" >
-                                                    <?php    echo $appointmentrow ->num_rows  ?>
-                                                </div><br>
-                                                <div class="h3-dashboard" >
-                                                    NewBooking &nbsp;&nbsp;
-                                                </div>
-                                        </div>
-                                                <div class="btn-icon-back dashboard-icons" style="margin-left: 0px;background-image: url('../img/icons/book-hover.svg');"></div>
-                                    </div>
-                                </td>
-                                <td style="width: 25%;">
-                                    <div  class="dashboard-items"  style="padding:20px;margin:auto;width:95%;display: flex;padding-top:26px;padding-bottom:26px;">
-                                        <div>
-                                                <div class="h1-dashboard">
-                                                    <?php    echo $schedulerow ->num_rows  ?>
-                                                </div><br>
-                                                <div class="h3-dashboard" style="font-size: 15px">
-                                                    Today Sessions
-                                                </div>
-                                        </div>
-                                                <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/session-iceblue.svg');"></div>
-                                    </div>
-                                </td>
-                                
+                            
                             </tr>
                         </table>
                     </center>

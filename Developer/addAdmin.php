@@ -114,6 +114,10 @@
                                   <form action="code2.php" method="POST" enctype="multipart/form-data">
                                     
                                     <div class="modal-body">
+                                    <div class="form-group">
+                                            <label>Hospital Name</label>
+                                            <input type="text" name="ahosname" class="form-control" placeholder="email">
+                                        </div>
                                         <div class="form-group">
                                             <label>Email</label>
                                             <input type="email" name="aemail" class="form-control" placeholder="email">
@@ -162,9 +166,9 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
                                     <thead>
                                         <tr>
+                                        <th>HOSPITAL NAME</th>
                                         <th>EMAIL</th>
                                         <th>PASSWORD</th>
-                                        
                                         <th>DELETE</th>
                                         </tr>
                                     </thead>
@@ -178,6 +182,7 @@
                                             ?>
                             
                                         <tr>
+                                            <td><?php echo $row['ahosname']; ?></td>
                                             <td><?php echo $row['aemail']; ?></td>
                                             <td><?php echo $row['apassword']; ?></td>
                                             
@@ -220,7 +225,7 @@
                                             
                                 
                                             <td>
-                                                <form action="code2.php" method="post">
+                                                <form action="code4.php" method="post">
                                                     <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>" >
                                                     <button type="submit"  name="delete_btn" class="btn btn-danger">DELETE</button>
                                                 </form>
