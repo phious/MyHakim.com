@@ -124,7 +124,7 @@
                             
                             <?php
                                 echo '<datalist id="doctors">';
-                                $list11 = $database->query("SELECT  docname,docemail FROM doctor WHERE h_code='kk15';");
+                                $list11 = $database->query("SELECT  docname,docemail FROM doctor WHERE usertype='kk15';");
 
                                 for ($y=0;$y<$list11->num_rows;$y++){
                                     $row00=$list11->fetch_assoc();
@@ -181,9 +181,9 @@
                     if($_POST){
                         $keyword=$_POST["search"];
                         
-                        $sqlmain= "SELECT * FROM `doctor` WHERE h_code='kk15' && docemail='$keyword' OR docname='$keyword' OR docname LIKE '$keyword%' OR docname LIKE '%$keyword' OR docname LIKE '%$keyword%'";
+                        $sqlmain= "SELECT * FROM `doctor` WHERE usertype='kk15' && docemail='$keyword' OR docname='$keyword' OR docname LIKE '$keyword%' OR docname LIKE '%$keyword' OR docname LIKE '%$keyword%'";
                     }else{
-                        $sqlmain= "SELECT * FROM `doctor` WHERE h_code='kk15'";
+                        $sqlmain= "SELECT * FROM `doctor` WHERE usertype='kk15'";
 
                     }
 
@@ -503,12 +503,12 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="h_code" class="form-label">Hospital code: </label>
+                                    <label for="usertype" class="form-label">Hospital code: </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="text" name="h_code" class="input-text" placeholder="hospital code" required><br>
+                                    <input type="text" name="usertype" class="input-text" placeholder="hospital code" required><br>
                                 </td>
                             </tr>
                             <tr>

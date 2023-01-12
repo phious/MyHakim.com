@@ -124,7 +124,7 @@
                             
                             <?php
                                 echo '<datalist id="patient">';
-                                $list11 = $database->query("SELECT  pname,pemail FROM `patient` WHERE h_code='kk15' ;");
+                                $list11 = $database->query("SELECT  pname,pemail FROM `patient` WHERE usertype='kk15' ;");
 
                                 for ($y=0;$y<$list11->num_rows;$y++){
                                     $row00=$list11->fetch_assoc();
@@ -176,7 +176,7 @@
                         
                         $sqlmain= "SELECT * FROM `patient` WHERE pemail='$keyword' OR pname='$keyword' OR pname LIKE '$keyword%' OR pname LIKE '%$keyword' OR pname LIKE '%$keyword%' ";
                     }else{
-                        $sqlmain= "SELECT * FROM `patient` WHERE h_code='kk15'";
+                        $sqlmain= "SELECT * FROM `patient` WHERE usertype='kk15'";
 
                     }
 

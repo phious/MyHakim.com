@@ -185,7 +185,7 @@
                                 
                             <?php 
                             
-                                $list11 = $database->query("SELECT * FROM `doctor`  WHERE h_code='kk15'");
+                                $list11 = $database->query("SELECT * FROM `doctor`  WHERE usertype='kk15'");
 
                                 for ($y=0;$y<$list11->num_rows;$y++){
                                     $row00=$list11->fetch_assoc();
@@ -415,7 +415,7 @@
                                     <option value="" disabled selected hidden>Choose Doctor Name from the list</option><br/>';
                                         
         
-                                        $list11 = $database->query("SELECT * FROM `doctor` WHERE h_code='kk15';");
+                                        $list11 = $database->query("SELECT * FROM `doctor` WHERE usertype='kk15';");
         
                                         for ($y=0;$y<$list11->num_rows;$y++){
                                             $row00=$list11->fetch_assoc();
