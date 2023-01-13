@@ -33,11 +33,6 @@
         <i class="fas fa-fw fa-table"></i>
         <span>Add new admins</span></a>
 </li>
-<li class="nav-item">
-    <a class="nav-link" href="admininfo.php">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Admin Info</span></a>
-</li>
 <!-- Nav Item - Tables -->
 <li class="nav-item">
     
