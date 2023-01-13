@@ -323,7 +323,10 @@
                                         
                
  
-    <div id="map"></div>
+    <div id="map">
+        <iframe src="https://my.atlistmaps.com/map/ccd38979-2f95-4a34-a84c-20c617e2143a?share=true" 
+    allow="geolocation" width="585px" height="450px" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    </div>
 
     <!-- 
      The `defer` attribute causes the callback to execute after the full HTML
@@ -331,10 +334,6 @@
      and consistent behavior across browsers, consider loading using Promises
      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
     -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-      defer
-    ></script>
                                         </table>
                                         </div>
                                         </center>
