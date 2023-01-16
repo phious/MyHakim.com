@@ -63,7 +63,7 @@ if($_POST){
         }else{
             //TODO
             $hashedpassword = password_hash($newpassword, PASSWORD_DEFAULT);
-            $database->query("INSERT INTO `webuser` (pname,email,ptel,ppassword,usertype) VALUES ('$name','$email','$tele','$hashedpassword','p')");
+            $database->query("INSERT INTO `webuser` (name,email,tel,password,usertype) VALUES ('$name','$email','$tele','$hashedpassword','p')");
            
 
             //print_r("insert into patient values($pid,'$email','$fname','$lname','$newpassword','$address','$nic','$dob','$tele');");
