@@ -78,6 +78,18 @@ if($_POST){
                         
                     </tr>
                     <tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                                <label for="tele" class="form-label">Telephone Number: </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="telephonenumber" name="tele" class="input-text" placeholder="Tel No" required>
+                        </td>
+                        
+                    </tr>
+                    <tr>
                         <td class="label-td" colspan="2">
                             <label for="newpassword" class="form-label">Create New Password: </label>
                         </td>

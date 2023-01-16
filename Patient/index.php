@@ -52,13 +52,13 @@
     //import database
     include("../connection.php");
 
-    $sqlmain= "SELECT * FROM `account` WHERE pemail=?";
+    $sqlmain= "SELECT * FROM `webuser` WHERE email=?";
     $stmt = $database->prepare($sqlmain);
     $stmt->bind_param("s",$useremail);
     $stmt->execute();
     $userrow = $stmt->get_result();
     $userfetch=$userrow->fetch_assoc();
-    $userid= $userfetch["pid"];
+    $userid= $userfetch["id"];
     $username=$userfetch["pname"];
 
 
@@ -142,7 +142,7 @@
                                 echo $today;
 
 
-                                $patientrow = $database->query("SELECT * FROM  `account`;");
+                                $patientrow = $database->query("SELECT * FROM  `webuser`;");
                                 $hospitalrow = $database->query("SELECT  * FROM  hospital;");
                                 $appointmentrow = $database->query("SELECT  * FROM  appointment WHERE appodate>='$today';");
                                 $schedulerow = $database->query("SELECT * FROM  schedule WHERE scheduledate='$today';");
@@ -246,7 +246,7 @@
                                         
                                             <?php
                                             $nextweek=date("Y-m-d",strtotime("+1 week"));
-                                                $sqlmain= "select * from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join account on account.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid inner join hospital on schedule.hid=hospital.hid where  account.pid=$userid  and schedule.scheduledate>='$today' order by schedule.scheduledate asc";
+                                                $sqlmain= "select * from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join webuser on webuser.id=appointment.pid inner join doctor on schedule.docid=doctor.docid inner join hospital on schedule.hid=hospital.hid where  webuser.id=$userid  and schedule.scheduledate>='$today' order by schedule.scheduledate asc";
                                                 //echo $sqlmain;
                                                 $result= $database->query($sqlmain);
                 

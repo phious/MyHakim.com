@@ -33,13 +33,13 @@
 
     //import database
     include("connection.php");
-
+   
     
 
 
 
     if($_POST){
-
+        include("create-account.php");
         $email=$_POST['useremail'];
         $password=$_POST['userpassword'];
         
@@ -50,9 +50,11 @@
             $utype=$result->fetch_assoc()['usertype'];
             if ($utype=='p'){
                 //TODO
-                $checker = $database->query("SELECT * FROM `account` where pemail='$email' and ppassword='$password'");
-                if ($checker->num_rows==1){
-
+                $checker = $database->query("SELECT * FROM `webuser` where email='$email'");
+                if(password_verify($newpassword, $hashedpassword)) {
+                   
+              
+                  
 
                     //   Patient dashbord
                     $_SESSION['user']=$email;
@@ -87,7 +89,7 @@
                 if ($checker->num_rows==1){
 
 
-                    //   Admin dashbord
+                    //    developers dashbord
                     $_SESSION['user']=$email;
                     $_SESSION['usertype']='dev';
                     
