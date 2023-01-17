@@ -121,11 +121,11 @@ include("../connection.php");
 
                                             <?php
                                             require '../connection.php';
-                                            $query = "SELECT pid FROM `account` ORDER BY pid";
+                                            $query = "SELECT id FROM `webuser` ORDER BY id";
                                             $query_run = mysqli_query($database, $query);
 
                                             $row = mysqli_num_rows($query_run);
-                                            echo '<h4>Registered accounts: '.$row.'</h4>';
+                                            echo '<h4>Webusers: '.$row.'</h4>';
                                             ?> 
                                             </div>
                                         </div>

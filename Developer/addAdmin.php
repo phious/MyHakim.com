@@ -127,27 +127,6 @@
                                             <input type="text" name="usertype" class="form-control" placeholder="usertype">
                                         </div>
                                     </div>
-                                    <form action="codedev.php" method="POST" enctype="multipart/form-data">
-                                    
-                                    <div class="modal-body">
-                                    <div class="form-group">
-                                            <label>developer Name</label>
-                                            <input type="text" name="devname" class="form-control" placeholder="email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="email" name="devemail" class="form-control" placeholder="email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="text" name="devpassword" class="form-control" placeholder="password">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Usertype</label>
-                                            <input type="text" name="usertype" class="form-control" placeholder="usertype">
-                                        </div>
-                                        
-                                    </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         <button type="submit" name="registerbtn" class="btn btn-primary">Add</button>
@@ -165,17 +144,9 @@
                                 <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-                                   Add Admin
+                                   Add data
                             </button>
                             </h6>
-                            <div style="margin-left:120px; margin-top:-37px; width:100%;">
-                            <h7 class="m-0 font-weight-bold text-primary">
-
-                            <button  type="button" class="btn btn-primary" data-toggle= "modal">
-                                   Add dev
-                            </button>
-                            </h7>
-                            
                             </div>
                             <div class="card-body">
                             
