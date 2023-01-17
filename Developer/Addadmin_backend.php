@@ -2,29 +2,27 @@
 session_start();
 require '../connection.php';
 if(isset($_POST['registerbtn'])){
-    $hospitalName = $_POST['ahosname'];
-    $email = $_POST['aemail'];
-    $password = $_POST['apassword'];
+    $aemail = $_POST['aemail'];
+    $apassword = $_POST['apassword'];
     $usertype = $_POST['usertype'];
-   
 
     
 
             
-            $query = "INSERT INTO `admin` (ahosname, aemail, apassword) VALUES ('$hospitalName','$email', '$password')";
+            $query = "INSERT INTO `admin` (aemail, apassword) VALUES ('$aemail', '$apassword')";
             $query_run = mysqli_query($database, $query);
             
             if($query_run)
             {   // echo "Saved";
-                $query2 = "INSERT INTO `webuser` (email, usertype) VALUES ('$email', '$usertype')";
-                $result = mysqli_query($database, $query2);
+                $query = "INSERT INTO `webuser` (email, usertype) VALUES ('$aemail', '$usertype')";
+                $query_run = mysqli_query($database, $query);
                 $_SESSION['status'] = "Admin Profile Added";
-                header('Location: addAdmin.php');
+                header('Location: Addadmin.php');
             }
             else 
             {
                 $_SESSION['status'] = "Admin Profile Not Added";
-                header('Location: addAdmin.php');  
+                header('Location: Addadmin.php');  
             }
         }
 
@@ -38,7 +36,7 @@ if(isset($_POST['registerbtn'])){
 
             if($query_run){
                 $_SESSION['success'] = "Your Data is Deleted";
-                header('Location: addAdmin.php');
+                header('Location: Addadmin.php');
             }
         }
         

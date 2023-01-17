@@ -106,12 +106,12 @@
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Add hospitals</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Add info</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <form action="Addhos_backend.php" method="POST" enctype="multipart/form-data">
+                                  <form action="clientinfo_backend.php" method="POST" enctype="multipart/form-data">
                             
                                     <div class="modal-body">
                                     <div class="form-group">
@@ -119,16 +119,16 @@
                                             <input type="text" name="hosname" class="form-control" placeholder="hosptial name">
                                         </div>
                                         <div class="form-group">
-                                            <label>Address</label>
-                                            <input type="text" name="hosaddress" class="form-control" placeholder="address">
+                                            <label>AVS</label>
+                                            <input type="text" name="avs" class="form-control" placeholder="admin name">
                                         </div>
                                         <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="email" name="hosemail" class="form-control" placeholder="email">
+                                            <label>DVS</label>
+                                            <input type="text" name="dvs" class="form-control" placeholder="dvs">
                                         </div>
                                         <div class="form-group">
-                                            <label>Telephone Number</label>
-                                            <input type="text" name="hostel" class="form-control" placeholder="telephone">
+                                            <label>USERTYPE</label>
+                                            <input type="text" name="usertype" class="form-control" placeholder="usertype">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -158,19 +158,18 @@
                             
                             <?php
                             require '../connection.php';
-                            $query = "SELECT * From `hospital`";
+                            $query = "SELECT * From `admin`";
                             $query_run = mysqli_query($database, $query)
                             ?>
                             
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
                                     <thead>
                                         <tr>
-                                        <th>Hospital Name</th>
-                                        <th>Address</th>
-                                        <th>Email</th>
-                                        <th>Telephone Number</th>
+                                        <th>HOSPITALNAME</th>
+                                        <th>AVS</th>
+                                        <th>DVS</th>
+                                        <th>USERTYPE</th>
                                         <th>EDIT</th>
-                                        <th>DELETE</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -184,20 +183,14 @@
                             
                                         <tr>
                                             <td><?php echo $row['hosname']; ?></td>
-                                            <td><?php echo $row['hosaddress']; ?></td>
-                                            <td><?php echo $row['hosemail']; ?></td>
-                                            <td><?php echo $row['hostel']; ?></td>
+                                            <td><?php echo $row['avs']; ?></td>
+                                            <td><?php echo $row['dvs']; ?></td>
+                                            <td><?php echo $row['usertype']; ?></td>
 
                                             <td>
-                                                <form action="register_edit.php" method="post">
-                                                    <input type="hidden" name="edit_id" value="<?php echo $row['hid']; ?>" >
+                                                <form action="register_edit2.php" method="post">
+                                                    <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>" >
                                                 <button type="submit"  name="edit_btn" class="btn btn-success">EDIT</button>
-                                                </form>
-                                            </td>
-                                            <td>
-                                                <form action="Addhos_backend.php" method="post">
-                                                    <input type="hidden" name="delete_id" value="<?php echo $row['hid']; ?>" >
-                                                    <button type="submit"  name="delete_btn" class="btn btn-danger">DELETE</button>
                                                 </form>
                                             </td>
                                         </tr>

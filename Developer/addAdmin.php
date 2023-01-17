@@ -111,32 +111,27 @@
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <form action="code2.php" method="POST" enctype="multipart/form-data">
-                                    
+                                  <form action="Addadmin_backend.php" method="POST" enctype="multipart/form-data">
+                            
                                     <div class="modal-body">
                                     <div class="form-group">
-                                            <label>Hospital Name</label>
-                                            <input type="text" name="ahosname" class="form-control" placeholder="email">
-                                        </div>
-                                        <div class="form-group">
                                             <label>Email</label>
                                             <input type="email" name="aemail" class="form-control" placeholder="email">
                                         </div>
                                         <div class="form-group">
-                                            <label>Password</label>
+                                            <label>password</label>
                                             <input type="text" name="apassword" class="form-control" placeholder="password">
                                         </div>
                                         <div class="form-group">
                                             <label>Usertype</label>
                                             <input type="text" name="usertype" class="form-control" placeholder="usertype">
                                         </div>
-                                        
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         <button type="submit" name="registerbtn" class="btn btn-primary">Add</button>
                                     </div>
-                          </form>
+                                  </form>
                             
                                 </div>
                               </div>
@@ -156,19 +151,18 @@
                             <div class="card-body">
                             
                             <div class="table-responsive">
-                            
+                            <h1>Admins</h1>
                             <?php
                             require '../connection.php';
                             $query = "SELECT * From `admin`";
                             $query_run = mysqli_query($database, $query)
                             ?>
-                            <h1>Admins</h1>
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+                            
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
                                     <thead>
                                         <tr>
-                                        <th>HOSPITAL NAME</th>
-                                        <th>EMAIL</th>
-                                        <th>PASSWORD</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
                                         <th>DELETE</th>
                                         </tr>
                                     </thead>
@@ -182,13 +176,10 @@
                                             ?>
                             
                                         <tr>
-                                            <td><?php echo $row['ahosname']; ?></td>
                                             <td><?php echo $row['aemail']; ?></td>
                                             <td><?php echo $row['apassword']; ?></td>
-                                            
-                                
                                             <td>
-                                                <form action="code2.php" method="post">
+                                                <form action="Addadmin_backend.php" method="post">
                                                     <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>" >
                                                     <button type="submit"  name="delete_btn" class="btn btn-danger">DELETE</button>
                                                 </form>
@@ -197,98 +188,74 @@
                                         
                                         <?php
                                         }
-                                        require '../connection.php';
-                            $query = "SELECT * From `webuser`";
-                            $query_run = mysqli_query($database, $query)
-                            ?>
-                            
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
-                                    <thead>
-                                        <tr>
-                                        <th>USERTYPE</th>
-                                        <th>EMAIL</th>
-                                        <th>DELETE</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                            
-                                    <?php
-                                    if(mysqli_num_rows($query_run) > 0){
-                            
-                                        while($row = mysqli_fetch_assoc($query_run)){
-                                            
-                                            ?>
-                            
-                                        <tr>
-                                            <td><?php echo $row['usertype']; ?></td>
-                                            <td><?php echo $row['email']; ?></td>
-                                            
-                                
-                                            <td>
-                                                <form action="code4.php" method="post">
-                                                    <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>" >
-                                                    <button type="submit"  name="delete_btn" class="btn btn-danger">DELETE</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        
-                                        <?php
-                                        }
-                                        
-                                    }
                                         
                                     }else {
                                         "No Record Found";
                                     } 
-                                
                                     ?>
-                                    <h1>Webusers</h1>
 
+                                    
+                                    </tbody>
+                                </table>
+
+                                <?php
+                            require '../connection.php';
+                            $query = "SELECT * From `webuser`";
+                            $query_run = mysqli_query($database, $query)
+                            ?>
+                            
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+                                    <thead>
+                                        <tr>
+                                        <th>Email</th>
+                                        <th>Usertype</th>
+                                        <th>DELETE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                            
+                                    <?php
+                                    if(mysqli_num_rows($query_run) > 0){
+                            
+                                        while($row = mysqli_fetch_assoc($query_run)){
+                                            
+                                            ?>
+                            
+                                        <tr>
+                                            <td><?php echo $row['email']; ?></td>
+                                            <td><?php echo $row['usertype']; ?></td>
+                                            <td>
+                                                <form action="adminWebuser_Delete.php" method="post">
+                                                    <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>" >
+                                                    <button type="submit"  name="delete_btn" class="btn btn-danger">DELETE</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        
+                                        <?php
+                                        }
+                                        
+                                    }else {
+                                        "No Record Found";
+                                    } 
+                                    ?>
+                                    <h1>Webuser</h1>
                                     </tbody>
                                 </table>
                             </div>
                             </div>
                             </div>
                             
-                    
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; NN 2022</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+            
 
         </div>
         <!-- End of Content Wrapper -->
 
     </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    
-
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <?php
+include('include/scripts.php');
+include('include/footer.php');
+?>
 
 </body>
 

@@ -106,29 +106,29 @@
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Add hospitals</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Add Developers</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <form action="Addhos_backend.php" method="POST" enctype="multipart/form-data">
+                                  <form action="AddDev_backend.php" method="POST" enctype="multipart/form-data">
                             
                                     <div class="modal-body">
                                     <div class="form-group">
-                                            <label> Hospital name </label>
-                                            <input type="text" name="hosname" class="form-control" placeholder="hosptial name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <input type="text" name="hosaddress" class="form-control" placeholder="address">
+                                            <label>Developer name </label>
+                                            <input type="text" name="devname" class="form-control" placeholder="developer name">
                                         </div>
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="email" name="hosemail" class="form-control" placeholder="email">
+                                            <input type="email" name="devemail" class="form-control" placeholder="email">
                                         </div>
                                         <div class="form-group">
-                                            <label>Telephone Number</label>
-                                            <input type="text" name="hostel" class="form-control" placeholder="telephone">
+                                            <label>Password</label>
+                                            <input type="text" name="devpassword" class="form-control" placeholder="password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Usertype</label>
+                                            <input type="text" name="usertype" class="form-control" placeholder="usertype">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -155,21 +155,19 @@
                             <div class="card-body">
                             
                             <div class="table-responsive">
-                            
+                            <h1>Developers</h1>
                             <?php
                             require '../connection.php';
-                            $query = "SELECT * From `hospital`";
+                            $query = "SELECT * From `developers`";
                             $query_run = mysqli_query($database, $query)
                             ?>
                             
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
                                     <thead>
                                         <tr>
-                                        <th>Hospital Name</th>
-                                        <th>Address</th>
+                                        <th>Developer Name</th>
                                         <th>Email</th>
-                                        <th>Telephone Number</th>
-                                        <th>EDIT</th>
+                                        <th>Password</th>
                                         <th>DELETE</th>
                                         </tr>
                                     </thead>
@@ -183,20 +181,12 @@
                                             ?>
                             
                                         <tr>
-                                            <td><?php echo $row['hosname']; ?></td>
-                                            <td><?php echo $row['hosaddress']; ?></td>
-                                            <td><?php echo $row['hosemail']; ?></td>
-                                            <td><?php echo $row['hostel']; ?></td>
-
+                                            <td><?php echo $row['devname']; ?></td>
+                                            <td><?php echo $row['devemail']; ?></td>
+                                            <td><?php echo $row['devpassword']; ?></td>
                                             <td>
-                                                <form action="register_edit.php" method="post">
-                                                    <input type="hidden" name="edit_id" value="<?php echo $row['hid']; ?>" >
-                                                <button type="submit"  name="edit_btn" class="btn btn-success">EDIT</button>
-                                                </form>
-                                            </td>
-                                            <td>
-                                                <form action="Addhos_backend.php" method="post">
-                                                    <input type="hidden" name="delete_id" value="<?php echo $row['hid']; ?>" >
+                                                <form action="AddDev_backend.php" method="post">
+                                                    <input type="hidden" name="delete_id" value="<?php echo $row['devid']; ?>" >
                                                     <button type="submit"  name="delete_btn" class="btn btn-danger">DELETE</button>
                                                 </form>
                                             </td>
@@ -210,6 +200,52 @@
                                     } 
                                     ?>
 
+                                    
+                                    </tbody>
+                                </table>
+
+                                <?php
+                            require '../connection.php';
+                            $query = "SELECT * From `webuser`";
+                            $query_run = mysqli_query($database, $query)
+                            ?>
+                            
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+                                    <thead>
+                                        <tr>
+                                        <th>Email</th>
+                                        <th>usertype</th>
+                                        <th>DELETE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                            
+                                    <?php
+                                    if(mysqli_num_rows($query_run) > 0){
+                            
+                                        while($row = mysqli_fetch_assoc($query_run)){
+                                            
+                                            ?>
+                            
+                                        <tr>
+                                            <td><?php echo $row['email']; ?></td>
+                                            <td><?php echo $row['usertype']; ?></td>
+                                            <td>
+                                                <form action="devWebuser_delete.php" method="post">
+                                                    <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>" >
+                                                    <button type="submit"  name="delete_btn" class="btn btn-danger">DELETE</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        
+                                        <?php
+                                        }
+                                        
+                                    }else {
+                                        "No Record Found";
+                                    } 
+                                    ?>
+                                    <h1>Webuser</h1>
                                     </tbody>
                                 </table>
                             </div>
