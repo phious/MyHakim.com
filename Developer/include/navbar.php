@@ -33,11 +33,15 @@
         <i class="fas fa-fw fa-table"></i>
         <span>Add new admins</span></a>
 </li>
+<!-- Divider -->
+<hr class="sidebar-divider">
 <li class="nav-item">
     <a class="nav-link" href="Clientsinfo.php">
         <i class="fas fa-fw fa-table"></i>
         <span>Clients info</span></a>
 </li>
+<!-- Divider -->
+<hr class="sidebar-divider">
 <li class="nav-item">
     <a class="nav-link" href="AddDeveloper.php">
         <i class="fas fa-fw fa-table"></i>
