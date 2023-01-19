@@ -59,7 +59,7 @@
     $userrow = $stmt->get_result();
     $userfetch=$userrow->fetch_assoc();
     $userid= $userfetch["id"];
-    $username=$userfetch["pname"];
+    $username=$userfetch["name"];
 
 
     //echo $userid;
@@ -324,8 +324,8 @@
                
  
     <div id="map">
-        <iframe src="https://my.atlistmaps.com/map/ccd38979-2f95-4a34-a84c-20c617e2143a?share=true" 
-    allow="geolocation" width="585px" height="450px" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    <iframe src="https://www.google.com/maps/d/embed?mid=1ZAg8EteRrSK9BYzoT13DkyObpzLUJNw&ehbc=2E312F" 
+    width="400" height="400"></iframe>
     </div>
 
     <!-- 
