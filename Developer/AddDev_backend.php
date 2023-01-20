@@ -10,13 +10,13 @@ if(isset($_POST['registerbtn'])){
     
 
             
-            $query = "INSERT INTO `developers` (devname, devemail) VALUES ('$devname', '$devemail')";
+            $query = "INSERT INTO `developers` (devname, devemail, devpassword) VALUES ('$devname', '$devemail', '$devpassword')";
             $query_run = mysqli_query($database, $query);
             
             if($query_run)
             {   // echo "Saved";
                
-                $query = "INSERT INTO `webuser` (email,  password, usertype) VALUES ('$devemail', '$devpassword', 'dev')";
+                $query = "INSERT INTO `webuser` (email, usertype) VALUES ('$devemail', 'dev')";
                 $query_run = mysqli_query($database, $query);
                 $_SESSION['status'] = "Admin Profile Added";
                 header('Location: AddDeveloper.php');

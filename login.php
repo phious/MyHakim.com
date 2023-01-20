@@ -45,7 +45,7 @@
         
         $error='<label for="promter" class="form-label"></label>';
 
-        $result= $database->query("select * from webuser where email='$email' and password='$password'");
+        $result= $database->query("select * from webuser where email='$email' ");
         if($result->num_rows==1){
             $utype=$result->fetch_assoc()['usertype'];
             if ($utype=='p'){

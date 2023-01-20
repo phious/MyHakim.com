@@ -145,7 +145,7 @@
                                 <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-                                   Add data
+                                   Add Developers
                             </button>
                             </h6>
                             </div>
