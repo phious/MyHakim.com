@@ -16,7 +16,7 @@ if(isset($_POST['registerbtn'])){
             if($query_run)
             {   // echo "Saved";
                
-                $query = "INSERT INTO `webuser` (email,  password, usertype) VALUES ('$devemail', '$devpassword', '$usertype')";
+                $query = "INSERT INTO `webuser` (email,  password, usertype) VALUES ('$devemail', '$devpassword', 'dev')";
                 $query_run = mysqli_query($database, $query);
                 $_SESSION['status'] = "Admin Profile Added";
                 header('Location: AddDeveloper.php');

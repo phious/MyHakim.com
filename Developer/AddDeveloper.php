@@ -126,10 +126,7 @@
                                             <label>Password</label>
                                             <input type="text" name="devpassword" class="form-control" placeholder="password">
                                         </div>
-                                        <div class="form-group">
-                                            <label>Usertype</label>
-                                            <input type="text" name="usertype" class="form-control" placeholder="usertype">
-                                        </div>
+                                       
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
