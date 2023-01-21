@@ -43,9 +43,9 @@ include("connection.php");
 if($_POST){
 
     $result= $database->query("select * from webuser");
-
-    $fname=$_SESSION['personal']['fname'];
-    $lname=$_SESSION['personal']['lname'];
+    $fname=$_POST['fname'];
+    
+    $lname=$_POST['lname'];
     $name=$fname." ".$lname;
     $email=$_POST['newemail'];
     $tele=$_POST['tele'];
@@ -83,12 +83,109 @@ if($_POST){
 
     
 }else{
-    //header('location: signup.php');
+    //header('location: create-account.php');
     $error='<label for="promter" class="form-label"></label>';
 }
 
 ?>
+    <center>
+    <div class="container">
+        <table border="0">
+            <tr>
+                <td colspan="2">
+                    <p class="header-text">Let's Get Started</p>
+                    <p class="sub-text">Add account informations</p>
+                </td>
+            </tr>
+            <tr>
+                <form action="create-account.php" method="POST" >
+                        <td class="label-td" colspan="2">
+                            <label for="name" class="form-label">Name: </label>
+                        </td>
+            </tr>
+                    <tr>
+                        <td class="label-td">
+                            <input type="text" name="fname" class="input-text" placeholder="First Name" required>
+                        </td>
+                        <td class="label-td">
+                            <input type="text" name="lname" class="input-text" placeholder="Last Name" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                                <label for="newemail" class="form-label">Email: </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="email" name="newemail" class="input-text" placeholder="Email Address" required>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                                <label for="tele" class="form-label">Telephone Number: </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="telephonenumber" name="tele" class="input-text" placeholder="Tel No" required>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <label for="newpassword" class="form-label">Create New Password: </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="password" name="newpassword" class="input-text" placeholder="New Password" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <label for="cpassword" class="form-label">Confirm Password: </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="password" name="cpassword" class="input-text" placeholder="Confirm Password" required>
+                        </td>
+                    </tr>
+            
+                    <tr>
+                        <td colspan="2">
+                            <?php echo $error ?>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <input type="reset" value="Reset" class="login-btn btn-primary-soft btn" >
+                        </td>
+                        <td>
+                            <input type="submit" value="Sign Up" class="login-btn btn-primary btn">
+                        </td>
 
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <br>
+                            <label for="" class="sub-text" style="font-weight: 280;">Already have an account&#63; </label>
+                            <a href="login.php" class="hover-link1 non-style-link">Login</a>
+                            <br><br><br>
+                        </td>
+                    </tr>
+
+
+                </form>
+            </tr>
+        </table>
+
+    </div>
+</center>
 
 </body>
 </html>

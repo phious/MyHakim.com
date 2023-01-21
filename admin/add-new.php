@@ -76,7 +76,7 @@
         
         
     }else{
-        //header('location: signup.php');
+        //header('location: create-account.php');
         $error='3';
     }
     

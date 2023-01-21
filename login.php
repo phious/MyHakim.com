@@ -192,7 +192,7 @@
                 <td>
                     <br>
                     <label for="" class="sub-text" style="font-weight: 280;">Don't have an account&#63; </label>
-                    <a href="signup.php" class="hover-link1 non-style-link">Sign Up</a>
+                    <a href="create-account.php" class="hover-link1 non-style-link">Sign Up</a>
                     <br><br><br>
                 </td>
             </tr>
