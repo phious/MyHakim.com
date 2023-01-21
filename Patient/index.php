@@ -246,7 +246,7 @@
                                         
                                             <?php
                                             $nextweek=date("Y-m-d",strtotime("+1 week"));
-                                                $sqlmain= "select * from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join webuser on webuser.id=appointment.pid inner join doctor on schedule.docid=doctor.docid inner join hospital on schedule.hid=hospital.hid where  webuser.id=$userid  and schedule.scheduledate>='$today' order by schedule.scheduledate asc";
+                                                $sqlmain= "select * from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join webuser on webuser.id=appointment.pid inner join doctor on schedule.docid=doctor.docid inner join hospital on schedule.scheduleid=hospital.hid where  webuser.id=$userid  and schedule.scheduledate>='$today' order by schedule.scheduledate asc";
                                                 //echo $sqlmain;
                                                 $result= $database->query($sqlmain);
                 
