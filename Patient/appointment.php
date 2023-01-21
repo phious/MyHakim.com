@@ -39,14 +39,14 @@
 
     //import database
     include("../connection.php");
-    $sqlmain= "SELECT * FROM `account` WHERE pemail=?";
+    $sqlmain= "SELECT * FROM `webuser` WHERE email=?";
     $stmt = $database->prepare($sqlmain);
     $stmt->bind_param("s",$useremail);
     $stmt->execute();
     $userrow = $stmt->get_result();
     $userfetch=$userrow->fetch_assoc();
-    $userid= $userfetch["pid"];
-    $username=$userfetch["pname"];
+    $userid= $userfetch["id"];
+    $username=$userfetch["name"];
 
 
     //echo $userid;

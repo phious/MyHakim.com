@@ -63,12 +63,12 @@
 
     //import database
     include("../connection.php");
-    $userrow = $database->query("SELECT * FROM `account` WHERE pemail='$useremail'");
+    $userrow = $database->query("SELECT * FROM `webuser` WHERE email='$useremail'");
     
     
     $userfetch=$userrow->fetch_assoc();
-    $userid= $userfetch["pid"];
-    $username=$userfetch["pname"];
+    $userid= $userfetch["id"];
+    $username=$userfetch["name"];
 
 
     //echo $userid;
