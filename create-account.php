@@ -41,7 +41,7 @@ include("connection.php");
 
 
 if($_POST){
-
+    
     $result= $database->query("select * from webuser");
     $fname=$_POST['fname'];
     
@@ -86,7 +86,7 @@ if($_POST){
     //header('location: create-account.php');
     $error='<label for="promter" class="form-label"></label>';
 }
-
+if ( isset($_GLOBAL['is_included']) ) { return; }
 ?>
     <center>
     <div class="container">
