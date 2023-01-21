@@ -152,7 +152,7 @@
                                 echo $today;
 
 
-                                $patientrow = $database->query("SELECT * FROM `account`;");
+                                $patientrow = $database->query("SELECT * FROM `webuser`;");
                                
                                 $appointmentrow = $database->query("SELECT * FROM `appointment` WHERE appodate>='$today';");
                                 $schedulerow = $database->query("SELECT * FROM `schedule` WHERE scheduledate='$today';");
@@ -283,11 +283,11 @@
             </div>
             ';
         }elseif($action=='view'){
-            $sqlmain= "SELECT * FROM `account` WHERE pid='$id'";
+            $sqlmain= "SELECT * FROM `webuser` WHERE id='$id'";
             $result= $database->query($sqlmain);
             $row=$result->fetch_assoc();
-            $name=$row["pname"];
-            $email=$row["pemail"];           
+            $name=$row["name"];
+            $email=$row["email"];           
             echo '
             <div id="popup1" class="overlay">
                     <div class="popup">
@@ -347,11 +347,11 @@
             </div>
             ';
         }elseif($action=='edit'){
-            $sqlmain= "SELECT * FROM `account` WHERE pid='$id'";
+            $sqlmain= "SELECT * FROM `webuser` WHERE id='$id'";
             $result= $database->query($sqlmain);
             $row=$result->fetch_assoc();
-            $name=$row["pname"];
-            $email=$row["pemail"];
+            $name=$row["name"];
+            $email=$row["email"];
 
             $error_1=$_GET["error"];
                 $errorlist= array(
