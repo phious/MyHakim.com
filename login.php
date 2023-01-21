@@ -18,7 +18,7 @@
 
     //learn from w3schools.com
     //Unset all the server side variables
-    
+
     session_start();
 
     $_SESSION["user"]="";
@@ -30,30 +30,27 @@
 
     $_SESSION["date"]=$date;
     
-  
+
     //import database
     include("connection.php");
    
-    
     
 
 
 
     if($_POST){
-        include ("create-account.php");
-        
+        include("create-account.php");
         $email=$_POST['useremail'];
         $password=$_POST['userpassword'];
-        include ("developer/AddDev_backend.php");
+        
         $error='<label for="promter" class="form-label"></label>';
 
-        $result= $database->query("select * from webuser where email='$email'");
+        $result= $database->query("select * from webuser where email='$email' ");
         if($result->num_rows==1){
             $utype=$result->fetch_assoc()['usertype'];
-            
             if ($utype=='p'){
                 //TODO
-                
+                $checker = $database->query("SELECT * FROM `webuser` where email='$email'");
                 if(password_verify($newpassword, $hashedpassword)) {
                    
               
@@ -85,10 +82,11 @@
                     $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
                 }
 
-                
+
             }elseif($utype=='dev'){
-                 //TODO
-                if(password_verify($newpassword, $hashedpassword)) {
+                //TODO
+                $checker = $database->query("SELECT * FROM `developers` WHERE devemail='$email' AND devpassword='$password'");
+                if ($checker->num_rows==1){
 
 
                     //    developers dashbord
@@ -194,7 +192,7 @@
                 <td>
                     <br>
                     <label for="" class="sub-text" style="font-weight: 280;">Don't have an account&#63; </label>
-                    <a href="signup.php" class="hover-link1 non-style-link">Sign Up</a>
+                    <a href="create-account.php" class="hover-link1 non-style-link">Sign Up</a>
                     <br><br><br>
                 </td>
             </tr>

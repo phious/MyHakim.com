@@ -122,10 +122,7 @@
                                             <label>password</label>
                                             <input type="text" name="apassword" class="form-control" placeholder="password">
                                         </div>
-                                        <div class="form-group">
-                                            <label>Usertype</label>
-                                            <input type="text" name="usertype" class="form-control" placeholder="usertype">
-                                        </div>
+                                       
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -144,7 +141,7 @@
                                 <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-                                   Add data
+                                   Add Admin
                             </button>
                             </h6>
                             </div>
