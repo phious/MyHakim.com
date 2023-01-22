@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/animations.css">  
-    <link rel="stylesheet" href="../css/main.css"> 
+    <link rel="stylesheet" href="../css/main.css""<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/admin.css">
     
    
@@ -16,6 +16,33 @@
         }
         .sub-table{
             animation: transitionIn-Y-bottom 0.5s;
+            
+        }
+        .dashbord-tables{
+            animation: transitionIn-Y-over 0.5s;
+        }
+        .filter-container{
+            animation: transitionIn-X  0.5s;
+        }
+        .sub-table{
+            animation: transitionIn-Y-bottom 0.5s;
+        }
+    
+        div.popup {
+    margin: 10px auto;
+    
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+        
+        div.hyu {   
+            width:80%;
+            height:1900px;
+            overflow:auto;
+           
         }
 </style>
 </head>
@@ -46,6 +73,10 @@
     $username=$userfetch["name"];
 
     ?>
+     if($_GET){
+        
+        $id=$_GET["id"];
+        $action=$_GET["action"];
     <div class="container">
         <div class="menu">
             <table class="menu-container" border="0">
@@ -243,17 +274,16 @@
 
                                         <td>
                                         <div style="display:flex;justify-content: left;">
-                                        
-                                        
-                                       <a href="?action=session&id='.'&name='.$name.'"  class="non-style-link"><button  class="btn-primary-soft btn button-icon menu-icon-session-active"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Make An Appointment!</font></button></a>
+
+                                       <a href="?action=add&id='.'&name='.$name.'"  class="non-style-link"><button  class="btn-primary-soft btn button-icon menu-icon-session-active"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Make An Appointment!</font></button></a>
                                         </div>
                                         </td>
                                     </tr>';
                                     
                                 }
                             }
-                                 
-                            ?>
+                            ?>   
+                            
  
                             </tbody>
 
@@ -268,38 +298,192 @@
             </table>
         </div>
     </div>
-    <?php 
-    if($_GET){
+     <?php
+     if ($_GET) {
+
+         $id = $_GET["id"];
+         $action = $_GET["action"];
+         if ($action == 'add') {
+             $error_1 = $_GET["error"];
+             $errorlist = array(
+                 '1' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Already have an account for this Email address.</label>',
+                 '2' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Password Conformation Error! Reconform Password</label>',
+                 '3' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;"></label>',
+                 '4' => "",
+                 '0' => '',
+
+             );
+             if ($error_1 != '4') {
+                 echo '
         
-        $id=$_GET["id"];
-        $action=$_GET["action"];
-        if($action=='drop'){
-            $nameget=$_GET["name"];
-            echo '
-            <div id="popup1" class="overlay">
-                    <div class="popup">
-                    <center>
-                        <h2>Are you sure?</h2>
-                        <a class="close" href="hospital.php">&times;</a>
-                        <div class="content">
-                            You want to delete this record<br>('.substr($nameget,0,40).').
+    <div id="popup1" class="overlay">
+    
+            <div class="popup">
+            <center>
+            <div class="hyu">
+                <a class="close" href="hospital.php">&times;</a> 
+               <div class="content">
+                <div style="display: flex;justify-content: center;">
+                
+                <table width="100%" height="50%" class="sub-table scrolldown add-doc-form-container" border="0">
+                <tr>
+                        <td class="label-td" colspan="2" >' .
+                     $errorlist[$error_1]
+                     . '</td>
+                       
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Make A New Appointment </p><br><br>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <form action="patient-register.php" method="POST" class="add-new-form">
+                        <td class="label-td" colspan="2">
+                            <label for="name" class="form-label">Name: </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="text" name="name" class="input-text" placeholder="Patient Name" required><br>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <label for="Email" class="form-label">Email: </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="email" name="email" class="input-text" placeholder="Email Address" required><br>
+                        </td>
+                    </tr>
+                   
+                   
+                    
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <label for="Tele" class="form-label">Telephone: </label>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="tel" name="Tele" class="input-text" placeholder="Telephone Number" required><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <label for="usertype" class="form-label">Date of Birth </label>
+                        </td>
+                    </tr>
+                    <tr>
+                <td class="label-td" colspan="2">
+                    <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style="margin: 0;width: 95%;">
+
+                </td>
+            </tr>
+                    <td class="label-td" colspan="2">
+                    <label for="usertype" class="form-label">Appointment Date</label>
+                </td>
+            </tr>
+            
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style="margin: 0;width: 95%;">
+
+                        </td>
+                    </tr>
+                    <td class="label-td" colspan="2">
+                    <label for="usertype" class="form-label">Appointment Time</label>
+                </td>
+            </tr>
+            
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="time" name="appt" id="appt" class="input-text filter-container-items" style="margin: 0;width: 95%;">
+
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <label for="spec" class="form-label">Choose specialties: </label>
                             
-                        </div>
-                        <div style="display: flex;justify-content: center;">
-                        <a href="delete-doctor.php?id='.$id.'" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Yes&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
-                        <a href="hospital.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;No&nbsp;&nbsp;</font></button></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <select name="spec" id="" class="box" >
+                            ';
 
-                        </div>
-                    </center>
-            </div>
-            </div>
-            ';
-        }
-        }
-       
 
+                 $list11 = $database->query("select  * from  specialties order by sname asc;");
+
+                 for ($y = 0; $y < $list11->num_rows; $y++) {
+                     $row00 = $list11->fetch_assoc();
+                     $sn = $row00["sname"];
+                     $id00 = $row00["id"];
+                     echo "<option value=" . $id00 . ">$sn</option><br/>";
+                 }
+                 ;
+
+
+
+
+                 echo '       </select><br>
+                        </td>
+                    </tr>
+                    
+                    <td class="label-td" colspan="2">
+                    <label for="usertype" class="form-label">If Any Medical Concern</label>
+                </td>
+            </tr>
+            
+                    <tr>
+                        <td class="label-td" colspan="2">
+                            <input type="text" name="text" id="text"  style="margin: top;width: 95%; height: 100px;">
+
+                        </td>
+                    </tr>
+                    
+        
+                    <tr>
+                        <td colspan="2">
+                        <label for="myfile">Attach file (Optional)</label>
+                            <input type="file" id="myfile" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <a href="payment-info.php"  class="login-btn btn-primary btn">NEXT</font></button></a>
+
+                        </td>
+        
+                    </tr>
+                   
+                    </form>
+                    </tr>
+                </table>
+                </div>
+                </div>
+                </div>
+                
+                
+               
+            </center>
+            <br><br>
+    </div>
+    </div>
+
+    ';
+             }
+         }
+     }
+     
 ?>
-</div>
+
+
 
 </body>
 </html>
