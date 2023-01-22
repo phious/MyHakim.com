@@ -275,8 +275,8 @@
                                         <td>
                                         <div style="display:flex;justify-content: left;">
 
-                                       <a href="?action=add&id='.'&name='.$name.'"  class="non-style-link"><button  class="btn-primary-soft btn button-icon menu-icon-session-active"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Make An Appointment!</font></button></a>
-                                        </div>
+                                        </div>                                       <a href="?action=add&id='.'&name='.$name.'"  class="non-style-link"><button  class="btn-primary-soft btn button-icon menu-icon-session-active"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Make An Appointment!</font></button></a>
+
                                         </td>
                                     </tr>';
                                     
@@ -454,9 +454,19 @@
                     <tr>
                         <td colspan="2">
                         <label for="myfile">Attach file (Optional)</label>
-                            <input type="file" id="myfile" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="file" id="myfile" >
+                           
+                            </td>
+        
+                            </tr>
+                            
+                    
+                            <tr>
+                            <td colspan="2">
+                            <br>
+      <a  href="payment-info.php" class="btn-primary-soft btn button-icon"   style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;">Next</button>
 
-                            <a href="payment-info.php"  class="login-btn btn-primary btn">NEXT</font></button></a>
+           
 
                         </td>
         
