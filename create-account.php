@@ -41,12 +41,11 @@ include("connection.php");
 
 
 if($_POST){
-  
-   
+
     $result= $database->query("select * from webuser");
 
-    $fname=$_SESSION['personal']['fname'];
-    $lname=$_SESSION['personal']['lname'];
+    $fname=$_POST['fname'];
+    $lname=$_POST['lname'];
     $name=$fname." ".$lname;
     $email=$_POST['newemail'];
     $tele=$_POST['tele'];
@@ -63,7 +62,7 @@ if($_POST){
             $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Already have an account for this Email address.</label>';
         }else{
             //TODO
-            $hash= password_hash($newpassword, PASSWORD_DEFAULT);
+            $hash = password_hash($newpassword, PASSWORD_DEFAULT);
             $database->query("INSERT INTO `webuser` (name,email,tel,password,usertype) VALUES ('$name','$email','$tele','$hash','p')");
            
 
