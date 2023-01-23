@@ -41,11 +41,12 @@ include("connection.php");
 
 
 if($_POST){
-    
+  
+   
     $result= $database->query("select * from webuser");
-    $fname=$_POST['fname'];
-    
-    $lname=$_POST['lname'];
+
+    $fname=$_SESSION['personal']['fname'];
+    $lname=$_SESSION['personal']['lname'];
     $name=$fname." ".$lname;
     $email=$_POST['newemail'];
     $tele=$_POST['tele'];
@@ -62,8 +63,8 @@ if($_POST){
             $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Already have an account for this Email address.</label>';
         }else{
             //TODO
-            $hashedpassword = password_hash($newpassword, PASSWORD_DEFAULT);
-            $database->query("INSERT INTO `webuser` (name,email,tel,password,usertype) VALUES ('$name','$email','$tele','$hashedpassword','p')");
+            $hash= password_hash($newpassword, PASSWORD_DEFAULT);
+            $database->query("INSERT INTO `webuser` (name,email,tel,password,usertype) VALUES ('$name','$email','$tele','$hash','p')");
            
 
             //print_r("insert into patient values($pid,'$email','$fname','$lname','$newpassword','$address','$nic','$dob','$tele');");
@@ -83,7 +84,7 @@ if($_POST){
 
     
 }else{
-    //header('location: create-account.php');
+    //header('location: signup.php');
     $error='<label for="promter" class="form-label"></label>';
 }
 if ( isset($_GLOBAL['is_included']) ) { return; }

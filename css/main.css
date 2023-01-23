@@ -607,4 +607,65 @@ input[type=search]:focus {
     text-align: center;
     margin-top: 0;
 }
+.copy-text{
+  position:relative;
+  padding:10px;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:10px;
+  display:flex;
+  background: ghostwhite; 
+          font-size: 20px; 
+          padding: 10px; 
+          border: 1px solid lightgray; 
+          margin: 10px;
+         color: #556;
+}
+ .copy-text input.text{
+  padding:10px;
+  font-size:18px;
+  color:#555;
+  border:none;
+  outline:none;
+ 
+}
+ .copy-text button{
+  padding:10px;
+  background: #5784f5;
+  color:#fff;
+  font-size:18px;
+  border:none;
+  outline:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+.copy-text button:active{
+  background:#809ce2;
+}
+.copy-text button:before{
 
+
+  content:"copied";
+  position:absolute;
+  top:-20px;
+  right:25px;
+  background:#5c81dc;
+  padding:8px 10px;
+border-radius:20px;
+font-size:15px;
+display:none;
+}
+.copy-text button:after{
+content:"";
+position:absolute;
+top:-20px;
+right:25px;
+width:10px;
+height:10px;
+background;#5c81dc;transform:rotat(45deg);
+display:none;
+}
+.copy-text.active buuton:before,
+.copy-text.active buuton:after {
+ display:block; 
+}
