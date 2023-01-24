@@ -1,5 +1,8 @@
 <?php require 'controllers/authController.php';
-
+if(isset($_GET['password-token'])){
+    $passwordToken = $_GET['password-token'];
+    resetPassword($passwordToken);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
