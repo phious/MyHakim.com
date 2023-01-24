@@ -18,8 +18,14 @@
 
     //learn from w3schools.com
     //Unset all the server side variables
+    require 'controllers/authController.php';
 
-    session_start();
+    // verify user using token
+if(isset($_GET['password-token'])){
+    $passwordToken = $_GET['password-token'];
+    resetPassword($passwordToken);
+}
+
 
     $_SESSION["user"]="";
     $_SESSION["usertype"]="";
@@ -37,7 +43,6 @@
     
 
     
-
 
     if($_POST){
         $_GLOBAL['is_included'] = true;
