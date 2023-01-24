@@ -192,7 +192,12 @@
         </div>
             <tr>
                 <td>
-                    <br>
+                    <label for="" class="sub-text" style="font-weight: 280;">Reset your password&#63; </label>
+                    <a href="forgot_password.php" class="hover-link1 non-style-link">Forgot password</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <label for="" class="sub-text" style="font-weight: 280;">Don't have an account&#63; </label>
                     <a href="create-account.php" class="hover-link1 non-style-link">Sign Up</a>
                     <br><br><br>
