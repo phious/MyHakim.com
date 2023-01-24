@@ -17,10 +17,36 @@
 </head>
 <body>
     <?php
-
+    include("payment-info.php");
+    include("hospital.php");
     //learn from w3schools.com
 
     session_start();
+
+
+    if($_POST){
+
+    
+
+        $_SESSION["personal"]=array(
+            'name'=>$_POST['fname'],
+            'Email'=>$_POST['lname'],
+            'Tele'=>$_POST['address'],
+            'dob'=>$_POST['nic'],
+            'appodate'=>$_POST['dob'],
+            'spec'=>$_POST['dob'],
+            'medicalconcern'=>$_POST['dob'],
+            'myfile'=>$_POST['dob'],
+        );
+    
+    
+        print_r($_SESSION["personal"]);
+        header("location: create-account.php");
+    
+    
+    
+    
+    }
 
     if(isset($_SESSION["user"])){
         if(($_SESSION["user"])=="" or $_SESSION['usertype']!='p'){
