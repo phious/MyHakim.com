@@ -40,7 +40,7 @@ if(isset($_GET['password-token'])){
     //import database
     include("connection.php");
    
-    
+
 
     
 
@@ -50,7 +50,7 @@ if(isset($_GET['password-token'])){
         include("create-account.php");
         $email=$_POST['useremail'];
         $password=$_POST['userpassword'];
-        
+
         $error='<label for="promter" class="form-label"></label>';
         $re= $database->query("select * from webuser where email='$email'");
         $storedpass=$re->fetch_assoc()['password'];
@@ -197,14 +197,14 @@ if(isset($_GET['password-token'])){
         </div>
             <tr>
                 <td>
-                    <label for="" class="sub-text" style="font-weight: 280;">Reset your password&#63; </label>
-                    <a href="forgot_password.php" class="hover-link1 non-style-link">Forgot password</a>
+                    <label for="" class="sub-text" style="font-weight: 180px;">Reset your password&#63; </label>
+                    <a href="forgot_password.php" style="font-size: 15px;" class="hover-link1 non-style-link">Forgot password</a>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="" class="sub-text" style="font-weight: 280;">Don't have an account&#63; </label>
-                    <a href="create-account.php" class="hover-link1 non-style-link">Sign Up</a>
+                    <label for="" class="sub-text" style="font-weight: 180;">Don't have an account&#63; </label>
+                    <a href="create-account.php" style="font-size: 15px;" class="hover-link1 non-style-link">Sign Up</a>
                     <br><br><br>
                 </td>
             </tr>
