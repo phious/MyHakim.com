@@ -1,13 +1,42 @@
 <?php
 
 session_start();
-
 require 'connection.php';
-require_once 'emailController.php';
+require_once 'emailController.php';  
 
 $errors = array();
 $username = "";
 $email = "";
+
+
+
+function verifyUser($token)
+{
+    global $database;
+    $sql = "SELECT * FROM webuser WHERE token='$token' LIMIT 1";
+    $result = mysqli_query($database, $sql);
+    
+    if (mysqli_num_rows($result) > 0) {
+        $user = mysqli_fetch_assoc($result);
+        $update_query = "UPDATE webuser SET verified=1 WHERE token='$token' ";
+
+        if (mysqli_query($database, $update_query)) {
+            // log user in
+             $_SESSION['email'] = $user['email'];
+             $_SESSION['verified'] = 1;
+             // set flash message
+ 
+             $_SESSION['message'] = "Your email address was successfully verified!";
+             $_SESSION['alert-class'] = "alert-success";
+             header('Location: patient/index.php');
+             exit();
+
+        }
+        else{
+            echo 'User not found';
+        }
+    }
+}
 
 
 // Forgot password clicks
@@ -71,9 +100,13 @@ function resetPassword($token)
     header('Location: reset_password.php');
     exit(0);
 }
+// verify users using token
 if(isset($_GET['password-token'])){
     $passwordToken = $_GET['password-token'];
     resetPassword($passwordToken);
 }
 
-        
+if(isset($_GET['token'])){
+    $token = $_GET['token'];
+    verifyUser($token);
+}

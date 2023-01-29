@@ -20,8 +20,8 @@
 
 //learn from w3schools.com
 //Unset all the server side variables
+require_once 'controllers/authController.php';
 
-session_start();
 
 $_SESSION["user"]="";
 $_SESSION["usertype"]="";
@@ -40,7 +40,7 @@ include("connection.php");
 
 
 
-if($_POST){
+if(isset($_POST['singnup-btn'])){
 
     $result= $database->query("select * from webuser");
 
@@ -63,20 +63,50 @@ if($_POST){
         }else{
             //TODO
             $token = bin2hex(random_bytes(50));
+           
             $hash = password_hash($newpassword, PASSWORD_DEFAULT);
             $database->query("INSERT INTO `webuser` (name,email,token,tel,password,usertype) VALUES ('$name','$email','$token','$tele','$hash','p')");
-           
 
+            
             //print_r("insert into patient values($pid,'$email','$fname','$lname','$newpassword','$address','$nic','$dob','$tele');");
             $_SESSION["user"]=$email;
             $_SESSION["usertype"]="p";
             $_SESSION["username"]=$fname;
 
-            header('Location: patient/index.php');
             $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;"></label>';
         }
         
-    }else{
+    }if (count($errors) === 0 ){
+        $verified = false;
+        $sql = "INSERT INTO webuser (verified) VALUES (?)";
+        $stmt = $database->prepare($sql);
+        $stmt->bind_param('s',$verified);
+
+        if ($stmt->execute()){
+            //login user
+            $user_id = $database->insert_id;
+            $_SESSION['id'] = $user_id;
+            $_SESSION['email'] = $email;
+            $_SESSION['verified'] = $verified;
+
+
+            sendVerificationEmail($email, $token);
+
+            // set flash message
+
+            $_SESSION['message'] = "You are now logged in!";
+            $_SESSION['alert-class'] = "alert-success";
+            header('Location: verification.php');
+
+            
+            
+        }
+        
+        else {
+            $errors['db_error'] = "Database error: failed to register";
+        }
+    }
+    else{
         $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Password Conformation Error! Reconform Password</label>';
     }
 
@@ -167,7 +197,7 @@ if ( isset($_GLOBAL['is_included']) ) { return; }
                             <input type="reset" value="Reset" class="login-btn btn-primary-soft btn" >
                         </td>
                         <td>
-                            <input type="submit" value="Sign Up" class="login-btn btn-primary btn">
+                            <input type="submit" name='singnup-btn' value="Sign Up" class="login-btn btn-primary btn">
                         </td>
 
                     </tr>
