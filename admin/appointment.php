@@ -115,7 +115,7 @@
                         $today = date('Y-m-d');
                         echo $today;
 
-                        $list110 = $database->query("SELECT * FROM  `appointment` WHERE usertype='kk15';");
+                        $list110 = $database->query("SELECT * FROM  `appointment` WHERE hos_ID=1131;");
 
                         ?>
                         </p>

@@ -3,14 +3,13 @@ session_start();
 require '../connection.php';
 if(isset($_POST['registerbtn'])){
     $hospitalName = $_POST['hosname'];
-    $avs = $_POST['avs'];
-    $dvs = $_POST['dvs'];
+    $hos_ID = $_POST['hos_ID'];
     $usertype = $_POST['usertype'];
 
     
 
             
-            $query = "INSERT INTO `admin` (hosname, avs, dvs, usertype) VALUES ('$hospitalName', '$avs', '$dvs', '$usertype')";
+            $query = "INSERT INTO `admin` (hosname,hos_ID, usertype) VALUES ('$hospitalName', '$hos_ID', '$usertype')";
             $query_run = mysqli_query($database, $query);
             
             if($query_run)
@@ -28,11 +27,10 @@ if(isset($_POST['registerbtn'])){
         if(isset($_POST['updatebtn'])) {
             $id = $_POST['edit_id'];
             $hospitalName = $_POST['edit_hospitalName'];
-            $avs = $_POST['edit_avs'];
-            $dvs = $_POST['edit_dvs'];
+            $hos_ID = $_POST['edit_hos_ID'];
             $usertype = $_POST['edit_usertype'];
         
-            $query = "UPDATE `admin` SET hosname='$hospitalName', avs='$avs', dvs='$dvs', usertype='$usertype' WHERE id='$id' ";
+            $query = "UPDATE `admin` SET hosname='$hospitalName', hos_ID='$hos_ID', usertype='$usertype' WHERE id='$id' ";
             $query_run = mysqli_query($database, $query);
 
             if($query_run){

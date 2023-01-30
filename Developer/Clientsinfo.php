@@ -118,13 +118,10 @@
                                             <label> Hospital name </label>
                                             <input type="text" name="hosname" class="form-control" placeholder="hosptial name">
                                         </div>
+                                        
                                         <div class="form-group">
-                                            <label>AVS</label>
-                                            <input type="text" name="avs" class="form-control" placeholder="admin name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>DVS</label>
-                                            <input type="text" name="dvs" class="form-control" placeholder="dvs">
+                                            <label>HOS_ID</label>
+                                            <input type="text" name="hos_ID" class="form-control" placeholder="hos_ID">
                                         </div>
                                         <div class="form-group">
                                             <label>USERTYPE</label>
@@ -166,8 +163,7 @@
                                     <thead>
                                         <tr>
                                         <th>HOSPITALNAME</th>
-                                        <th>AVS</th>
-                                        <th>DVS</th>
+                                        <th>HOS_ID</th>
                                         <th>USERTYPE</th>
                                         <th>EDIT</th>
                                         </tr>
@@ -183,8 +179,7 @@
                             
                                         <tr>
                                             <td><?php echo $row['hosname']; ?></td>
-                                            <td><?php echo $row['avs']; ?></td>
-                                            <td><?php echo $row['dvs']; ?></td>
+                                            <td><?php echo $row['hos_ID']; ?></td>
                                             <td><?php echo $row['usertype']; ?></td>
 
                                             <td>

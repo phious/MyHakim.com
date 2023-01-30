@@ -63,7 +63,6 @@ if(isset($_POST['singnup-btn'])){
         }else{
             //TODO
             $token = bin2hex(random_bytes(50));
-           
             $hash = password_hash($newpassword, PASSWORD_DEFAULT);
             $database->query("INSERT INTO `webuser` (name,email,token,tel,password,usertype) VALUES ('$name','$email','$token','$tele','$hash','p')");
 

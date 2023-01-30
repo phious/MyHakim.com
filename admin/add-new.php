@@ -46,7 +46,7 @@
         $spec=$_POST['spec'];
         $email=$_POST['email'];
         $tele=$_POST['Tele'];
-        $h_code=$_POST['h_code'];
+        $hos_ID=$_POST['hos_ID'];
         $password=$_POST['password'];
         $cpassword=$_POST['cpassword'];
         
@@ -57,10 +57,9 @@
                 $error='1';
             }else{
 
-                $sql1="insert into doctor(docemail,docname,docpassword,docnic,doctel,h_code,specialties) values('$email','$name','$password','$nic','$tele', '$h_code',$spec);";
-                $sql2="insert into webuser values('$email','d')";
+                $sql1="insert into doctor(docemail,docname,docpassword,docnic,doctel,specialties,hos_ID) values('$email','$name','$password','$nic','$tele',$spec, '$hos_ID');";
                 $database->query($sql1);
-                $database->query($sql2);
+                $database->query("INSERT INTO `webuser` (email, usertype) VALUES ('$email', 'd')");
 
                 //echo $sql1;
                 //echo $sql2;

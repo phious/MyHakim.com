@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/animations.css">  
-    <link rel="stylesheet" href="../css/main.css"<?php echo time(); ?>">  
+    <link rel="stylesheet" href="../css/main.css"<?php echo time(); ?>>  
     <link rel="stylesheet" href="../css/admin.css">
         
     <title>Doctors</title>
@@ -124,7 +124,7 @@
                             
                             <?php
                                 echo '<datalist id="doctors">';
-                                $list11 = $database->query("SELECT  docname,docemail FROM doctor WHERE usertype='kk15';");
+                                $list11 = $database->query("SELECT  docname,docemail FROM doctor WHERE hos_ID=1131;");
 
                                 for ($y=0;$y<$list11->num_rows;$y++){
                                     $row00=$list11->fetch_assoc();
@@ -181,9 +181,9 @@
                     if($_POST){
                         $keyword=$_POST["search"];
                         
-                        $sqlmain= "SELECT * FROM `doctor` WHERE usertype='kk15' && docemail='$keyword' OR docname='$keyword' OR docname LIKE '$keyword%' OR docname LIKE '%$keyword' OR docname LIKE '%$keyword%'";
+                        $sqlmain= "SELECT * FROM `doctor` WHERE hos_ID=1131 AND docemail='$keyword' OR docname='$keyword' OR docname LIKE '$keyword%' OR docname LIKE '%$keyword' OR docname LIKE '%$keyword%'";
                     }else{
-                        $sqlmain= "SELECT * FROM `doctor` WHERE usertype='kk15'";
+                        $sqlmain= "SELECT * FROM `doctor` WHERE hos_ID=1131";
 
                     }
 
@@ -503,12 +503,12 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="usertype" class="form-label">Hospital code: </label>
+                                    <label for="hos_ID" class="form-label">Hospital ID: </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="text" name="usertype" class="input-text" placeholder="hospital code" required><br>
+                                    <input type="text" name="hos_ID" class="input-text" placeholder="hospital ID" required><br>
                                 </td>
                             </tr>
                             <tr>

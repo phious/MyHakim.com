@@ -28,12 +28,8 @@ if(isset($_POST['edit_btn'])) {
         <input type="text" name="edit_hospitalName" value="<?php echo $row['hosname']?>" class="form-control" placeholder="hospital name">
         </div>
         <div class="form-group">
-        <label>AVS</label>
-        <input type="text" name="edit_avs" value="<?php echo $row['avs']?>" class="form-control" placeholder="avs">
-        </div>
-        <div class="form-group">
-        <label>DVS</label>
-        <input type="text" name="edit_dvs" value="<?php echo $row['dvs']?>" class="form-control" placeholder="dvs">
+        <label>HOS_ID</label>
+        <input type="text" name="edit_hos_ID" value="<?php echo $row['hos_ID']?>" class="form-control" placeholder="hos_ID">
         </div>
         <div class="form-group">
         <label>USERTYPE</label>
