@@ -35,7 +35,7 @@
     //import database
     include("connection.php");
    
-    //$_SESSION['verified'] = 1;
+
 
 
     if(isset($_POST['login-btn'])){
@@ -50,29 +50,33 @@
         $result= $database->query("select * from webuser where email='$email'");
         if($result->num_rows==1){
             $utype=$result->fetch_assoc()['usertype'];
-            
+            $veridata= $database->query("select * from webuser where email='$email'");
+                $verify=$veridata->fetch_assoc()['verified'];
             if ($utype=='p'){
                 //TODO
                 $re= $database->query("select * from webuser where email='$email'");
                 $storedpass=$re->fetch_assoc()['password'];
-               if(password_verify($password, $storedpass)  == 'GET' && $_SESSION['verified'] == 1 ) {
-                   
+                if ($verify == '1') {
+                if (password_verify($password, $storedpass)) {
 
-                  
 
-                    //   Patient dashbord
-                    $_SESSION['user']=$email;
-                    $_SESSION['usertype']='p';
-                    
-                    
-                    header('location: patient/index.php');
+                        //   Patient dashbord
+                        $_SESSION['user'] = $email;
+                        $_SESSION['usertype'] = 'p';
 
+
+                        header('location: patient/index.php');
+
+                    }
+                }
+                if ($verify != '1') {
+                    header('location: verification.php');
                 }
                  else {
-                    header('location: verification.php');
+                   
                     $error = '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
                    
-                }
+                 }
 
             }elseif($utype=='a'){
                 //TODO
