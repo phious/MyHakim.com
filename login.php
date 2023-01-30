@@ -19,32 +19,26 @@
     //learn from w3schools.com
     //Unset all the server side variables
     require 'controllers/authController.php';
-
-    // verify user using token
-if(isset($_GET['password-token'])){
-    $passwordToken = $_GET['password-token'];
-    resetPassword($passwordToken);
-}
-
-
+   
+   
+    
     $_SESSION["user"]="";
     $_SESSION["usertype"]="";
+   
     
     // Set the new timezone
-    date_default_timezone_set('Asia/Aden');
+    date_default_timezone_set('Asia/Kolkata');
     $date = date('Y-m-d');
 
-    $_SESSION["date"]=$date;
-    
+   $_SESSION["date"]=$date;
 
     //import database
     include("connection.php");
    
+    //$_SESSION['verified'] = 1;
 
 
-    
-
-    if($_POST){
+    if(isset($_POST['login-btn'])){
         $_GLOBAL['is_included'] = true;
     
         include("create-account.php");
@@ -52,26 +46,31 @@ if(isset($_GET['password-token'])){
         $password=$_POST['userpassword'];
 
         $error='<label for="promter" class="form-label"></label>';
-        $re= $database->query("select * from webuser where email='$email'");
-        $storedpass=$re->fetch_assoc()['password'];
-      
+
         $result= $database->query("select * from webuser where email='$email'");
         if($result->num_rows==1){
             $utype=$result->fetch_assoc()['usertype'];
+            
             if ($utype=='p'){
                 //TODO
-                 if(password_verify($password, $storedpass)) {
+                $re= $database->query("select * from webuser where email='$email'");
+                $storedpass=$re->fetch_assoc()['password'];
+               if(password_verify($password, $storedpass)  == 'GET' && $_SESSION['verified'] == 1 ) {
+                   
 
+                  
 
                     //   Patient dashbord
                     $_SESSION['user']=$email;
                     $_SESSION['usertype']='p';
                     
-                    header('location: patient/index.php');
-                   
-                } else {
                     
-                        $error = '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
+                    header('location: patient/index.php');
+
+                }
+                 else {
+                    header('location: verification.php');
+                    $error = '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
                    
                 }
 
@@ -109,19 +108,21 @@ if(isset($_GET['password-token'])){
                 }
 
 
-            } elseif ($utype == 'd') {
+            }
+
+            elseif($utype=='d'){
                 //TODO
                 $checker = $database->query("SELECT * FROM `doctor` WHERE docemail='$email' AND docpassword='$password'");
-                if ($checker->num_rows == 1) {
+                if ($checker->num_rows==1){
 
 
                     //   doctor dashbord
-                    $_SESSION['user'] = $email;
-                    $_SESSION['usertype'] = 'd';
+                    $_SESSION['user']=$email;
+                    $_SESSION['usertype']='d';
                     header('location: doctor/index.php');
 
-                } else {
-                    $error = '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
+                }else{
+                    $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Wrong credentials: Invalid email or password</label>';
                 }
 
             }
@@ -132,12 +133,12 @@ if(isset($_GET['password-token'])){
 
 
 
-       }
-       else{
+    }
+    
+        
+    else{
         $error='<label for="promter" class="form-label">&nbsp;</label>';
     }
-        
-   
 
     ?>
 
@@ -191,7 +192,7 @@ if(isset($_GET['password-token'])){
 
             <tr>
                 <td>
-                    <input type="submit" value="Login" class="login-btn btn-primary btn">
+                    <input type="submit" value="Login" name='login-btn' class="login-btn btn-primary btn">
                 </td>
             </tr>
         </div>
