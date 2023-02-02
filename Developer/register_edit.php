@@ -19,7 +19,7 @@ if(isset($_POST['edit_btn'])) {
     $query_run = mysqli_query($database, $query);
 
     foreach($query_run as $row) {
-        ?>
+        ?>  
  
     <form action="Addhos_backend.php" method="POST">
         <input type="hidden" name="edit_id" value="<?php echo $row['hid']?>">
