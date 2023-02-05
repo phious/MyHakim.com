@@ -227,7 +227,8 @@
                         
                             <?php
 
-                                
+                               $sqlmain= "SELECT * FROM `pending_patient`  ";
+
                                 $result= $database->query($sqlmain);
 
                                 if($result->num_rows==0){
@@ -317,12 +318,7 @@
 
                 $database->query("insert into patient (pemail,pname,paddress) values ('$name','$email','$dob');");
             
-                $ssqlmain= "select * from pending_patient where id=?";
-                $sstmt = $database->prepare($ssqlmain);
-                $sstmt->bind_param("i",$id);
-                $sstmt->execute();
-                $result001 = $sstmt->get_result();
-                $semail=($result001->fetch_assoc())["email"];
+              
         
                 $ssqlmain= "delete from pending_patient where email=?;";
                 $sstmt = $database->prepare($ssqlmain);
