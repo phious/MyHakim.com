@@ -100,6 +100,11 @@
                         <a href="appointment.php" class="non-style-link-menu"><div><p class="menu-text">Appointment</p></a></div>
                     </td>
                 </tr>
+                <tr class="menu-row">
+                    <td class="menu-btn menu-icon-timer ">
+                        <a href="Pending_appointments.php" class="non-style-link-menu "><div><p class="menu-text">Pending Appointments</p></a></div>
+                    </td>
+                </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-patient  menu-active menu-icon-patient-active">
                         <a href="patient.php" class="non-style-link-menu  non-style-link-menu-active"><div><p class="menu-text">Patients</p></a></div>
@@ -269,7 +274,7 @@
                                         <div style="display:flex;justify-content: center;">
                                         
                                         <a href="?action=view&id='.$pid.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px; margin-right: 40px; padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">View</font></button></a>
-                                        <a href="?history=history&id='.$pid.'"  name="history"class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view" name="add_history" style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Add history</font></button></a>
+                                        <a href="?action=add"  class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view" name="add_history" style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Add history</font></button></a>
                                        
                                         </div>   
                                                                                            
@@ -301,10 +306,9 @@
     </div>
     <?php 
      if($_GET){
-        $id=$_GET["id"];
-        $action=$_GET["history"];
         
-            
+        $action=$_GET["add"];
+
             echo '
             <div id="popup1" class="overlay">
                     <div class="popup">
@@ -388,117 +392,63 @@
             $row=$result->fetch_assoc();
             $name=$row["pname"];
             $email=$row["pemail"];
-            
             $dob=$row["pdob"];
             $tele=$row["ptel"];
             $address=$row["pcity"];
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
-                    <center>
-                    <div class="hyu">
-                        <a class="close" href="patient.php">&times;</a>
-                        <div class="content">
+            <div class="popup">
+            <center>
+            <div class="hyu">
+                <a class="close" href="patient.php">&times;</a>
+                <div class="content">
 
-                        </div>
-                        <div style="display: flex;justify-content: center;">
-                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
-                        
-                            <tr>
-                                <td>
-                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">View Details.</p><br><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                
-                                <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Patient ID: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    P-'.$id.'<br><br>
-                                </td>
-                                
-                            </tr>
-                            
-                            <tr>
-                                
-                                <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Name: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    '.$name.'<br><br>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="Email" class="form-label">Email: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                '.$email.'<br><br>
-                                </td>
-                            </tr>
-                            <tr>
-                               
-                            </tr>
-                           
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="Tele" class="form-label">Telephone: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                '.$tele.'<br><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="spec" class="form-label">Address: </label>
-                                    
-                                </td>
-                            </tr>
-                            <tr>
-                            <td class="label-td" colspan="2">
-                            '.$address.'<br><br>
-                            </td>
-                            </tr>
-                            <tr>
-                                
-                                <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Date of Birth: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    '.$dob.'<br><br>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <a href="patient.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
-                                
-                                    
-                                </td>
+                </div>
+                <div style="display: flex;justify-content: center;">
+                <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
                 
-                            </tr>
-                           
+                    <tr>
+                        <td>
+                            <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">View Details.</p><br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td class="label-td" colspan="2">
+                            <label for="history" class="form-label">Add history: </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <input type="text" name="history" id="text"  style="margin: top;width: 95%; height: 200px;">
+                        </td>
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">
+                            <a href="patient.php"><input type="submit" name="add_history" value="add" class="login-btn btn-primary-soft btn" ></a>
+                        
+                            
+                        </td>
+        
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a href="patient.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
+                        
+                            
+                        </td>
+        
+                    </tr>
+                   
 
-                        </table>
-                        </div>
-                    </center>
-                    <br><br>
-            </div>
-            </div>
-            ';
+                </table>
+                </div>
+            </center>
+            <br><br>
+    </div>
+    </div>    ';
         
     };
 

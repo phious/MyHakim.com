@@ -88,7 +88,7 @@
                         <a href="appointment.php" class="non-style-link-menu"><div><p class="menu-text">Appointment</p></a></div>
                     </td>
                     <tr class="menu-row">
-                    <td class="menu-btn menu-icon-schedule ">
+                    <td class="menu-btn menu-icon-timer ">
                         <a href="Pending_appointments.php" class="non-style-link-menu "><div><p class="menu-text">Pending Appointments</p></a></div>
                     </td>
                 </tr>

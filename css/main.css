@@ -377,6 +377,9 @@ input[type=search]:focus {
 .menu-icon-appoinment{
   background-image: url('../img/icons/book.svg');
 }
+.menu-icon-timer{
+  background-image: url('../img/icons/timer.png');
+}
 .menu-icon-patient{
   background-image: url('../img/icons/patients.svg');
 }
@@ -418,6 +421,11 @@ input[type=search]:focus {
   color: var(--primarycolor);
   
   background-image: url('../img/icons/patients-hover.svg');
+}
+.menu-icon-patient:hover,.menu-icon-timer-active{
+  color: var(--primarycolor);
+  
+  background-image: url('../img/icons/timer.png');
 }
 
 .menu-icon-settings:hover,.menu-icon-settings-active{
