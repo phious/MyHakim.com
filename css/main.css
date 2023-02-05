@@ -422,7 +422,7 @@ input[type=search]:focus {
   
   background-image: url('../img/icons/patients-hover.svg');
 }
-.menu-icon-patient:hover,.menu-icon-timer-active{
+.menu-icon-timer:hover,.menu-icon-timer-active{
   color: var(--primarycolor);
   
   background-image: url('../img/icons/timer.png');
@@ -471,6 +471,12 @@ input[type=search]:focus {
 
 .btn-view{
   background-image: url('../img/icons/view-iceblue.svg');
+}
+.ok-view{
+  background-image: url('../img/icons/ok.png');
+}
+.notok-view{
+  background-image: url('../img/icons/notok.png');
 }
 .btn-view:hover{
   background-image: url('../img/icons/view-white.svg');
