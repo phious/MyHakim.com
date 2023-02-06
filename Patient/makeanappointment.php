@@ -59,10 +59,10 @@ if ($_POST) {
         $appotime = $_POST['appotime'];
         $spec = $_POST['spec'];
         $medconcern = $_POST['medconcern'];
-      
+        $hos_ID = $_POST['hos_ID'];
 
 
-        $database->query("insert into pending_patient(name,email,telephone,dateofbirth,appointmentdate,appointmenttime,specialities,medicalconcern) values ('$name','$email','$tele','$dob','$appodate','$appotime','$spec','$medconcern');");
+        $database->query("insert into pending_patient(name,email,telephone,dateofbirth,appointmentdate,appointmenttime,specialities,medicalconcern, hos_ID) values ('$name','$email','$tele','$dob','$appodate','$appotime','$spec','$medconcern','$hos_ID');");
 
         header('Location: payment_page.php');
     }
@@ -206,10 +206,17 @@ if ($_POST) {
 
                         </td>
                     </tr>
+          
+                <tr>
+                    <td class="label-td" colspan="2">
+                        <input type="hidden"  name="hos_ID" id="text" value='1131'   style="margin: top;width: 95%; height: 100px;" required>
+
+                    </td>
+                </tr>
                     
         
 
-                            <td>
+                <td>
                             <form method="post" action="" >
                     <input type="submit" name="submit" value="NEXT" class="login-btn btn-primary btn">
                     </form>

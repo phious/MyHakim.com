@@ -257,6 +257,7 @@
                                 
                                     $dob=$row["dateofbirth"];
                                     $tel=$row["telephone"];
+                                    $hos_ID=$row["hos_ID"];
                                     
                                     echo '<tr>
                                         <td> &nbsp;'.
@@ -271,6 +272,12 @@
                                          </td>
                                         <td>
                                         '.substr($dob,0,10).'
+                                        </td>
+                                         <td>
+                                        '.substr($dob,0,10).'
+                                        </td>
+                                        <td>
+                                        '.substr($hos_ID,0,10).'
                                         </td>
                                         <td >
                                         <div style="display:flex;justify-content: center;">
@@ -316,7 +323,7 @@
            
 
 
-                $database->query("insert into patient (pemail,pname,paddress) values ('$name','$email','$dob');");
+                $database->query("insert into patient (pemail,pname,pdob,ptel,hos_ID) values ('$email','$name','$dob','$tel','$hos_ID');");
             
               
         
