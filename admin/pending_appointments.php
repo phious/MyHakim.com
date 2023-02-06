@@ -273,9 +273,6 @@
                                         <td>
                                         '.substr($dob,0,10).'
                                         </td>
-                                         <td>
-                                        '.substr($dob,0,10).'
-                                        </td>
                                         <td>
                                         '.substr($hos_ID,0,10).'
                                         </td>
