@@ -100,6 +100,7 @@ function resetPassword($token)
     header('Location: reset_password.php');
     exit(0);
 }
+
 // verify users using token
 if(isset($_GET['password-token'])){
     $passwordToken = $_GET['password-token'];

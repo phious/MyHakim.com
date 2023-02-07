@@ -60,9 +60,10 @@ if ($_POST) {
         $spec = $_POST['spec'];
         $medconcern = $_POST['medconcern'];
         $hos_ID = $_POST['hos_ID'];
+        $token = $_POST['token'];
 
-
-        $database->query("insert into pending_patient(name,email,telephone,dateofbirth,appointmentdate,appointmenttime,specialities,medicalconcern, hos_ID) values ('$name','$email','$tele','$dob','$appodate','$appotime','$spec','$medconcern','$hos_ID');");
+        $token = bin2hex(random_bytes(50));
+        $database->query("insert into pending_patient(name,email,telephone,dateofbirth,appointmentdate,appointmenttime,specialities,medicalconcern,token,hos_ID) values ('$name','$email','$tele','$dob','$appodate','$appotime','$spec','$medconcern','$token','$hos_ID');");
 
         header('Location: payment_page.php');
     }

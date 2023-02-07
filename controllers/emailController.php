@@ -46,8 +46,6 @@ function  sendVerificationEmail($email, $token){
     $result = $mailer->send($message);
 }
 
-
-
 function sendPasswordResetLink($email, $token)
 {
     global $mailer;

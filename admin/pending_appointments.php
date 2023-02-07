@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +40,7 @@
 
     //learn from w3schools.com
 
-    session_start();
+    require '../controllers/authController2.php';
 
     $_SESSION["user"]="";
     $_SESSION["usertype"]="";
@@ -248,6 +249,10 @@
                                     </tr>';
                                     
                                 }
+
+                                
+                                
+                                 
                                 else{
                                 for ( $x=0; $x<$result->num_rows;$x++){
                                     $row=$result->fetch_assoc();
@@ -317,9 +322,11 @@
 
            
             if ($action == 'approve') {
-           
 
 
+                
+
+                
                 $database->query("insert into patient (pemail,pname,pdob,ptel,hos_ID) values ('$email','$name','$dob','$tel','$hos_ID');");
             
               
@@ -358,6 +365,17 @@
             </div>
             </div>    ';
 
+            if(count($errors) == 0) {
+                $sql = "SELECT * FROM pending_patient WHERE email='$email' LIMIT 1 ";
+                $result = mysqli_query($database, $sql);
+                $user = mysqli_fetch_assoc($result);
+                $token = $user['token'];
+                sendApprovalEmail($email, $token);
+                header('Location: pending_patient.php');
+                exit(0);
+            }
+
+
 
             } elseif ($action == 'deny') {
               
@@ -374,12 +392,6 @@
                         <br> The appointment is denied ! </br><br>The Denial email will be sent to the new patient !</br><br> This denial might take a while.</br>
                             &nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
-                       
-
-                       
-                   
-                  
-
 
                     <div class="overflow dark" id="preload">
                     <a href="pending_appointments.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;OK&nbsp;&nbsp;</font></button></a>
@@ -391,6 +403,20 @@
                     <br><br>
             </div>
             </div>    ';
+
+            if(count($errors) == 0) {
+                $sql = "SELECT * FROM pending_patient WHERE email='$email' LIMIT 1 ";
+                $result = mysqli_query($database, $sql);
+                $user = mysqli_fetch_assoc($result);
+                $token = $user['token'];
+                sendDenialEmail($email, $token);
+                header('Location: pending_patient.php');
+                exit(0);
+            }
+
+
+
+
 
             }
         
