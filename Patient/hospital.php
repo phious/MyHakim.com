@@ -130,7 +130,7 @@
   background: #27ae60;
   color:#fff;
   margin-top: 5px;
-  cursor: pointer;
+  cursor: pointer;ace
 }
 
 .container form .submit-btn:hover{
@@ -190,56 +190,42 @@
 </head>
 <body>
     
-    <?php
+<?php
 
-    
+//learn from w3schools.com
 
-    session_start();
+session_start();
 
-    if(isset($_SESSION["user"])){
-        if(($_SESSION["user"])=="" or $_SESSION['usertype']!='p'){
-            header("location: ../login.php");
-        }else{
-            $useremail=$_SESSION["user"];
-        }
-
-    }
-   else{
+if(isset($_SESSION["user"])){
+    if(($_SESSION["user"])=="" or $_SESSION['usertype']!='p'){
         header("location: ../login.php");
-    }
-    if($_POST){
-
-    
-
-        $_SESSION["personal"]=array(
-            'name'=>$_POST['name'],
-            'email'=>$_POST['email'],
-            'Tele'=>$_POST['Tele'],
-            'nic'=>$_POST['nic'],
-            'dob'=>$_POST['dob'],
-            'appodate'=>$_POST['appodate'],
-            'appotime'=>$_POST['appotime'],
-            'spec'=>$_POST['spec']
-        );
-    
-    
-        print_r($_SESSION["personal"]);
-        header("location: hospital.php?action=next");
-    
-    
-    
-    
+    }else{
+        $useremail=$_SESSION["user"];
     }
 
-    //import database
-    include("../connection.php");
-    $userrow = $database->query("SELECT * FROM `webuser` WHERE email='$useremail'");
-    $userfetch=$userrow->fetch_assoc();
-    $userid= $userfetch["id"];
-    $username=$userfetch["name"];
-    
-    ?>
-    
+}else{
+    header("location: ../login.php");
+}
+
+
+
+//import database
+include("../connection.php");
+
+$sqlmain= "SELECT * FROM `webuser` WHERE email=?";
+$stmt = $database->prepare($sqlmain);
+$stmt->bind_param("s",$useremail);
+$stmt->execute();
+$userrow = $stmt->get_result();
+$userfetch=$userrow->fetch_assoc();
+$userid= $userfetch["id"];
+$username=$userfetch["name"];
+
+
+//echo $userid;
+//echo $username;
+
+?>
     
     <div class="container">
         <div class="menu">
@@ -463,218 +449,8 @@
             </table>
         </div>
     </div>
-    <?php
-
-    if($_POST){
-
-        
-
-$_SESSION["personall"]=array(
-    'name'=>$_POST['fname'],
-    'email'=>$_POST['lname'],
-    'Yele'=>$_POST['Tele'],
-    'dob'=>$_POST['dob']
-    
-);
-
-
-print_r($_SESSION["personall"]);
-header("location: http://localhost/MyHakim.com/patient/hospital.php?action=next");
-
-
-
-
-}
-?>
-
-
-
-     <?php
-        
-      
-     if ($_GET) {
-        
-         $id = $_GET["id"];
-         $action = $_GET["action"];
-         if ($action == 'add') {
-             $error_1 = $_GET["error"];
-             $errorlist = array(
-                 '1' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Already have an account for this Email address.</label>',
-                 '2' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Password Conformation Error! Reconform Password</label>',
-                 '3' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;"></label>',
-                 '4' => "",
-                 '0' => '',
-
-             );
-             
-             if ($error_1 != '4') {
-               
-                 echo '
-                 
-   
-    ';
-             }
-         }
-         elseif ($action == 'next') {
-            session_start();
-             $error_1 = $_GET["error"];
-             $errorlist = array(
-                 '1' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Already have an account for this Email address.</label>',
-                 '2' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Password Conformation Error! Reconform Password</label>',
-                 '3' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;"></label>',
-                 '4' => "",
-                 '0' => '',
-
-             );
-             if ($error_1 != '4') {
-                 echo '
-       
-                 <div id="popup1" class="overlay">
-    
-            <div class="popup">
-            <center>
-            <div >
-                <a class="close" href="hospital.php">&times;</a> 
-               <div class="content">
-                <div style="display: flex;justify-content: center;">
-                
-                <div class="container">
-
-                <form action="" method="POST" >
-
-        <div class="row">
-
-            <div class="col">
-
-                <h3 class="title">Payment Information</h3>
-                <h4>COMMERCIAL BANK OF ETHIOPIA (CBE) ACCOUNT NUMBER :</h4>
-                <div class="boxy">                
-                   10200232342      
-                </div>
-                <h4>BANK OF ABYSSINIA (BoA) :</h4>
-                <div class="boxy">                
-                   10200232342      
-                </div>
-                <h4>AWASH BANK ACCOUNT NUMBER :</h4>
-                <div class="boxy">                
-                   10200232342      
-                </div>
-                <h4>TeleBirr ACCOUNT NUMBER :</h4>
-                <div class="boxy">                
-                   10200232342      
-                </div>
-
-                
-                
-                   
-                
-
-            </div>
-
-            <div class="col">
-
-                <h3 class="title">payment</h3>
-
-                <div class="inputBox">
-                    <span>Payment accepted :</span>
-                    <img src="../css/cbe.jfif" alt="">
-                    <img src="../css/telebirr.png" alt="">
-                    <img src="../css/amole.jfif" alt="">
-                    <img src="../css/arifpay.png" alt="">
-                </div>
-                <h>Amount of Money :</h>
-                <div class="boxy">                
-                   520 ETB    
-                </div>
-                <div class="inputBox">
-                    <span>Transaction ID</span>
-                    <input type="number" placeholder="Insert your Transaction ID">
-                </div>
-                <div class="inputBox">
-                  
-                    <label for="payment_select">Enter your Preferred Payment Method</label>
-                    <div class="boxpay">
-<select name="method" id="payment_select">
-<option value="">--Please choose an option--</option>
-  <option value="CBE">CBE</option>
-  <option value="BoA">BoA</option>
-  <option value="Awash Bank">Awash Bank</option>
-  <option value="Tele Birr">Tele Birr</option>
-  <option value="Arif Pay">Arif Pay</option>
-  <option value="Hello Cash">Amole</option>
-  <option value="Amole">Chappa</option>
-</select>
-                </div>
-
-                
-                </div>
-
-            </div>
-    
-        </div>
-        
-         <a  href="hospital.php?action=add&id" class="btn-primary-soft btn button-icon"   style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;">Back</button>
-                        </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                        <a  href="?action=paymentpending"  class="btn-primary-soft btn button-icon"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;">Procced to Payment</button></a>
-    </form>
-
-</div>    
-    </div>
-    </div>
-
-     
-
-   ';
-             }
-         } elseif ($action == 'paymentpending') {
-             $error_1 = $_GET["error"];
-             $errorlist = array(
-                 '1' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Already have an account for this Email address.</label>',
-                 '2' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Password Conformation Error! Reconform Password</label>',
-                 '3' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;"></label>',
-                 '4' => "",
-                 '0' => '',
-
-             );
-             if ($error_1 != '4') {
-                 echo '
-      
-                <div id="popup1" class="overlay">
-   
-           <div class="popup">
-           <center>
-           <div >
-               <a class="close" href="hospital.php">&times;</a> 
-            
-              
-               
-               
-               <div class="loader"></div>
-               <p class="ldr"> <br>Thank You for booking your appointment!</br> 
-
-
-
-               <br>Please wait for the hospital personnel to approve your payment</br>
-               <br> After you are approved, immedietly you will receive an email comfirmation including all the details  </br></p>
  
-       </div>
-       
-        <a  href="hospital.php?action=add&id" class="btn-primary-soft btn button-icon"   style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;">Back</button>
-                       </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-   </form>
-
-</div>    
-   </div>
-   </div>
-
     
-
-  ';
-             }
-         }
-     }
-     
-?>
 
 
 

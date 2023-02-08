@@ -220,6 +220,11 @@
                                 </th>
                                 <th class="table-headin">
                                     
+                                    Hospital ID
+                                    
+                                </th>
+                                <th class="table-headin">
+                                    
                                     Confirmation
                                     
                                 </tr>
@@ -270,22 +275,22 @@
                                         .'</td>
                                         
                                         <td>
-                                            '.substr($tel,0,10).'
+                                            '.substr($tel,0,13).'
                                         </td>
                                         <td>
-                                        '.substr($email,0,20).'
+                                        '.substr($email,0,25).'
                                          </td>
                                         <td>
                                         '.substr($dob,0,10).'
                                         </td>
                                         <td>
-                                        '.substr($hos_ID,0,10).'
+                                        '.substr($hos_ID,0,5).'
                                         </td>
                                         <td >
                                         <div style="display:flex;justify-content: center;">
                                         
-                                        <a href="?action=approve" class="non-style-link"><button  class="btn-primary-soft btn button-icon ok-view"  style=" background-color:#66ff66; padding-left: 40px; margin-right: 40px; padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Approve the patient</font></button></a>
-                                        <a href="?action=deny"  class="non-style-link"><button  class="btn-primary-soft btn button-icon notok-view" name="add_history" style=" background-color:#ff6666; padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Deny the patient</font></button></a>
+                                        <a href="?action=approve" class="non-style-link"><button  class="btn-primary-soft btn button-icon ok-view"  style=" background-color:#66ff66; padding-left: 40px; margin-right: 40px; padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Approve </font></button></a>
+                                        <a href="?action=deny"  class="non-style-link"><button  class="btn-primary-soft btn button-icon notok-view" name="add_history" style=" background-color:#ff6666; padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Deny </font></button></a>
                                        
                                         </div>   
                                                                                            
