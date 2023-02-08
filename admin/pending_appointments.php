@@ -394,7 +394,7 @@
                         <h2>Appointment Denial</h2>
                         <a class="close" href="pending_appointments.php">&times;</a>
                         <div class="content">
-                        <br> The appointment is denied ! </br><br>The Denial email will be sent to the new patient !</br><br> This denial might take a while.</br>
+                        <br> The appointment is denied ! </br><br>The Denial email will be sent to the new patient !</br><br> This denied patient will be appearing here untill the patient is approved again !</br>
                             &nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
 
