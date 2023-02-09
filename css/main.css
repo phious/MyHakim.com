@@ -676,7 +676,7 @@ top:-20px;
 right:25px;
 width:10px;
 height:10px;
-background;#5c81dc;transform:rotat(45deg);
+background:#5c81dc;transform:rotate(45deg);
 display:none;
 }
 .copy-text.active buuton:before,

@@ -13,6 +13,32 @@
         .container{
             animation: transitionIn-X 0.5s;
         }
+    
+        @media (min-width: 320px) and (max-width: 480px) {
+           .container{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            h
+           }
+        }
+        @media (min-width: 481px) and (max-width: 768px) {
+            .container{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            
+           }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container{
+            margin: 0;
+            padding: 0;
+            width: 70%;
+            
+           }
+
+        }
     </style>
 </head>
 <body>
