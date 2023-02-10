@@ -22,7 +22,9 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            h
+           }
+           .header-text{
+            color: #0978f6;
            }
         }
         @media (min-width: 481px) and (max-width: 768px) {
@@ -32,6 +34,9 @@
             width: 100%;
             
            }
+           .header-text{
+            color: #0978f6;
+           }
         }
         @media (min-width: 769px) and (max-width: 1024px) {
             .container{
@@ -39,6 +44,9 @@
             padding: 0;
             width: 70%;
             
+           }
+           .header-text{
+            color: #0978f6;
            }
 
         }
@@ -58,7 +66,7 @@
                                         <?php endif; ?>
                                         <tr>
                                             <td>
-                                                <p class="header-text">Welcome Back!</p>
+                                                <p class="header-text">MyHakim</p>
                                             </td>
                                         </tr>
                                     <div class="form-body">

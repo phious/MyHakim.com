@@ -22,6 +22,9 @@
             width: 100%;
             
            }
+           .header-text{
+            color: #0978f6;
+           }
         }
         @media (min-width: 481px) and (max-width: 768px) {
             .container{
@@ -30,6 +33,9 @@
             width: 100%;
             
            }
+           .header-text{
+            color: #0978f6;
+           }
         }
         @media (min-width: 769px) and (max-width: 1024px) {
             .container{
@@ -37,6 +43,9 @@
             padding: 0;
             width: 70%;
             
+           }
+           .header-text{
+            color: #0978f6;
            }
 
         }
@@ -182,7 +191,7 @@
         <table border="0" style="margin: 0;padding: 0;width: 60%;">
             <tr>
                 <td>
-                    <p class="header-text">Welcome Back!</p>
+                    <p class="header-text">MyHakim</p>
                 </td>
             </tr>
         <div class="form-body">
@@ -236,7 +245,7 @@
             <tr>
                 <td>
                     <label for="" class="sub-text" style="font-weight: 180px;">Don't have an account&#63; </label>
-                    <a href="create-account.php" style="font-size: 15px;" class="hover-link1 non-style-link">Sign Up</a>
+                    <a href="create-account.php" style="font-size: 15px;" class="hover-link1 non-style-link">Create new account</a>
                     <br><br><br>
                 </td>
             </tr>

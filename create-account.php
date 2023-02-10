@@ -19,8 +19,11 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            h
            }
+           .header-text{
+            color: #0978f6;
+           }
+
         }
         @media (min-width: 481px) and (max-width: 768px) {
             .container{
@@ -29,6 +32,10 @@
             width: 100%;
             
            }
+           .header-text{
+            color: #0978f6;
+           }
+
         }
         @media (min-width: 769px) and (max-width: 1024px) {
             .container{
@@ -37,6 +44,10 @@
             width: 70%;
             
            }
+           .header-text{
+            color: #0978f6;
+           }
+
 
         }
     </style>
