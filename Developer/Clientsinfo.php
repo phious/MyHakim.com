@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Developer</title>
+    <title>lient info</title>
 
     <!-- Custom fonts for this template -->
     <link href="cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">

@@ -108,8 +108,9 @@ if(isset($_POST['singnup-btn'])){
             $_SESSION["user"]=$email;
             $_SESSION["usertype"]="p";
             $_SESSION["username"]=$fname;
-
+            
             $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;"></label>';
+            header("location: login.php");
         }
         
     }if (count($errors) === 0 ){

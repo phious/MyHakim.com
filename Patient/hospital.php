@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="../css/animations.css">  
     <link rel="stylesheet" href="../css/main.css""<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/admin.css">
-    
+
+
    
     <title>Hospitals</title>
     <style>
@@ -229,6 +230,10 @@ $username=$userfetch["name"];
     
     <div class="container">
         <div class="menu">
+        <input type="checkbox" id="toggler" />
+<aside class="aside-wrapper">
+  <h1 class="logo-text"> <label for="toggler"><i class="fas fa-bars sidebar-toggle"></i></label></h1>
+
             <table class="menu-container" border="0">
                 <tr>
                     <td style="padding:10px" colspan="2">

@@ -17,7 +17,7 @@
 }
 
 .menu-container{
-    width: 100%;
+    width: 50%;
     border-spacing: 0;
     
 }
@@ -132,3 +132,67 @@
     
 }
 
+
+
+
+
+
+aside {
+    width: 250px;
+    height: 100vh;
+   
+    position: fixed;
+  
+    color: #fff;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  
+    box-shadow: 3px 1px 5px 0px rgba(0, 0, 0, 0.75)
+  }
+  
+  aside ul {
+    padding-inline-start: 0;
+  }
+  
+  aside ul li {
+    list-style: none;
+    font-size: 18px;
+    padding: 20px 0;
+    cursor: pointer;
+  }
+  
+  aside ul li .fas {
+    width: 50px;
+  }
+  
+  .aside-wrapper {
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  
+  .logo-text {
+    font-size: 32px;
+    position: relative;
+  }
+  
+  .sidebar-toggle {
+    position: absolute;
+    top: 5px;
+    left: 205px;
+    background: blueviolet;
+    padding: 4px 11px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  input {
+    display: none;
+  }
+  
+  /* Toggler Functionality */
+  input:checked ~ aside {
+    left: -250px;
+  }
