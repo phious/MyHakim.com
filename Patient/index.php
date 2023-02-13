@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="../css/animations.css">  
     <link rel="stylesheet" href="../css/main.css">  
     <link rel="stylesheet" href="../css/admin.css">
-  
     <link rel="stylesheet" href="../css/patient.css">
-    <link rel="stylesheet" href="style.css">    <title>Dashboard</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="../css/style.css">
+   
+    <title>Dashboard</title>
 </head>
+
+<style>
+
+</style>     
+
+ 
+
 <body>
-    
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-    
-    <script type="module" src="./index.js"></script>
-
-<body style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <?php
 
     //learn from w3schools.com
@@ -57,84 +57,31 @@
     //echo $username;
     
     ?>
-     <div class="container">
      
-        <div class="menu">
-        <input type="checkbox" id="toggler" />
-        <aside class="aside-wrapper">
-  <h1 class="logo-text"> <label for="toggler"><i class="fas fa-bars sidebar-toggle"></i></label></h1>
+ <!-- partial:index.partial.html -->
+<!-- Video Source -->
+  <!-- https://www.pexels.com/video/aerial-view-of-beautiful-resort-2169880/ -->
+  <section class="showcase">
+    <header>
+      <div class="toggle"></div>
+    </header>
 
-            <table class="menu-container" border="0">
-                <tr>
-                    <td style="padding:10px" colspan="2">
-                        <table border="0" class="profile-container">
-                            <tr>
-                                <td width="30%" style="padding-left:20px" >
-                                    <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
-                                </td>
-                                <td style="padding:0px;margin:0px;">
-                                    <p class="profile-title"><?php echo substr($username,0,13)  ?>..</p>
-                                    <p class="profile-subtitle"><?php echo substr($useremail,0,22)  ?></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
-                                </td>
-                            </tr>
-                    </table>
-                    </td>
-                
-                </tr>
-                <tr class="menu-row" >
-                    <td class="menu-btn menu-icon-home " >
-                        <a href="index.php" class="non-style-link-menu "><div><p class="menu-text">Home</p></a></div></a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-doctor menu-active menu-icon-doctor-active">
-                        <a href="hospital.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">All Hospital</p></a></div>
-                    </td>
-                </tr>
-                
-                <tr class="menu-row" >
-                    <td class="menu-btn menu-icon-session">
-                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Scheduled Sessions</p></div></a>
-                    </td>
-                </tr>
-                <tr class="menu-row" >
-                    <td class="menu-btn menu-icon-appoinment">
-                        <a href="appointment.php" class="non-style-link-menu"><div><p class="menu-text">My Bookings</p></a></div>
-                    </td>
-                </tr>
-                <tr class="menu-row" >
-                    <td class="menu-btn menu-icon-settings">
-                        <a href="settings.php" class="non-style-link-menu"><div><p class="menu-text">Settings</p></a></div>
-                    </td>
-                </tr>
-                
-            </table>
-
-</div>
-           
-           
-        <div class="dash-body" style="margin-top: 0px">
-            <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;" >
+    <table>
                         
                         <tr >
                             
-                            <td colspan="1" class="nav-bar" >
-                            <p style="font-size: 23px;padding-left:12px;font-weight: 600;margin-left:20px;">Home</p>
+                            <td  class="nav-bar" >
+                            <p style=" position: absolute; padding-top: -5px; left:20px; top: 10px; font-size: 23px;padding-left:12px;font-weight: 600;margin-left:20px;">Home</p>
                           
                             </td>
                             <td width="25%">
 
                             </td>
                             <td width="15%">
-                                <p style="font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
+                                <p style="  font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
                                     Today's Date
                                 </p>
-                                <p class="heading-sub12" style="padding: 0;margin: 0;">
+                                <p style="padding-left: 100px;margin: 0;">
                                     <?php 
                                 date_default_timezone_set('Asia/Aden');
         
@@ -152,7 +99,7 @@
                                 </p>
                             </td>
                             <td width="10%">
-                                <button  class="btn-label"  style="display: flex;justify-content: center;align-items: center;"><img src="../img/calendar.svg" width="100%"></button>
+                                <button  class="btn-label"  style="display: flex;justify-content: center; align-items: center;"><img src="../img/calendar.svg" width="100%"></button>
                             </td>
         
         
@@ -160,8 +107,8 @@
                 <tr>
                     <td colspan="4" >
                         
-                    <center>
-                    <table class="filter-container doctor-header account-header" style="border: none;width:95%" border="0" >
+                    <center style="position: absolute; left:30px; top:50px;   ">
+                    <table  class="filter-container doctor-header account-header" style="border: none;width:130%;" border="0" >
                     <tr>
                         <td >
                             <h3>Welcome!</h3>
@@ -211,14 +158,14 @@
 
 
                             
-                                    <p style="font-size: 20px;font-weight:600;padding-left: 40px;" class="anime">Your Upcoming Booking</p>
+                                    <p style="font-size: 20px;font-weight:600;padding-left: 40px; padding-top:250px;" class="anime">Your Upcoming Booking</p>
                                     <center>
                                        
                                         <table width="85%" class="sub-table scrolldown" border="0" >
                                         <thead>
                                             
                                         <tr>
-                                        <th class="table-headin">
+                                        <th class="table-headin ">
                                                     
                                                 
                                                     Appoint. Number
@@ -312,20 +259,14 @@
 
 
                             
-                                    <p style="font-size: 20px;font-weight:600;padding-left: 40px;" class="anime">Hospitals Near Me</p>
-                                    <center>
-                                       
-                                        <table width="85%" class="sub-table scrolldown" border="0" >
-                                        <thead>
-                                            
-                                        
-                                         </td>
+                                    <p style="position: absolute;  top: 325px; font-size: 20px;font-weight:600;padding-left: 40px;padding-bottom:10px;" class="anime">Hospitals Near Me</p>
+                                    
                                         
                
  
     <div id="map">
     <iframe src="https://www.google.com/maps/d/embed?mid=1ZAg8EteRrSK9BYzoT13DkyObpzLUJNw&ehbc=2E312F" 
-    width="400" height="400"></iframe>
+    width="400" height="400" style="position: absolute; margin-left:30px; bottom: 25px;"></iframe>
     </div>
 
     <!-- 
@@ -338,8 +279,68 @@
                                         </div>
                                         </center>
 
-
-
+  </section>
+  <div class="menu">
+    <ul>
+    <table border="0"  >
+                <tr>
+                    <td style="padding:0;" >
+                        <table border="0" >
+                            <tr>
+                                <td width="30%" style="padding-left:20px; padding-bottom:550px;" >
+                                    <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
+                                </td>
+                                <td style="padding-bottom:550px;margin:0px;">
+                                    <p class="profile-title"><?php echo substr($username,0,13)  ?>..</p>
+                                    <p class="profile-subtitle"><?php echo substr($useremail,0,22)  ?></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                
+                                    <button style="position: absolute; bottom: 510px;left:100px;" class="logout-btn btn-primary-soft btn" type=“button”><a href="../logout.php">logout</a></button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                
+                </tr>
+    </table>
+            <table border="0" style="position: absolute; bottom: 250px; left: 75px;" >
+                <tr class="menu-row" >
+                    <td class="menu-btn menu-icon-home " style="">
+                        <a href="index.php" class="non-style-link-menu "><div><p class="menu-text">Home</p></a></div></a>
+                    </td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="menu-btn menu-icon-doctor">
+                        <a href="hospital.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">All Hospital</p></a></div>
+                    </td>
+                </tr>
+                
+                <tr class="menu-row" >
+                    <td class="menu-btn menu-icon-session">
+                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Scheduled Sessions</p></div></a>
+                    </td>
+                </tr>
+                <tr class="menu-row" >
+                    <td class="menu-btn menu-icon-appoinment">
+                        <a href="appointment.php" class="non-style-link-menu"><div><p class="menu-text">My Bookings</p></a></div>
+                    </td>
+                </tr>
+                <tr class="menu-row" >
+                    <td class="menu-btn menu-icon-settings">
+                        <a href="settings.php" class="non-style-link-menu"><div><p class="menu-text">Settings</p></a></div>
+                    </td>
+                </tr>
+            </table>
+                
+           
+            
+    </ul>
+  </div>
+<!-- partial -->
+  <script  src="../Js/script.js"></script>
 
 </body>
 </html>
