@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/animations.css">  
     <link rel="stylesheet" href="../css/main.css">  
     <link rel="stylesheet" href="../css/admin.css">
-        
+         <link rel="stylesheet" href="../css/style2.css">
     <title>Dashboard</title>
     <style>
         .dashbord-tables{
@@ -32,7 +32,7 @@
 
     if(isset($_SESSION["user"])){
         if(($_SESSION["user"])=="" or $_SESSION['usertype']!='a'){
-           
+            $useremail=$_SESSION["user"];
         }
 
     }else{
@@ -42,68 +42,21 @@
 
     //import database
     include("../connection.php");
+    
 
     
     ?>
-    <div class="container">
-        <div class="menu">
-            <table class="menu-container" border="0">
-                <tr>
-                    <td style="padding:10px" colspan="2">
-                        <table border="0" class="profile-container">
-                            <tr>
-                                <td width="30%" style="padding-left:20px" >
-                                    <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
-                                </td>
-                                <td style="padding:0px;margin:0px;">
-                                    <p class="profile-title">Kiduspaulos</p>
-                                    <p class="profile-subtitle">admin@myhakim.com</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
-                                </td>
-                            </tr>
-                    </table>
-                    </td>
-                </tr>
-                <tr class="menu-row" >
-                    <td class="menu-btn menu-icon-dashbord menu-active menu-icon-dashbord-active" >
-                        <a href="index.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Dashboard</p></a></div></a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-doctor ">
-                        <a href="doctors.php" class="non-style-link-menu "><div><p class="menu-text">Doctors</p></a></div>
-                    </td>
-                </tr>
-                <tr class="menu-row" >
-                    <td class="menu-btn menu-icon-schedule">
-                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Schedule</p></div></a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-appoinment">
-                        <a href="appointment.php" class="non-style-link-menu"><div><p class="menu-text">Appointment</p></a></div>
-                    </td>
-                    <tr class="menu-row">
-                    <td class="menu-btn menu-icon-timer ">
-                        <a href="Pending_appointments.php" class="non-style-link-menu "><div><p class="menu-text">Pending Appointments</p></a></div>
-                    </td>
-                </tr>
-                </tr>
-                <tr class="menu-row" >
-                    <td class="menu-btn menu-icon-patient">
-                        <a href="patient.php" class="non-style-link-menu"><div><p class="menu-text">Patients</p></a></div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="dash-body" style="margin-top: 15px" ">
-            <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;" >
+   <section class="showcase"  >
+        <div class="dash-body" style="position: relative; margin-top: -50px">
+            <header>
+            <div class="toggle"></div>
+            </header>
+
+            <div class="dash-body" style="position: relative ; margin-top: -50px ;" >
+            <table border="0" width="70%" style=" border-spacing: 0; " >
                         
                         <tr >
+                              
                             
                             <td colspan="2" class="nav-bar" >
                                 
@@ -441,29 +394,86 @@
                                                  
                                             ?>
                  
-                                            </tbody>
+                 </tbody>
                 
-                                        </table>
+                </table>
+                </div>
+                </center>
+        </td>
+    </tr>
+    
+        
+    </td>
+    </tr>
+</table>
+</div>
+
+</table>
+
+</section>
                                         </div>
-                                        </center>
-                                </td>
-                            </tr>
-                            <tr>
-                                
-                                
-                            </tr>
-                        </table>
+    <div class="container">
+    <div class="menu">
+        <table class="menu-container" >
+            <tr>
+            <td style="padding:10px" colspan="2">
+
+                         <table border="0" class="profile-container">
+                     
+                         <td style="padding:0px;margin:0px;">
+                        
+                         <img src="../img/user.png" alt="" width="35%" style="border-radius:60%">
+
+                             <p class="profile-title"><?php echo substr($username,0,25)  ?>..</p>
+                             <p class="profile-subtitle"><?php echo substr($useremail,0,55)  ?></p>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td colspan="2">
+                             <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                         </td>
+                     </tr>
+             </table>
+             </td>
+         </tr>
+         <tr class="menu-row" >
+                    <td class="menu-btn menu-icon-dashbord menu-active menu-icon-dashbord-active" >
+                        <a href="index.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Dashboard</p></a></div></a>
                     </td>
-
                 </tr>
-                        </table>
-                        </center>
-                        </td>
+                <tr class="menu-row">
+                    <td class="menu-btn menu-icon-doctor ">
+                        <a href="doctors.php" class="non-style-link-menu "><div><p class="menu-text">Doctors</p></a></div>
+                    </td>
                 </tr>
-            </table>
-        </div>
-    </div>
+                <tr class="menu-row" >
+                    <td class="menu-btn menu-icon-schedule">
+                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Schedule</p></div></a>
+                    </td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="menu-btn menu-icon-appoinment">
+                        <a href="appointment.php" class="non-style-link-menu"><div><p class="menu-text">Appointment</p></a></div>
+                    </td>
+                    <tr class="menu-row">
+                    <td class="menu-btn menu-icon-timer ">
+                        <a href="Pending_appointments.php" class="non-style-link-menu "><div><p class="menu-text">Pending Appointments</p></a></div>
+                    </td>
+                </tr>
+                </tr>
+                <tr class="menu-row" >
+                    <td class="menu-btn menu-icon-patient">
+                    </td>
+</tr>
+</table>
+</div>
 
+
+</ul>
+</div>
+
+<script  src="../Js/script.js"></script>
+                                  
 
 </body>
 </html>
