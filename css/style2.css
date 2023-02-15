@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 *
 {
-  margin: 0;
-  padding: 0;
+  
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
@@ -12,9 +11,9 @@
 .toggle
 {
   position: relative;
-  color: black;
-  left: 1250px;
+  color: black; 
   top: 50px;
+  
   width: 60px;
   height: 60px;
   background: url('../img/menu.png');
@@ -25,6 +24,7 @@
 }
 .toggle.active
 {
+  left: -90px;
   background: url('../img/cancel\ \(1\).png');
   background-repeat: no-repeat;
   background-size: 30px;
@@ -33,26 +33,27 @@
 }
 .showcase
 {
+  
   position: absolute;
   top: 0%;
-  right: 0;
+  right: 0px; 
   width: 100%;
   min-height: 100vh;
   padding-top: 20px;
-  display: flex;
+  
   justify-content: space-between;
   align-items: center;
-  background: #eeeedd;
+  background: #ffffff;
   transition: 0.5s;
   z-index: 2;
 }
 .showcase.active
 {
-  right: 300px;
+ 
+  left: 300px;
+  
+
 }
-
-
-
 
 
 .text a
@@ -76,10 +77,10 @@
 
 .menu
 {
-  position: absolute;
+  
   top: 0;
-  right: 0;
-  width: 300px;
+  left: 0;
+
   height: 100%;
   display: flex;
   justify-content: center;

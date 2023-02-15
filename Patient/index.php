@@ -8,19 +8,31 @@
     <link rel="stylesheet" href="../css/main.css">  
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/patient.css">
-    <link rel="stylesheet" href="../css/style.css">
-   
+    <link rel="stylesheet" href="../css/style2.css">
+      
+      
     <title>Dashboard</title>
+   
+    <style>
+        .dashbord-tables{
+            animation: transitionIn-Y-over 0.5s;
+        }
+        .filter-container{
+            animation: transitionIn-Y-bottom  0.5s;
+        }
+        .sub-table,.anime{
+            animation: transitionIn-Y-bottom 0.5s;
+        }
+        
+    
+    </style>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    
+    <script type="module" src="./index.js"></script>
 </head>
-
-<style>
-
-</style>     
-
- 
-
 <body>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <?php
 
     //learn from w3schools.com
@@ -57,31 +69,30 @@
     //echo $username;
     
     ?>
-     
- <!-- partial:index.partial.html -->
-<!-- Video Source -->
-  <!-- https://www.pexels.com/video/aerial-view-of-beautiful-resort-2169880/ -->
-  <section class="showcase">
-    <header>
-      <div class="toggle"></div>
-    </header>
+       
+       <section class="showcase"  >
+        <div class="dash-body" style="position: relative; margin-top: -50px">
+            <header>
+            <div class="toggle"></div>
+            </header>
 
-    <table>
+            <div class="dash-body" style="position: relative ; margin-top: -50px ;" >
+            <table border="0" width="70%" style=" border-spacing: 0; " >
                         
                         <tr >
                             
-                            <td  class="nav-bar" >
-                            <p style=" position: absolute; padding-top: -5px; left:20px; top: 10px; font-size: 23px;padding-left:12px;font-weight: 600;margin-left:20px;">Home</p>
+                            <td colspan="2" class="nav-bar" >
+                            <p style="font-size: 23px;padding-left:12px;font-weight: 600;margin-left:20px;">Home</p>
                           
                             </td>
                             <td width="25%">
 
                             </td>
                             <td width="15%">
-                                <p style="  font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
+                                <p style="font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
                                     Today's Date
                                 </p>
-                                <p style="padding-left: 100px;margin: 0;">
+                                <p class="heading-sub12" style="padding: 0;margin: 0;">
                                     <?php 
                                 date_default_timezone_set('Asia/Aden');
         
@@ -99,7 +110,7 @@
                                 </p>
                             </td>
                             <td width="10%">
-                                <button  class="btn-label"  style="display: flex;justify-content: center; align-items: center;"><img src="../img/calendar.svg" width="100%"></button>
+                                <button  class="btn-label"  style="display: flex;justify-content: center;align-items: center;"><img src="../img/calendar.svg" width="100%"></button>
                             </td>
         
         
@@ -107,8 +118,8 @@
                 <tr>
                     <td colspan="4" >
                         
-                    <center style="position: absolute; left:30px; top:50px;   ">
-                    <table  class="filter-container doctor-header account-header" style="border: none;width:130%;" border="0" >
+                    <center>
+                    <table class="filter-container doctor-header account-header" style="border: none;width:95%" border="0" >
                     <tr>
                         <td >
                             <h3>Welcome!</h3>
@@ -158,14 +169,14 @@
 
 
                             
-                                    <p style="font-size: 20px;font-weight:600;padding-left: 40px; padding-top:250px;" class="anime">Your Upcoming Booking</p>
+                                    <p style="font-size: 20px;font-weight:600;padding-left: 40px;" class="anime">Your Upcoming Booking</p>
                                     <center>
                                        
                                         <table width="85%" class="sub-table scrolldown" border="0" >
                                         <thead>
                                             
                                         <tr>
-                                        <th class="table-headin ">
+                                        <th class="table-headin">
                                                     
                                                 
                                                     Appoint. Number
@@ -259,14 +270,20 @@
 
 
                             
-                                    <p style="position: absolute;  top: 325px; font-size: 20px;font-weight:600;padding-left: 40px;padding-bottom:10px;" class="anime">Hospitals Near Me</p>
-                                    
+                                    <p style="font-size: 20px;font-weight:600;padding-left: 40px;" class="anime">Hospitals Near Me</p>
+                                    <center>
+                                       
+                                        <table width="85%" class="sub-table scrolldown" border="0" >
+                                        <thead>
+                                            
+                                        
+                                         </td>
                                         
                
  
     <div id="map">
     <iframe src="https://www.google.com/maps/d/embed?mid=1ZAg8EteRrSK9BYzoT13DkyObpzLUJNw&ehbc=2E312F" 
-    width="400" height="400" style="position: absolute; margin-left:30px; bottom: 25px;"></iframe>
+    width="400" height="400"></iframe>
     </div>
 
     <!-- 
@@ -274,39 +291,43 @@
      document has been parsed. For non-blocking uses, avoiding race conditions,
      and consistent behavior across browsers, consider loading using Promises
      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-    -->
-                                        </table>
-                                        </div>
-                                        </center>
+    -->   </tbody>
 
-  </section>
-  <div class="menu">
-    <ul>
-    <table border="0"  >
-                <tr>
-                    <td style="padding:0;" >
-                        <table border="0" >
-                            <tr>
-                                <td width="30%" style="padding-left:20px; padding-bottom:550px;" >
-                                    <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
-                                </td>
-                                <td style="padding-bottom:550px;margin:0px;">
-                                    <p class="profile-title"><?php echo substr($username,0,13)  ?>..</p>
-                                    <p class="profile-subtitle"><?php echo substr($useremail,0,22)  ?></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                
-                                    <button style="position: absolute; bottom: 510px;left:100px;" class="logout-btn btn-primary-soft btn" type=“button”><a href="../logout.php">logout</a></button>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                
-                </tr>
     </table>
-            <table border="0" style="position: absolute; bottom: 250px; left: 75px;" >
+                                </div>
+                                </center>
+                        </td> 
+                        </tr>
+                            
+                                
+                                
+        </div>           </table>
+       
+        </section>
+        <div class="container">
+        <div class="menu">
+            <table class="menu-container" >
+                <tr>
+                <td style="padding:10px" colspan="2">
+
+                             <table border="0" class="profile-container">
+                         
+                             <td style="padding:0px;margin:0px;">
+                            
+                             <img src="../img/user.png" alt="" width="35%" style="border-radius:60%">
+
+                                 <p class="profile-title"><?php echo substr($username,0,25)  ?>..</p>
+                                 <p class="profile-subtitle"><?php echo substr($useremail,0,55)  ?></p>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td colspan="2">
+                                 <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                             </td>
+                         </tr>
+                 </table>
+                 </td>
+             </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-home " style="">
                         <a href="index.php" class="non-style-link-menu "><div><p class="menu-text">Home</p></a></div></a>
@@ -334,13 +355,18 @@
                     </td>
                 </tr>
             </table>
-                
+        </div>
            
             
     </ul>
   </div>
-<!-- partial -->
-  <script  src="../Js/script.js"></script>
+    
+
+    <script  src="../Js/script.js"></script>
+                                      
+
+
+
 
 </body>
 </html>

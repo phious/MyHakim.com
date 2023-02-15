@@ -100,7 +100,7 @@
                 </tr>
             </table>
         </div>
-        <div class="dash-body" style="margin-top: 15px">
+        <div class="dash-body" style="margin-top: 15px" ">
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;" >
                         
                         <tr >
