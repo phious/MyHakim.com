@@ -21,8 +21,7 @@
         }
     </style>
     
-    
-</head>
+  
 <body>
     <?php
 
@@ -32,6 +31,8 @@
 
     if(isset($_SESSION["user"])){
         if(($_SESSION["user"])=="" or $_SESSION['usertype']!='a'){
+            
+        }else{
             $useremail=$_SESSION["user"];
         }
 
@@ -39,14 +40,24 @@
         header("location: ../login.php");
     }
     
+//import database
+include("../connection.php");
 
-    //import database
-    include("../connection.php");
-    
+$sqlmain= "SELECT * FROM `webuser` WHERE email=?";
+$stmt = $database->prepare($sqlmain);
+$stmt->bind_param("s",$useremail);
+$stmt->execute();
+$userrow = $stmt->get_result();
+$userfetch=$userrow->fetch_assoc();
+$userid= $userfetch["id"];
+$username=$userfetch["name"];
 
-    
-    ?>
-   <section class="showcase"  >
+
+//echo $userid;
+//echo $username;
+
+?>
+       <section class="showcase"  >
         <div class="dash-body" style="position: relative; margin-top: -50px">
             <header>
             <div class="toggle"></div>
@@ -412,6 +423,7 @@
 
 </section>
                                         </div>
+                                       
     <div class="container">
     <div class="menu">
         <table class="menu-container" >

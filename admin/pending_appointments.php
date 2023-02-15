@@ -40,23 +40,34 @@
 <body>
     <?php
 
-    //learn from w3schools.com
+
 
     require '../controllers/authController2.php';
 
-    $_SESSION["user"]="";
-    $_SESSION["usertype"]="";
+
+
+    if(isset($_SESSION["user"])){
+        if(($_SESSION["user"])=="" or $_SESSION['usertype']!='a'){
+            
+        }else{
+            $useremail=$_SESSION["user"];
+        }
     
-    // Set the new timezone
-    date_default_timezone_set('Asia/Aden');
-    $date = date('Y-m-d');
-    
-    $_SESSION["date"]=$date;
-    
+    }else{
+        header("location: ../login.php");
+    }
     
     //import database
     include("../connection.php");
     
+    $sqlmain= "SELECT * FROM `webuser` WHERE email=?";
+    $stmt = $database->prepare($sqlmain);
+    $stmt->bind_param("s",$useremail);
+    $stmt->execute();
+    $userrow = $stmt->get_result();
+    $userfetch=$userrow->fetch_assoc();
+    $userid= $userfetch["id"];
+    $username=$userfetch["name"];
     
     
     
@@ -400,32 +411,29 @@
 </section>
 
 <div class="container">
-<div class="menu">
-<table class="menu-container" >
-<div class="container">
         <div class="menu">
-            <table class="menu-container" border="0">
+            <table class="menu-container" >
                 <tr>
-                    <td style="padding:10px" colspan="2">
-                        <table border="0" class="profile-container">
-                            <tr>
-                                <td width="30%" style="padding-left:20px" >
-                                    <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
-                                </td>
-                                <td style="padding:0px;margin:0px;">
-                                    <p class="profile-title">Kiduspaulos</p>
-                                    <p class="profile-subtitle">admin@myhakim.com</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
-                                </td>
-                            </tr>
-                    </table>
-                    </td>
-                
-                </tr>
+                <td style="padding:10px" colspan="2">
+
+                             <table border="0" class="profile-container">
+                         
+                             <td style="padding:0px;margin:0px;">
+                            
+                             <img src="../img/user.png" alt="" width="35%" style="border-radius:60%">
+
+                                 <p class="profile-title"><?php echo substr($username,0,25)  ?>..</p>
+                                 <p class="profile-subtitle"><?php echo substr($useremail,0,55)  ?></p>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td colspan="2">
+                                 <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                             </td>
+                         </tr>
+                 </table>
+                 </td>
+             </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-dashbord" >
                         <a href="index.php" class="non-style-link-menu"><div><p class="menu-text">Dashboard</p></a></div></a>
