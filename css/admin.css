@@ -8,8 +8,9 @@
 .menu{
     border-right: 1.5px solid rgb(235, 235, 235);
     width: 21%;
-    height: 100vh;
+    height: 100%;
     box-shadow: 0 0px 0px 2px rgba(240, 240, 240, 0.3);
+    border:0%;
 }
 .dash-body{
     width: 100%;
@@ -19,8 +20,9 @@
 }
 
 .menu-container{
-    width: 50%;
+    width: 90%;
     border-spacing: 0;
+    
     
 }
 
@@ -55,6 +57,7 @@
     /*box-shadow: 0 0 3px rgba(52,58,64,0.08);*/
     text-align: center;
     width: 100%;
+    border:0%;
 }
 
 

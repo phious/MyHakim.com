@@ -426,7 +426,7 @@ $username=$userfetch["name"];
                                        
     <div class="container">
     <div class="menu">
-        <table class="menu-container" >
+        <table border="0" class="menu-container" >
             <tr>
             <td style="padding:10px" colspan="2">
 
@@ -474,7 +474,8 @@ $username=$userfetch["name"];
                 </tr>
                 </tr>
                 <tr class="menu-row" >
-                    <td class="menu-btn menu-icon-patient">
+                    <td class="menu-btn menu-icon-patient ">
+                    <a href="patient.php" class="non-style-link-menu "><div><p class="menu-text">Patients</p></a></div>
                     </td>
 </tr>
 </table>
