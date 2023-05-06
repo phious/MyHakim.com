@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="../css/animations.css">  
     <link rel="stylesheet" href="../css/main.css""<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/admin.css">
-   
-    <link rel="stylesheet" href="../css/style2.css">
-
+    <link rel="stylesheet" href="../css/style2.css">  
+    <link rel="stylesheet" href="../css/hosMediaQueries.css">
 
    
     <title>Hospitals</title>
@@ -17,7 +16,7 @@
     
     </style>
 </head>
-<body >
+<body>
     
 <?php
 
@@ -27,13 +26,15 @@ session_start();
 
 if(isset($_SESSION["user"])){
     if(($_SESSION["user"])=="" or $_SESSION['usertype']!='p'){
-       
+        
+    }else{
         $useremail=$_SESSION["user"];
     }
 
 }else{
     header("location: ../login.php");
 }
+
 
 
 
@@ -68,11 +69,11 @@ $username=$userfetch["name"];
             <div class="dash-body" style="position: relative ; margin-top: -50px ;" >
             <table border="0" width="72%" style=" border-spacing: 0; " >
                         
-                        <tr >
+                        <tr>
                             
                             <td colspan="2" class="nav-bar" >
 
-                                    <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Hospital name or Address" list="hospitals">&nbsp;&nbsp;
+                                    <input id="search-bar" type="search" name="search" class="input-text header-searchbar" placeholder="Search Hospital name or Address" list="hospitals">&nbsp;&nbsp;
                                    
                                     <?php
                                         echo '<datalist id="hospitals">';
@@ -90,16 +91,16 @@ $username=$userfetch["name"];
         ?> 
        
 &nbsp;
-                                    <input type="Submit" value="Search" class="login-btn btn-primary btn" style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">
+                                    <input id="search-button" type="Submit" value="Search" class="login-btn btn-primary btn">
                                 
                                 </form>
                                 
                             </td>
                             <td width="15%">
-                                <p style=" position: relative; right: 100px; font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
+                                <p id="date-txt">
                                     Today's Date
                                 </p>
-                                <p class="heading-sub12" style="position: relative; right: 100px; padding: 0;margin: 0;">
+                                <p id="time-txt">
                                     <?php 
                                 date_default_timezone_set('Asia/Aden');
 
@@ -109,7 +110,7 @@ $username=$userfetch["name"];
                                 </p>
                             </td>
                             <td width="10%">
-                                <button  class="btn-label"  style="position: relative; right: 100px; display: flex;justify-content: center;align-items: center;"><img src="../img/calendar.svg" width="100%"></button>
+                                <button id="calender-img"  class="btn-label"><img src="../img/calendar.svg" ></button>
                             </td>
 
 
@@ -117,8 +118,11 @@ $username=$userfetch["name"];
                     
                         
                         <tr>
-                            <td colspan="4" style="padding-top:0px;">
-                                <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">Hospital (<?php echo $list11->num_rows; ?>)</p>
+                            <td id="hos-txt">
+                                <p  >Hospital (<?php echo $list11->num_rows; ?>)</p>
+                            </td>
+                            <td>
+                            <a href="maps.html"class="non-style-link"><button  id="map-button" class="btn-primary btn "><font style="font-size: 11px;  font-weight: 600;"  id="font">Maps</font></button></a>
                             </td>
                             
                         </tr>
@@ -137,11 +141,11 @@ $username=$userfetch["name"];
                         ?>
                         
                         <tr>
-                        <td colspan="4">
-                            <center>
-                                <div >
-                                <table width="90%" class="sub-table scrolldown" border="0">
-                                <thead>
+                        <td>
+                            <center id="center">
+                                <div>
+                                <table  id="table-content" class="sub-table scrolldown" border="0">
+                                <thead id="table">
                                 <tr>
                                         <th class="table-headin">     
                                         Hospital Name
@@ -157,9 +161,10 @@ $username=$userfetch["name"];
                                         </th>
                                         <th class="table-headin"> 
                                         Events
-                                        </tr>
+                                        </th>
+                                </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="body">
                                 
                                     <?php
 
@@ -168,13 +173,13 @@ $username=$userfetch["name"];
 
                                         if($result->num_rows==5){
                                             echo '<tr>
-                                            <td colspan="4">
+                                            <td>
                                         
                                             <center>
                                             <img src="../img/notfound.svg" width="25%">
                                             
                                             <br>
-                                            <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">No Hospitals Added</p>
+                                            <p>No Hospitals Added</p>
                                             </br>
                                             </center>
                                         
@@ -192,24 +197,24 @@ $username=$userfetch["name"];
                                             $tele=$row["hostel"];
                                             
                                             echo '<tr>
-                                                <td> &nbsp;'.
+                                                <td id="selector" > &nbsp;'.
                                                 substr($name,0,30)
                                                 .'</td>
-                                                <td> &nbsp;'.
+                                                <td id="selector"> &nbsp;'.
                                                 substr($address,0,30)
                                                 .'</td>
-                                                <td>
+                                                <td id="selector">
                                                 '.substr($email,0,20).'
                                                 </td>
-                                                <td>
+                                                <td id="selector">
                                                     '.substr($tele,0,20).'
                                                 </td>
 
                                                 <td>
-                                                <div style="display:flex;justify-content: left;">
+                                                <div">
 
                                                 </div>    
-                            <a href="makeanappointment.php"  class="non-style-link"><button  class="btn-primary-soft btn button-icon menu-icon-session-active"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Make An Appointment!</font></button></a>
+                                                 <a href="makeanappointment.php" id="appo-button"  class="non-style-link"><button id="button" class="btn-primary-soft btn button-icon menu-icon-session-active"><font id="font">Make An Appointment!</font></button></a>
 
                                                 </td>
                                             </tr>';
@@ -219,7 +224,7 @@ $username=$userfetch["name"];
                                     ?>   
                                     
         
-                                    </tbody>
+                                </tbody>
 
                     </table>
                                 </div>
@@ -230,32 +235,42 @@ $username=$userfetch["name"];
                                 
                                 
         </div>           </table>
+
+                                            <p id="map-txt" style="" class="anime">Hospitals</p>
+                                            <p id="map-txt1">Near</p>
+                                            <p id="map-txt2">Me</p>
+
+        <div id="maps">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1ZAg8EteRrSK9BYzoT13DkyObpzLUJNw&ehbc=2E312F" 
+            id="maps" width="300" height="300"  ></iframe>
+            </div>
        
         </section>
     
+       
         <div class="container">
-        <div class="menu">
-            <table class="menu-container" >
+        <div class="menu" id="menu-side">
+            <table>
                 <tr>
-                <td style="padding:10px" colspan="2">
+                <td id="profile-style" colspan="2">
 
                              <table border="0" class="profile-container">
                          
                              <td style="padding:0px;margin:0px;">
                             
-                             <img src="../img/user.png" alt="" width="35%" style="border-radius:60%">
+                             <img src="../img/user.png" id="profile-img"  alt="" width="35%">
 
-                                 <p class="profile-title"><?php echo substr($username,0,25)  ?>..</p>
-                                 <p class="profile-subtitle"><?php echo substr($useremail,0,55)  ?></p>
-                             </td>
+                                 <p id="pro-title" class="profile-title"><?php echo substr($username,0,25)  ?>..</p>
+                                 <p id="pro-subtitle" class="profile-subtitle"><?php echo substr($useremail,0,55)  ?></p>
+                            </td>
                          </tr>
                          <tr>
                              <td colspan="2">
-                                 <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                                 <a href="../logout.php" ><input id="logout---btn" type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
                              </td>
                          </tr>
                  </table>
-                 </td>
+                </td>
              </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-home " style="">
@@ -289,7 +304,6 @@ $username=$userfetch["name"];
             
     </ul>
   </div>
-    
 
     <script  src="../Js/script.js"></script>
 

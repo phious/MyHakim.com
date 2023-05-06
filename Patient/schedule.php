@@ -282,62 +282,63 @@
 
 </section>
 
+
 <div class="container">
-<div class="menu">
-<table class="menu-container" >
-<tr>
-<td style="padding:10px" colspan="2">
+        <div class="menu" style="background-color:  #f5f4f4">
+            <table  style=" position: relative; left:-65px; right: 0; top: -34px; height: 100% ">
+                <tr>
+                <td style="padding:10px;" colspan="2">
 
-         <table border="0" class="profile-container">
-     
-         <td style="padding:0px;margin:0px;">
-        
-         <img src="../img/user.png" alt="" width="35%" style="border-radius:60%">
+                             <table border="0" class="profile-container">
+                         
+                             <td style="padding:0px;margin:0px;">
+                            
+                             <img src="../img/user.png" alt="" width="35%" style=" position: relative; left: 7%; border-radius:60%">
 
-             <p class="profile-title"><?php echo substr($username,0,25)  ?>..</p>
-             <p class="profile-subtitle"><?php echo substr($useremail,0,55)  ?></p>
-         </td>
-     </tr>
-     <tr>
-         <td colspan="2">
-             <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
-         </td>
-     </tr>
-</table>
-</td>
-</tr>
-<tr class="menu-row" >
-<td class="menu-btn menu-icon-home " style="">
-    <a href="index.php" class="non-style-link-menu "><div><p class="menu-text">Home</p></a></div></a>
-</td>
-</tr>
-<tr class="menu-row">
-<td class="menu-btn menu-icon-doctor">
-    <a href="hospital.php" class="non-style-link-menu "><div><p class="menu-text">All Hospital</p></a></div>
-</td>
-</tr>
-
-<tr class="menu-row" >
-<td class="menu-btn menu-icon-session">
-    <a href="schedule.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Scheduled Sessions</p></div></a>
-</td>
-</tr>
-<tr class="menu-row" >
-<td class="menu-btn menu-icon-appoinment">
-    <a href="appointment.php" class="non-style-link-menu"><div><p class="menu-text">My Bookings</p></a></div>
-</td>
-</tr>
-<tr class="menu-row" >
-<td class="menu-btn menu-icon-settings">
-    <a href="settings.php" class="non-style-link-menu"><div><p class="menu-text">Settings</p></a></div>
-</td>
-</tr>
-</table>
-</div>
-
-
-</ul>
-</div>
+                                 <p class="profile-title"><?php echo substr($username,0,25)  ?>..</p>
+                                 <p class="profile-subtitle"><?php echo substr($useremail,0,55)  ?></p>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td colspan="2">
+                                 <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                             </td>
+                         </tr>
+                 </table>
+                 </td>
+             </tr>
+                <tr class="menu-row" >
+                    <td class="menu-btn menu-icon-home " style="">
+                        <a href="index.php" class="non-style-link-menu "><div><p class="menu-text">Home</p></a></div></a>
+                    </td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="menu-btn menu-icon-doctor">
+                        <a href="hospital.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">All Hospital</p></a></div>
+                    </td>
+                </tr>
+                
+                <tr class="menu-row" >
+                    <td class="menu-btn menu-icon-session">
+                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Scheduled Sessions</p></div></a>
+                    </td>
+                </tr>
+                <tr class="menu-row" >
+                    <td class="menu-btn menu-icon-appoinment">
+                        <a href="appointment.php" class="non-style-link-menu"><div><p class="menu-text">My Bookings</p></a></div>
+                    </td>
+                </tr>
+                <tr class="menu-row" >
+                    <td class="menu-btn menu-icon-settings">
+                        <a href="settings.php" class="non-style-link-menu"><div><p class="menu-text">Settings</p></a></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+           
+            
+    </ul>
+  </div>
 
 
 <script  src="../Js/script.js"></script>
@@ -347,3 +348,4 @@
 
 </body>
 </html>
+

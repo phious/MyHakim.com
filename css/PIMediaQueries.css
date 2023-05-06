@@ -1,0 +1,1489 @@
+@media (min-width: 320px) and (max-width: 480px) {
+    .showcase{
+        position: absolute;
+        top: 0%;
+        right: 0px; 
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 20px;
+        padding-bottom: 0px;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        transition: 0.5s;
+        z-index: 2;
+    }
+    .dash-body{
+        position: absolute; 
+        background: rgba(206, 212, 231, 0.274);
+        width: 0%;
+        height: 0%; 
+    }
+
+    #card{
+        position: relative;
+        left: -20px;
+        top: -3px;
+        border:none;
+        width: 326px;
+        height: auto;
+        background-size: 99%;
+        font-size: 6px;
+    }
+   
+    #home-txt{
+      
+        position: relative;
+        top: 25px;
+        left: -15px; 
+        font-size: 10px;
+        padding-left:30px;  
+        bottom:-20px; 
+        font-weight: 600;
+        margin-left:20px;
+    }
+    #search-button{
+        position: relative;
+        font-size: 13px;
+        margin-left: -3px;
+        top: 2px;
+        padding-left: 5px;
+        padding-right: 10px;
+        padding-top: 12px;
+        padding-bottom: 7px;
+        width: 22%;
+        height: 30%;
+    }
+    #search-bar{
+        position: relative;
+        width: 66%;
+        
+    }
+    #date-txt{
+        position: relative; 
+        top: 0px;
+        left: 175px; 
+        font-size: 8px;
+        color: rgb(119, 119, 119);
+        padding-top: 20px;
+        margin: 0;
+        text-align: right;
+    }
+    #time-txt{
+        position: relative; 
+        top: 0px;
+        left: 175px; 
+        font-size: 8px;
+        padding: 0;
+        margin: 0;
+    }
+    #calender-img{
+        position: relative;
+        top: 5px;
+        width: 10%;
+        height: 10%; 
+        left: 170px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .toggle
+    {
+    position: relative;
+    color: black; 
+    top: -5px;
+    left: -80px;
+    width: 60px;
+    height: 60px;
+    background: url('../img/menu.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: center;
+    cursor: pointer;
+    }
+    .toggle.active
+    {
+    left: -100px;
+    background: url('../img/cancel\ \(1\).png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+    }
+    
+    .menu{
+    
+    border-right: 1.5px solid rgb(235, 235, 235);
+    width: 24%;
+    height: 100%;
+    box-shadow: 0 0px 0px 2px rgba(240, 240, 240, 0.3);
+    }
+
+    .menu-container{
+    background: rgba(150, 174, 241, 0.274);
+    width: 50%;
+    border-spacing: 0;
+    
+    }
+    .showcase.active
+    {
+    
+    left: 220px;
+    
+
+    }
+    .menu{
+    
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu ul
+    {
+    position: relative;
+    }
+    .menu ul li
+    {
+    list-style: none;
+    
+    }
+    .menu ul li a
+    {
+    text-decoration: none;
+    font-size: 24px;
+    color: #111;
+    }
+    .menu ul li a:hover
+    {
+    color: #03a9f4; 
+    }
+    #menu-side{
+        position: relative; 
+        background-color:  #f5f4f4;
+        width: 100%;
+        left: -86px; 
+        right: 0; 
+        top: -34px; 
+        height: 100%; 
+      }
+      #pro-title{
+        position: relative;
+        font-size: 15px;
+        left: 120px;
+      }
+      #pro-subtitle{
+        position: relative;
+        font-size: 12px;
+        left: 115px;
+      }
+    #profile-img{
+        position: relative; 
+        left: 2%; 
+        border-radius:60%;
+        width: 20%;
+    }
+    #profile-style{
+        background-size: 5px;
+        padding:-5px;
+    }
+    #logout---btn{
+        position: relative;
+        left: 12px;
+        background: rgba(63, 241, 233, 0.767);
+        margin-top: 0px;
+        width: 50%;
+    }
+
+    .profile-title{
+        font-size: 2px;
+        font-weight: 500;
+        color: #161c2d;
+        font-size: 22px;
+        margin: 0;
+        text-align: left;
+        padding-left: 0%;
+    }
+
+    .profile-subtitle{
+        font-weight: 300;
+        color: #8492a6;
+        font-size: 15px;
+        margin: 0;
+        text-align: left;
+        padding-left: 0%;
+    }
+
+    .logout-btn{
+        position: relative;
+        background: rgba(63, 241, 233, 0.767);
+        margin-top: 0px;
+        width: 50%;
+        left: 7%;
+    }
+
+    .profile-container{
+        border: 1.5px solid rgb(235, 235, 235);
+        border-radius: 6px;
+        padding-top: 12%;
+        padding-bottom: 12%;
+        box-shadow: 0 0 3px rgba(52,58,64,0.08);
+        text-align: center;
+        
+    }
+
+    #show-txt{
+        position: relative;
+        top: -40px;
+        left: -40px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #show-txt1{
+        position: relative;
+        margin-left: -4px;
+        top: -79px;
+        left: 5px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #show-txt2{
+        position: relative;
+        margin-left: -10px;
+        top: -117px;
+        left: 100px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    .table-headin{
+        font-size: 15px;
+        padding: 10px;
+    }
+    #table-content{
+        position: relative;
+        top: -130px;
+        left: -45px;
+    }
+    #map-txt{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map-txt1{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map-txt2{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map{
+        position: relative;
+        width: 0%;
+        height: 0%;
+        left: 0;
+        top: -200px;
+    }
+
+    
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .showcase{
+        position: absolute;
+        top: 0%;
+        right: 0px; 
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 20px;
+        padding-bottom: 0px;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        transition: 0.5s;
+        z-index: 2;
+    }
+    .dash-body{
+        position: absolute; 
+        background: rgba(206, 212, 231, 0.274);
+        width: 0%;
+        height: 0%; 
+    }
+
+    #card{
+        position: relative;
+        left: -20px;
+        top: -3px;
+        border:none;
+        width: 500px;
+        height: auto;
+        background-size: 100%;
+        font-size: 10px;
+    }
+   
+    #home-txt{
+      
+        position: relative;
+        top: 28px;
+        left: -15px; 
+        font-size: 13px;
+        padding-left:30px;  
+        bottom:-20px; 
+        font-weight: 600;
+        margin-left:20px;
+    }
+    #search-button{
+        font-size: 13px;
+        position: relative;
+        margin-left: -3px;
+        top: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        width: 18%;
+        height: 18%;
+    }
+    #search-bar{
+        position: relative;
+        width: 70%;
+        
+    }
+    #date-txt{
+        position: relative; 
+        top: 0px;
+        left: 340px; 
+        font-size: 10px;
+        color: rgb(119, 119, 119);
+        padding-top: 20px;
+        margin: 0;
+        text-align: right;
+    }
+    #time-txt{
+        position: relative; 
+        top: 0px;
+        left: 340px; 
+        font-size: 10px;
+        padding: 0;
+        margin: 0;
+    }
+    #calender-img{
+        position: relative;
+        top: 5px;
+        width: 10%;
+        height: 10%; 
+        left: 335px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .toggle
+    {
+    position: relative;
+    color: black; 
+    top: -5px;
+    left: -80px;
+    width: 60px;
+    height: 60px;
+    background: url('../img/menu.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: center;
+    cursor: pointer;
+    }
+    .toggle.active
+    {
+    left: -100px;
+    background: url('../img/cancel\ \(1\).png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+    }
+    
+    .menu{
+    
+    border-right: 1.5px solid rgb(235, 235, 235);
+    width: 24%;
+    height: 100%;
+    box-shadow: 0 0px 0px 2px rgba(240, 240, 240, 0.3);
+    }
+
+    .menu-container{
+    background: rgba(150, 174, 241, 0.274);
+    width: 50%;
+    border-spacing: 0;
+    
+    }
+    .showcase.active
+    {
+    
+    left: 260px;
+    
+
+    }
+    .menu{
+    
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu ul
+    {
+    position: relative;
+    }
+    .menu ul li
+    {
+    list-style: none;
+    
+    }
+    .menu ul li a
+    {
+    text-decoration: none;
+    font-size: 24px;
+    color: #111;
+    }
+    .menu ul li a:hover
+    {
+    color: #03a9f4; 
+    }
+    #menu-side{
+        position: relative; 
+        background-color:  #f5f4f4;
+        width: 100%;
+        left: -160px; 
+        right: 0; 
+        top: -34px; 
+        height: 100%; 
+      }
+      #pro-title{
+        position: relative;
+        font-size: 15px;
+        left: 167px;
+      }
+      #pro-subtitle{
+        position: relative;
+        font-size: 12px;
+        left: 150px;
+      }
+    #profile-img{
+        position: relative; 
+        left: 2%; 
+        border-radius:60%;
+        width: 20%;
+    }
+    #profile-style{
+        background-size: 5px;
+        padding:-5px;
+    }
+    #logout---btn{
+        position: relative;
+        left: 12px;
+        background: rgba(63, 241, 233, 0.767);
+        margin-top: 0px;
+        width: 50%;
+    }
+
+    .profile-title{
+        font-size: 2px;
+        font-weight: 500;
+        color: #161c2d;
+        font-size: 22px;
+        margin: 0;
+        text-align: left;
+        padding-left: 0%;
+    }
+
+    .profile-subtitle{
+        font-weight: 300;
+        color: #8492a6;
+        font-size: 15px;
+        margin: 0;
+        text-align: left;
+        padding-left: 0%;
+    }
+
+    .logout-btn{
+        position: relative;
+        background: rgba(63, 241, 233, 0.767);
+        margin-top: 0px;
+        width: 50%;
+        left: 7%;
+    }
+
+    .profile-container{
+        border: 1.5px solid rgb(235, 235, 235);
+        border-radius: 6px;
+        padding-top: 12%;
+        padding-bottom: 12%;
+        box-shadow: 0 0 3px rgba(52,58,64,0.08);
+        text-align: center;
+        
+    }
+
+    #show-txt{
+        position: relative;
+        padding-top: 40px;
+        margin-left: 67px;
+        top: -40px;
+        left: -40px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #show-txt1{
+        position: relative;
+        margin-left: 65px;
+        top: -79px;
+        left: 5px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #show-txt2{
+        position: relative;
+        margin-left: 60px;
+        top: -117px;
+        left: 100px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #table-content{
+        position: relative;
+        top: -130px;
+        left: -20px;
+    }
+    .table-headin{
+        font-size: 15px;
+        background-size: 100px;
+        padding: 30px;
+    }
+    #map-txt{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map-txt1{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map-txt2{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map{
+        position: relative;
+        width: 0%;
+        height: 0%;
+        left: 0;
+        top: -200px;
+    }
+
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .showcase{
+        position: absolute;
+        top: 0%;
+        right: 0px; 
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 20px;
+        padding-bottom: 0px;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        transition: 0.5s;
+        z-index: 2;
+    }
+    .dash-body{
+        position: absolute; 
+        background: rgba(206, 212, 231, 0.274);
+        width: 0%;
+        height: 0%; 
+    }
+
+    #card{
+        position: relative;
+        left: -20px;
+        top: -3px;
+        border:none;
+        width: 710px;
+        height: auto;
+        background-size: 100%;
+        font-size: 12px;
+    }
+   
+    #home-txt{
+      
+        position: relative;
+        top: 28px;
+        left: -15px; 
+        font-size: 15px;
+        padding-left:30px;  
+        bottom:-20px; 
+        font-weight: 600;
+        margin-left:20px;
+    }
+    #search-button{
+        font-size: 13px;
+        position: relative;
+        margin-left: -3px;
+        top: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        width: 18%;
+        height: 18%;
+    }
+    #search-bar{
+        position: relative;
+        width: 70%;
+        
+    }
+    #date-txt{
+        position: relative; 
+        top: 0px;
+        left: 530px; 
+        font-size: 11px;
+        color: rgb(119, 119, 119);
+        padding-top: 20px;
+        margin: 0;
+        text-align: right;
+    }
+    #time-txt{
+        position: relative; 
+        top: 0px;
+        left: 530px; 
+        font-size: 11px;
+        padding: 0;
+        margin: 0;
+    }
+    #calender-img{
+        position: relative;
+        top: 5px;
+        width: 10%;
+        height: 10%; 
+        left: 536px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .toggle
+    {
+    position: relative;
+    color: black; 
+    top: -5px;
+    left: -80px;
+    width: 60px;
+    height: 60px;
+    background: url('../img/menu.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
+    cursor: pointer;
+    }
+    .toggle.active
+    {
+    left: -100px;
+    background: url('../img/cancel\ \(1\).png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+    }
+    
+    .menu{
+    
+    border-right: 1.5px solid rgb(235, 235, 235);
+    width: 24%;
+    height: 100%;
+    box-shadow: 0 0px 0px 2px rgba(240, 240, 240, 0.3);
+    }
+
+    .menu-container{
+    background: rgba(150, 174, 241, 0.274);
+    width: 50%;
+    border-spacing: 0;
+    
+    }
+    .showcase.active
+    {
+    
+    left: 260px;
+    
+
+    }
+    .menu{
+    
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu ul
+    {
+    position: relative;
+    }
+    .menu ul li
+    {
+    list-style: none;
+    
+    }
+    .menu ul li a
+    {
+    text-decoration: none;
+    font-size: 24px;
+    color: #111;
+    }
+    .menu ul li a:hover
+    {
+    color: #03a9f4; 
+    }
+    #menu-side{
+        position: relative; 
+        background-color:  #f5f4f4;
+        width: 90%;
+        left: -240px; 
+        right: 0; 
+        top: -70px; 
+        height: 100%; 
+      }
+      #pro-title{
+        position: relative;
+        font-size: 15px;
+        left: 167px;
+      }
+      #pro-subtitle{
+        position: relative;
+        font-size: 12px;
+        left: 150px;
+      }
+    #profile-img{
+        position: relative; 
+        left: 2%; 
+        border-radius:60%;
+        width: 20%;
+    }
+    #profile-style{
+        background-size: 5px;
+        padding:-5px;
+    }
+    #logout---btn{
+        position: relative;
+        left: 12px;
+        background: rgba(63, 241, 233, 0.767);
+        margin-top: 0px;
+        width: 50%;
+    }
+
+    .profile-title{
+        font-size: 2px;
+        font-weight: 500;
+        color: #161c2d;
+        font-size: 22px;
+        margin: 0;
+        text-align: left;
+        padding-left: 0%;
+    }
+
+    .profile-subtitle{
+        font-weight: 300;
+        color: #8492a6;
+        font-size: 15px;
+        margin: 0;
+        text-align: left;
+        padding-left: 0%;
+    }
+
+    .logout-btn{
+        position: relative;
+        background: rgba(63, 241, 233, 0.767);
+        margin-top: 0px;
+        width: 50%;
+        left: 7%;
+    }
+
+    .profile-container{
+        border: 1.5px solid rgb(235, 235, 235);
+        border-radius: 6px;
+        padding-top: 12%;
+        padding-bottom: 12%;
+        box-shadow: 0 0 3px rgba(52,58,64,0.08);
+        text-align: center;
+        
+    }
+
+    #show-txt{
+        position: relative;
+        padding-top: 50px;
+        margin-left: 196px;
+        top: -40px;
+        left: -40px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #show-txt1{
+        position: relative;
+        margin-left: 195px;
+        top: -79px;
+        left: 5px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #show-txt2{
+        position: relative;
+        margin-left: 190px;
+        top: -117px;
+        left: 100px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #table-content{
+        position: relative;
+        top: -130px;
+        left: -20px;
+    }
+    .table-headin{
+        font-size: 17px;
+        background-size: 100px;
+        padding: 53px;
+    }
+    #map-txt{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map-txt1{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map-txt2{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map{
+        position: relative;
+        width: 0%;
+        height: 0%;
+        left: 0;
+        top: -200px;
+    }
+    
+}
+@media (min-width: 1025px){
+    .showcase{
+        position: absolute;
+        top: 0%;
+        right: 0px; 
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 20px;
+        padding-bottom: 0px;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        transition: 0.5s;
+        z-index: 2;
+    }
+    .dash-body{
+        position: relative; 
+        background: rgba(206, 212, 231, 0.274);
+        width: 90%;
+        height: 100%;
+        margin-left: 24px; 
+        margin-top: -28px; 
+    }
+
+    #card{
+        position: relative;
+        left: 20px;
+        top: 10px;
+        border:none;
+        width: 90%;
+        height: auto;
+        background-size: 100%;
+        font-size: 15px;
+    }
+   
+    #home-txt{
+      
+        position: relative;
+        top: 26px;
+        left: 6px; 
+        font-size: 16px;
+        padding-left:30px;  
+        bottom:-20px; 
+        font-weight: 600;
+        margin-left:20px;
+    }
+    #search-button{
+        font-size: 13px;
+        position: relative;
+        margin-left: -3px;
+        top: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        width: 18%;
+        height: 18%;
+    }
+    #search-bar{
+        position: relative;
+        width: 70%;
+        
+    }
+    #date-txt{
+        position: relative; 
+        top: 0px;
+        left: 360px; 
+        font-size: 13px;
+        color: rgb(119, 119, 119);
+        padding-top: 20px;
+        margin: 0;
+        text-align: right;
+    }
+    #time-txt{
+        position: relative; 
+        top: 0px;
+        left: 360px; 
+        font-size: 13px;
+        padding: 0;
+        margin: 0;
+    }
+    #calender-img{
+        position: relative;
+        top: 5px;
+        width: 10%;
+        height: 10%; 
+        left: 360px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .toggle
+    {
+    position: relative;
+    color: black; 
+    top: 40px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: url('../img/menu.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+    }
+    .toggle.active
+    {
+    left: -24px;
+    background: url('../img/cancel\ \(1\).png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+    }
+    
+    .menu{
+    
+    border-right: 1.5px solid rgb(235, 235, 235);
+    width: 24%;
+    height: 100%;
+    box-shadow: 0 0px 0px 2px rgba(240, 240, 240, 0.3);
+    }
+
+    .menu-container{
+    background: rgba(150, 174, 241, 0.274);
+    width: 50%;
+    border-spacing: 0;
+    
+    }
+    .showcase.active
+    {
+    
+    left: 270px;
+    
+
+    }
+    .menu{
+    
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu ul
+    {
+    position: relative;
+    }
+    .menu ul li
+    {
+    list-style: none;
+    
+    }
+    .menu ul li a
+    {
+    text-decoration: none;
+    font-size: 24px;
+    color: #111;
+    }
+    .menu ul li a:hover
+    {
+    color: #03a9f4; 
+    }
+    #menu-side{
+        position: relative; 
+        background-color:  #ffffff;
+        width: 50%;
+        left: -100px; 
+        right: 0; 
+        top: -34px; 
+        height: 100%; 
+      }
+      #pro-title{
+        position: relative;
+        font-size: 17px;
+        left: 167px;
+      }
+      #pro-subtitle{
+        position: relative;
+        font-size: 15px;
+        left: 140px;
+      }
+    #profile-img{
+        position: relative; 
+        left: 2%; 
+        border-radius:60%;
+        width: 20%;
+    }
+    #profile-style{
+        background-size: 5px;
+        padding:-5px;
+    }
+    #logout---btn{
+        position: relative;
+        left: 12px;
+        background: rgba(63, 241, 233, 0.767);
+        margin-top: 0px;
+        width: 50%;
+    }
+
+    .profile-title{
+        font-size: 2px;
+        font-weight: 500;
+        color: #161c2d;
+        font-size: 22px;
+        margin: 0;
+        text-align: left;
+        padding-left: 0%;
+    }
+
+    .profile-subtitle{
+        font-weight: 300;
+        color: #8492a6;
+        font-size: 15px;
+        margin: 0;
+        text-align: left;
+        padding-left: 0%;
+    }
+
+    .logout-btn{
+        position: relative;
+        background: rgba(63, 241, 233, 0.767);
+        margin-top: 0px;
+        width: 50%;
+        left: 7%;
+    }
+
+    .profile-container{
+        border: 1.5px solid rgb(235, 235, 235);
+        border-radius: 6px;
+        padding-top: 12%;
+        padding-bottom: 12%;
+        box-shadow: 0 0 3px rgba(52,58,64,0.08);
+        text-align: center;
+        
+    }
+
+    #show-txt{
+        position: relative;
+        padding-top: 70px;
+        margin-left: 300px;
+        top: -40px;
+        left: -40px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #show-txt1{
+        position: relative;
+        margin-left: 300px;
+        top: -79px;
+        left: 5px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #show-txt2{
+        position: relative;
+        margin-left: 300px;
+        top: -117px;
+        left: 100px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #table-content{
+        position: relative;
+        top: -100px;
+        left: 10px;
+    }
+    .table-headin{
+        font-size: 15px;
+        padding: -10px;
+    }
+    #map-txt{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map-txt1{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map-txt2{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map{
+        position: relative;
+        width: 0%;
+        height: 0%;
+        left: 0;
+        top: -200px;
+    }
+}
+
+@media (min-width: 1200px)  {
+    .showcase{
+        position: absolute;
+        top: 0%;
+        right: 0px; 
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 20px;
+        padding-bottom: 0px;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        transition: 0.5s;
+        z-index: 2;
+    }
+    .dash-body{
+        position: relative; 
+        background: rgba(206, 212, 231, 0.274);
+        width: 90%;
+        height: 100%;
+        margin-left: 4  px; 
+        margin-top: -28px; 
+    }
+
+    #card{
+        position: relative;
+        left: 20px;
+        top: 10px;
+        border:none;
+        width: 90%;
+        height: auto;
+        background-size: 100%;
+        font-size: 15px;
+    }
+   
+    #home-txt{
+      
+        position: relative;
+        top: 26px;
+        left: 6px; 
+        font-size: 16px;
+        padding-left:30px;  
+        bottom:-20px; 
+        font-weight: 600;
+        margin-left:20px;
+    }
+    #search-button{
+        font-size: 13px;
+        position: relative;
+        margin-left: -3px;
+        top: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        width: 18%;
+        height: 18%;
+    }
+    #search-bar{
+        position: relative;
+        width: 70%;
+        
+    }
+    #date-txt{
+        position: relative; 
+        top: 0px;
+        left: 520px; 
+        font-size: 13px;
+        color: rgb(119, 119, 119);
+        padding-top: 20px;
+        margin: 0;
+        text-align: right;
+    }
+    #time-txt{
+        position: relative; 
+        top: 0px;
+        left: 520px; 
+        font-size: 13px;
+        padding: 0;
+        margin: 0;
+    }
+    #calender-img{
+        position: relative;
+        top: 5px;
+        width: 10%;
+        height: 10%; 
+        left: 520px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .toggle
+    {
+    position: relative;
+    color: black; 
+    top: 40px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: url('../img/menu.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+    }
+    .toggle.active
+    {
+    left: -10px;
+    background: url('../img/cancel\ \(1\).png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+    }
+    
+    .menu{
+    
+    border-right: 1.5px solid rgb(235, 235, 235);
+    width: 24%;
+    height: 100%;
+    box-shadow: 0 0px 0px 2px rgba(240, 240, 240, 0.3);
+    }
+
+    .menu-container{
+    background: rgba(150, 174, 241, 0.274);
+    width: 50%;
+    border-spacing: 0;
+    
+    }
+    .showcase.active
+    {
+    
+    left: 250px;
+    
+
+    }
+    .menu{
+    
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu ul
+    {
+    position: relative;
+    }
+    .menu ul li
+    {
+    list-style: none;
+    
+    }
+    .menu ul li a
+    {
+    text-decoration: none;
+    font-size: 24px;
+    color: #111;
+    }
+    .menu ul li a:hover
+    {
+    color: #03a9f4; 
+    }
+    #menu-side{
+        position: relative; 
+        background-color:  #ffffff;
+        width: 50%;
+        left: -220px; 
+        right: 0; 
+        top: -34px; 
+        height: 100%; 
+      }
+      #pro-title{
+        position: relative;
+        font-size: 17px;
+        left: 167px;
+      }
+      #pro-subtitle{
+        position: relative;
+        font-size: 15px;
+        left: 150px;
+      }
+    #profile-img{
+        position: relative; 
+        left: 2%; 
+        border-radius:60%;
+        width: 20%;
+    }
+    #profile-style{
+        background-size: 5px;
+        padding:-5px;
+    }
+    #logout---btn{
+        position: relative;
+        left: 12px;
+        background: rgba(63, 241, 233, 0.767);
+        margin-top: 0px;
+        width: 50%;
+    }
+
+    .profile-title{
+        font-size: 2px;
+        font-weight: 500;
+        color: #161c2d;
+        font-size: 22px;
+        margin: 0;
+        text-align: left;
+        padding-left: 0%;
+    }
+
+    .profile-subtitle{
+        font-weight: 300;
+        color: #8492a6;
+        font-size: 15px;
+        margin: 0;
+        text-align: left;
+        padding-left: 0%;
+    }
+
+    .logout-btn{
+        position: relative;
+        background: rgba(63, 241, 233, 0.767);
+        margin-top: 0px;
+        width: 50%;
+        left: 7%;
+    }
+
+    .profile-container{
+        border: 1.5px solid rgb(235, 235, 235);
+        border-radius: 6px;
+        padding-top: 12%;
+        padding-bottom: 12%;
+        box-shadow: 0 0 3px rgba(52,58,64,0.08);
+        text-align: center;
+        
+    }
+
+    #show-txt{
+        position: relative;
+        padding-top: 70px;
+        margin-left: 400px;
+        top: -3px;
+        left: -40px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #show-txt1{
+        position: relative;
+        margin-left: 398px;
+        top: -43px;
+        left: 5px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #show-txt2{
+        position: relative;
+        margin-left: 392px;
+        top: -83px;
+        left: 100px;
+        font-size: 16px;
+        font-weight:600;
+        padding-left: 40px;
+    }
+    #table-content{
+        position: relative;
+        top: -100px;
+        left: -20px;
+    }
+    .table-headin{
+        font-size: 15px;
+        padding: 10px;
+    }
+    #map-txt{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map-txt1{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map-txt2{
+        position: relative;
+        font-size: 0;
+        font-weight: 0;   
+    }
+    #map{
+        position: relative;
+        width: 0%;
+        height: 0%;
+        left: 0;
+        top: -200px;
+    }
+}

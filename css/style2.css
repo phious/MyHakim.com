@@ -24,19 +24,42 @@
 }
 .toggle.active
 {
-  left: -90px;
+  left: 5px;
   background: url('../img/cancel\ \(1\).png');
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: center;
   cursor: pointer;
 }
+.container{
+  background: rgba(255, 255, 255, 0.473);
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+
+
+}
+.menu{
+  
+  border-right: 1.5px solid rgb(235, 235, 235);
+  width: 24%;
+  height: 100%;
+  box-shadow: 0 0px 0px 2px rgba(240, 240, 240, 0.3);
+}
+
+.menu-container{
+  background: rgba(150, 174, 241, 0.274);
+  width: 50%;
+  border-spacing: 0;
+  
+}
+
 .showcase
 {
   
   position: absolute;
   top: 0%;
-  right: 0px; 
+  right: 0%; 
   width: 100%;
   min-height: 100vh;
   padding-top: 20px;
@@ -50,7 +73,7 @@
 .showcase.active
 {
  
-  left: 300px;
+  left: 260px;
   
 
 }
@@ -105,13 +128,14 @@
   color: #03a9f4; 
 }
 
+
 .profile-title{
     font-weight: 500;
     color: #161c2d;
     font-size: 22px;
     margin: 0;
     text-align: left;
-    padding-left: 8%;
+    padding-left: 30%;
 }
 
 .profile-subtitle{
@@ -120,13 +144,15 @@
     font-size: 15px;
     margin: 0;
     text-align: left;
-    padding-left: 8%;
+    padding-left: 30%;
 }
 
 .logout-btn{
+    position: relative;
     background: rgba(63, 241, 233, 0.767);
     margin-top: 0px;
     width: 50%;
+    left: 7%;
 }
 
 .profile-container{
