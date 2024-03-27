@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../../../../style.css">
+    <title>My-Hakim | Manager</title>
+
+
+    <style>
+        .tobetoggled1 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar ">
+        <div class="mt-2">
+            <a href="#" class="profile">
+                <img src="images/my-hakim-high-resolution-logo-transparent.png" class="img-fluid" alt="My Hakim Logo">
+            </a>
+        </div>
+        
+        <!-- Apply Bootstrap classes to make the text disappear on small devices -->
+<div class="text-center mt-2 d-none d-lg-block">
+    <div class="logo d-flex justify-content-center align-items-center">
+        <div class="logo-name "><span>My</span>Hakim</div>
+    </div>
+</div>
+        
+
+        <dl class="side-menu">
+            <dl><dt>            <li ><a href="../../../../../index.html"><i class='bx bxs-dashboard'></i>Dashboard</a></li></dl>
+
+         
+            <dl><dt>            <li><a href="../../../../../MainSideBars/Patients/index.html" class="main-link" data-target="patients"><i class='bx bx-user-pin'></i>Patients</a></li>
+            </dt>
+                <div class="tobetoggled1" id="patients" >
+                    <ul>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Patients/Register-Patient/index.html" ><h6  class="p-1">Register Patient</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Patients/View-Patients/index.html"><h6 class="p-1">View Patients</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Patients/Manage-Patients/index.html"><h6 class="p-1">Manage Patients</h6></a></li></br></br>
+
+                        <li class="m-4"><a href="../../../../../SubSideBars/Patients/Discharge/index.html"><h6 class="p-1"></i>Discharge</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Patients/Patient-Transfers/index.html"><h6 class="p-1"></i>Patient Transfers</h6></a></li>
+                </ul>
+                </div>
+            </dl>
+            
+           
+
+            <dl><dt>            <li><a href="../../../../../MainSideBars/Employees/index.html" class="main-link" data-target="employees"><i class='bx bx-group'></i>Employees</a></li>
+            </dt>
+                <div class="tobetoggled1" id="employees">
+                    <ul>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Employees/Add-Employee/index.html" ><h6  class="p-1">Add Employee</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Employees/View-Employees/index.html"><h6 class="p-1">View Employees</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Employees/Manage-Employees/index.html"><h6 class="p-1">Manage Employees</h6></a></li></br></br>
+
+                        <li class="m-4"><a href="../../../../../SubSideBars/Employees/Assign-Department/index.html"><h6 class="p-1"></i>Assign Department</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Employees/Transfer-Employees/index.html"><h6 class="p-1"></i>Transfer Employee</h6></a></li>
+                </ul>
+                </div>
+            </dl>
+
+            <dl><dt>             <li><a href="../../../../../MainSideBars/Pharmacy/index.html" class="main-link" data-target="Pharmacy"><i class='bx bx-plus-medical'></i>Pharmacy</a></li>
+            </dt>
+                <div class="tobetoggled1" id="Pharmacy">
+                    <ul>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Pharmacy/Add-Pharm-Category/index.html" ><h6  class="p-1">Add Pharm Category</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Pharmacy/View-Pharm-Category/index.html"><h6 class="p-1">View pharm Category</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Pharmacy/Manage-Pharm-Category/index.html"><h6 class="p-1">Manage Pharm Category</h6></a></li></br></br>
+
+                        <li class="m-4"><a href="../../../../../SubSideBars/Pharmacy/Add-Pharmaceuticals/index.html" ><h6  class="p-1">Add Pharmaceuticals</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Pharmacy/View-Pharmaceuticals/index.html"><h6 class="p-1">View Pharmaceuticals</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Pharmacy/Manage-Pharmaceuticals/index.html"><h6 class="p-1">Manage Pharmaceuticals</h6></a></li></br></br>
+
+                        <li class="m-4"><a href="../../../../../SubSideBars/Pharmacy/Add-Prescriptions/index.html" ><h6  class="p-1">Add Prescriptions</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Pharmacy/View-Prescriptions/index.html"><h6 class="p-1">View Prescriptions</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Pharmacy/Manage-Prescriptions/index.html"><h6 class="p-1">Manage Prescriptions</h6></a></li>
+                </ul>
+                </div>
+            </dl>
+            
+            <dl><dt>             <li class="active"><a href="../../../../../MainSideBars/Accounting/index.html" class="main-link" data-target="Accounting"><i class='bx bx-credit-card-alt'></i>Accounting</a></li>
+            </dt>
+                <div   class="tobetoggled1" id="Accounting" >
+                    <ul>
+                        <li class="m-4 active"><a href="../../../../../SubSideBars/Accounting/Add-Acc-Payable/index.html" ><h6  class="p-1">Add  Acc. Payable</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Accounting/Manage-Acc-Payable/index.html"><h6 class="p-1">Manage Acc. Payable</h6></a></li>
+     
+                        <li class="m-4"><a href="../../../../../SubSideBars/Accounting/Add-Acc-Receivable/index.html"><h6 class="p-1"></i>Add  Acc. Receivable</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Accounting/Manage-Acc-Receivable/index.html"><h6 class="p-1"></i>Manage Acc. Receivable</h6></a></li>
+                </ul>
+                </div>
+            </dl>
+
+            <dl><dt>             <li><a href="../../../../../MainSideBars/Invenetory/index.html" class="main-link" data-target="Invenetory"><i class='bx bx-store-alt'></i>Invenetory</a></li>
+            </dt>
+                <div class="tobetoggled1" id="Invenetory">
+                    <ul>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Invenetory/Pharmaceuticals/index.html" ><h6  class="p-1">Pharmaceuticals</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Invenetory/Assetss/index.html"><h6 class="p-1">Assets</h6></a></li>
+                </ul>
+                </div>
+            </dl>
+           
+            <dl><dt>             <li><a href="../../../../../MainSideBars/Reporting/index.html" class="main-link" data-target="Reporting"><i class='bx bx-bar-chart-alt-2'></i>Reporting</a></li>
+            </dt>
+                <div class="tobetoggled1" id="Reporting">
+                    <ul>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Reporting/InPatient-Records/index.html" ><h6  class="p-1">InPatient Records</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Reporting/OutPatient-Records/index.html"><h6 class="p-1">OutPatient Records</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Reporting/Employee-Records/index.html"><h6 class="p-1">Employee Records</h6></a></li></br></br>
+
+                        <li class="m-4"><a href="../../../../../SubSideBars/Reporting/Pharmaceutical-Records/index.html"><h6 class="p-1"></i>Pharmaceutical Records </h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Reporting/Accounting-Records/index.html"><h6 class="p-1"></i>Accounting Records</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Reporting/Medical-Records/index.html"><h6 class="p-1"></i>Medical Records</h6></a></li>
+                </ul>
+                </div>
+            </dl>
+            
+            <dl><dt>             <li><a href="../../../../../MainSideBars/Medical-Records/index.html" class="main-link" data-target="MedicalRecords"><i class='bx bx-add-to-queue'></i>Medical Records</a></li>
+            </dt>
+                <div class="tobetoggled1" id="MedicalRecords">
+                    <ul>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Medical-Records/Add-Medical-Record/index.html" ><h6  class="p-1">Add Medical Record</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Medical-Records/Manage-Medical-Record/index.html"><h6 class="p-1">Manage Medical Record</h6></a></li>
+                     
+                </ul>
+                </div>
+            </dl>
+
+            <dl><dt>     <li><a href="../../../../../MainSideBars/Laboratory/index.html" class="main-link" data-target="Laboratory"><i class='bx bx-vial'></i>Laboratory</a></li>
+            </dt>
+                <div class="tobetoggled1" id="Laboratory">
+                    <ul>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Laboratory/Patient-Lab-Tests/index.html" ><h6  class="p-1">Patient Lab Tests</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Laboratory/Patient-Lab-Results/index.html"><h6 class="p-1">Patient Lab Results</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Laboratory/Patient-Vitals/index.html"><h6 class="p-1">Patient Vitals</h6></a></li></br></br>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Laboratory/Employee-Vitals/index.html"><h6 class="p-1">Employee Vitals</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Laboratory/Lab-Reports/index.html"><h6 class="p-1">Lab Reports</h6></a></li></br></br>
+
+
+                        <li class="m-4"><a href="../../../../../SubSideBars/Laboratory/Add-Lab-Equipment/index.html"><h6 class="p-1"></i>Add Lab Equipment</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Laboratory/Manage-Lab-Equipments/index.html"><h6 class="p-1"></i>Manage Lab Equipments</h6></a></li>
+                </ul>
+                </div>
+            </dl>
+
+            <dl><dt>     <li><a href="../../../../../MainSideBars/Surgical-Theatre/index.html" class="main-link" data-target="SurgicalTheatre"><i class='bx bx-shield-plus'></i>Surgical/Theatre</a></li>
+            </dt>
+                <div class="tobetoggled1" id="SurgicalTheatre" >
+                    <ul>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Surgical-Theatre/Add-Equipment/index.html" ><h6  class="p-1">Add Equipment</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Surgical-Theatre/Manage-Equipments/index.html"><h6 class="p-1">Manage Equipments</h6></a></li></br></br>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Surgical-Theatre/Add-Patient/index.html"><h6 class="p-1">Add Patient</h6></a></li>
+
+                        <li class="m-4"><a href="../../../../../SubSideBars/Surgical-Theatre/Manage-Patients/index.html"><h6 class="p-1"></i>Manage Patients</h6></a></li></br></br>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Surgical-Theatre/Surgery-Records/index.html"><h6 class="p-1"></i>Surgery Records</h6></a></li>
+                </ul>
+                </div>
+            </dl>
+
+            <dl><dt>     <li><a href="../../../../../MainSideBars/Payrolls/index.html" class="main-link" data-target="Payrolls"><i class='bx bx-briefcase'></i>Payrolls</a></li>
+            </dt>
+                <div class="tobetoggled1" id="Payrolls" >
+                    <ul>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Payrolls/Add-Payroll/index.html" ><h6  class="p-1">Add Payroll</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Payrolls/Manage-Payrolls/index.html"><h6 class="p-1">Manage Payrolls</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Payrolls/Generate-Payrolls/index.html"><h6 class="p-1">Generate Payrolls</h6></a></li></br></br>
+
+                </ul>
+                </div>
+            </dl>
+
+            
+            <dl><dt>      <li><a href="../../../../../MainSideBars/Vendorss/index.html" class="main-link" data-target="Vendors"><i class='bx bx-analyse'></i>Vendors</a></li>
+            </dt>
+                <div class="tobetoggled1" id="Vendors" >
+                    <ul>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Vendorss/Add-Vendor/index.html" ><h6  class="p-1">Add Vendor</h6></a></li>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Vendorss/Manage-Vendors/index.html"><h6 class="p-1">Manage Vendors</h6></a></li>
+                 </ul>
+                </div>
+            </dl>
+
+            <dl><dt>      <li><a href="../../../../../MainSideBars/Password-Resets/index.html" class="main-link" data-target="PasswordResets"><i class='bx bx-user-check'></i>Password Resets</a></li>
+            </dt>
+                <div class="tobetoggled1" id="PasswordResets">
+                    <ul>
+                        <li class="m-4"><a href="../../../../../SubSideBars/Password-Resets/Manage-Passwords/index.html" ><h6  class="p-1">Manage</h6></a></li>
+                 </ul>
+                </div>
+            </dl>
+
+            
+    
+
+
+        </dl>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">12</span>
+            </a>
+                      
+   <!-- Default dropstart link -->
+<div class="dropdown">
+    <a href="#" class="dropdown-toggle profile" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img src="images/logo.png">
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <!-- Dropdown menu links -->
+        <li><a class="dropdown-item profile text-center" href="#"><img src="images/logo.png"></a></li>
+        <li><a class="dropdown-item text-center" href="#">Belete Asefa</a></li>
+        <li><a class="dropdown-item text-center" href="#">Belete@gmail.com</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+        <li><a class="dropdown-item" href="#">Help</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign Out</a></li>
+    </ul>
+</div>
+
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>My-Hakim</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="../../../../../index.html">
+                            My-Hakim
+                            </a></li>
+                            <span class="text-info">&#8594;</span> 
+                            <li><a href="../../../../../MainSideBars/Accounting/index.html">
+                                Accounting
+                                </a></li>
+                                <span class="text-info">&#8594;</span> 
+                            <li><a href="../../../../Accounting/Manage-Acc-Payable/index.html">
+                                Manage-Acc-Payable
+                                </a></li>
+                                <span class="text-info">&#8594;</span> 
+                        <li><a href="#" class="active">Add-Acc-Payable</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="report">
+                    <i class='bx bx-cloud-download'></i>
+                    <span>Download CSV</span>
+                </a>
+            </div>
+
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bx-receipt'></i>
+                        <h3>Account Description For <br>Retirement</h3>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3" style="margin-left: 26%;">
+                                <img src="./images/logo.png" class="img-fluid" style="max-width: 50%;" alt="Profile Image"><br>
+                            </div>
+                            <h5 style="margin-left: 25%;">Account Name : Individual Retirement Account</h5>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                                <h4>Account Name : Individual Retirement Account</h4>
+                                <h5 style="color: red;">Account Number : 518703294</h5>
+                                <h5 style="color: red;">Account Amount : $ 25000</h5>
+                               
+                                <h5 >Account Description</h5>
+                               
+                                <ul>
+                                    <li><p class="small">IRA’s are simply an account where you stash your money
+                                         for retirement. The concept is pretty simple, your account balance is
+                                          not taxed UNTIL you withdraw, at which point you pay the taxes there. 
+                                          This allows you to grow your account with
+                                         interest without taxes taking away from the balance. The net result 
+                                         is you earn more money.</p></li>
+                                     </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+            </div>
+
+        </main>
+
+    </div>
+    <script>
+        const mainLinks = document.querySelectorAll('.main-link');
+        const dropdowns = document.querySelectorAll('.tobetoggled1');
+    
+        mainLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                const targetId = this.getAttribute('data-target');
+                const target = document.getElementById(targetId);
+                const parentLi = this.parentElement;
+    
+                if (target.style.display === 'block') {
+                    target.style.display = 'none';
+                    parentLi.classList.remove('active');
+                    sessionStorage.removeItem('dropdownState_' + targetId);
+                } else {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.style.display = 'none';
+                        dropdown.parentElement.classList.remove('active');
+                        sessionStorage.removeItem('dropdownState_' + dropdown.getAttribute('id'));
+                    });
+                    target.style.display = 'block';
+                    parentLi.classList.add('active');
+                    sessionStorage.setItem('dropdownState_' + targetId, 'open');
+                }
+            });
+    
+            // Restore the state of the dropdown from sessionStorage
+            const targetId = link.getAttribute('data-target');
+            const target = document.getElementById(targetId);
+            const dropdownState = sessionStorage.getItem('dropdownState_' + targetId);
+            if (dropdownState === 'open') {
+                target.style.display = 'block';
+                link.parentElement.classList.add('active');
+            } else {
+                target.style.display = 'none';
+                link.parentElement.classList.remove('active');
+            }
+        });
+    
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.tobetoggled1') && !event.target.closest('.main-link')) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.style.display = 'none';
+                    dropdown.parentElement.classList.remove('active');
+                });
+                sessionStorage.clear();
+            }
+        });
+    
+    </script>
+    
+    
+    
+    
+
+    <script src="../../../../../index.js"></script>
+</body>
+
+</html>
